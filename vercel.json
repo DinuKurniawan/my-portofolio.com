@@ -1,3 +1,4 @@
 {
+  "outputDirectory": ".",
   "routes": [{ "src": "/api/contact", "dest": "/api/contact.js" }]
 }

@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%234f46e5'/><text x='50' y='72' font-family='Inter,Arial,sans-serif' font-size='65' font-weight='800' text-anchor='middle' fill='white'>D</text></svg>"
+    />
+    <link rel="stylesheet" href="./src/css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+      />
+    </noscript>
+  </head>
+  <body class="bg-[#0a0a0f] text-white antialiased">
+    <!-- Noise overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <!-- Custom cursor (desktop) -->
+    <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <header
+      id="navbar"
+      class="fixed top-0 w-full z-50 transition-all duration-500"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex justify-between items-center"
+      >
+        <a href="#home" class="logo-text text-lg font-bold">
+          <span class="text-indigo-400">&lt;</span>D<span
+            class="text-indigo-400"
+            >/&gt;</span
+          >
+        </a>
+        <nav class="hidden md:flex gap-8 text-sm font-medium">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button
+          id="menu-btn"
+          class="md:hidden text-gray-400 hover:text-white transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg
+            id="icon-menu"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            id="icon-close"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden border-t border-white/5 bg-[#0d0d1a]/95 backdrop-blur-xl px-6 py-6 flex-col gap-5 text-sm font-medium"
+      >
+        <a
+          href="#about"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+          >About</a
+        >
+        <a
+          href="#skills"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+          >Skills</a
+        >
+        <a
+          href="#projects"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+          >Projects</a
+        >
+        <a
+          href="#contact"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- ═══════════════ HERO ═══════════════ -->
+      <section
+        id="home"
+        class="relative min-h-screen flex items-center overflow-hidden pt-20"
+      >
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-pattern"></div>
+        <canvas id="particles-canvas" aria-hidden="true"></canvas>
+        <div class="aurora-bg" aria-hidden="true"></div>
+
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
+          <div
+            class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[calc(100vh-5rem)] py-16"
+          >
+            <!-- Left: Text -->
+            <div class="order-2 md:order-1">
+              <!-- Status badge -->
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-8 reveal"
+              >
+                <span
+                  class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+                ></span>
+                <span
+                  class="text-emerald-400 text-xs font-medium font-code tracking-wide"
+                  >Available for work</span
+                >
+              </div>
+
+              <h1
+                class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-tight mb-5 reveal"
+              >
+                Hi, I'm<br />
+                <span class="gradient-text">Dinu Kurniawan</span><br />
+                <span class="gradient-text">Cahyadi</span>
+              </h1>
+
+              <div class="text-lg md:text-xl text-gray-400 mb-5 reveal">
+                <span id="typed-text" class="font-code text-indigo-300"></span
+                ><span class="typed-cursor">|</span>
+              </div>
+
+              <p class="text-gray-500 max-w-lg mb-8 leading-relaxed reveal">
+                Crafting beautiful, performant, and user-centered digital
+                products — one line of code at a time.
+              </p>
+
+              <!-- Social links row -->
+              <div class="flex items-center gap-3 mb-8 reveal">
+                <a
+                  href="https://github.com/DinuKurniawan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link"
+                  aria-label="GitHub"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/dkc_2863/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link"
+                  aria-label="Instagram"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                    />
+                  </svg>
+                </a>
+                <div class="w-px h-6 bg-white/10"></div>
+                <a
+                  href="https://wa.me/6281384634526"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-code text-xs text-gray-600 hover:text-indigo-400 transition-colors"
+                  >wa.me/dinu</a
+                >
+              </div>
+
+              <!-- CTA -->
+              <div class="flex flex-wrap gap-4 reveal">
+                <a href="#projects" class="btn-primary">
+                  View My Work <span class="ml-1">→</span>
+                </a>
+                <a href="#contact" class="btn-outline">Get In Touch</a>
+              </div>
+            </div>
+
+            <!-- Right: Photo -->
+            <div
+              class="order-1 md:order-2 flex justify-center md:justify-end reveal"
+            >
+              <div class="hero-photo-wrap">
+                <div class="hero-photo-glow"></div>
+                <div class="hero-photo-ring">
+                  <div class="hero-photo-inner" id="hero-photo-inner">
+                    <img
+                      src="./src/images/profile.jpg"
+                      alt="Dinu Kurniawan Cahyadi"
+                      class="w-full h-full object-cover object-center"
+                      onerror="
+                        this.style.display = 'none';
+                        document
+                          .getElementById('hero-photo-inner')
+                          .classList.add('photo-fallback');
+                      "
+                    />
+                  </div>
+                </div>
+                <!-- Floating tech badges -->
+                <div class="hero-badge hero-badge--tl">⚛️ React</div>
+                <div class="hero-badge hero-badge--br">� Laravel</div>
+                <!-- Corner accents -->
+                <div
+                  class="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-indigo-500/80 blur-sm pointer-events-none"
+                ></div>
+                <div
+                  class="absolute -bottom-3 -left-3 w-4 h-4 rounded-full bg-purple-500/80 blur-sm pointer-events-none"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600"
+        >
+          <span class="font-code text-xs tracking-widest uppercase"
+            >scroll</span
+          >
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ ABOUT ═══════════════ -->
+      <section
+        id="about"
+        class="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden"
+      >
+        <!-- Background glow -->
+        <div class="about-bg-orb" aria-hidden="true"></div>
+
+        <div class="max-w-6xl mx-auto">
+          <!-- Section header -->
+          <div class="reveal mb-14">
+            <p class="font-code text-indigo-400 text-sm mb-2">01. about</p>
+            <h2 class="text-3xl md:text-4xl font-bold">About Me</h2>
+          </div>
+
+          <!-- ── Main grid ── -->
+          <div class="grid md:grid-cols-5 gap-10 lg:gap-16 items-start">
+            <!-- ── Left: Profile card ── -->
+            <div class="md:col-span-2 space-y-4">
+              <!-- Card -->
+              <div class="about-profile-card reveal">
+                <div class="about-profile-glow" aria-hidden="true"></div>
+
+                <!-- Avatar -->
+                <div class="about-avatar-wrap">
+                  <img
+                    src="./src/images/profile.jpg"
+                    alt="Dinu Kurniawan Cahyadi"
+                    class="w-full h-full object-cover object-center rounded-full"
+                    onerror="
+                      this.style.display = 'none';
+                      this.parentElement.classList.add('photo-fallback');
+                    "
+                  />
+                </div>
+
+                <!-- Name -->
+                <div class="mt-5 text-center">
+                  <h3 class="text-white font-bold text-base leading-tight">
+                    Dinu Kurniawan Cahyadi
+                  </h3>
+                  <p class="font-code text-indigo-400 text-xs mt-1">
+                    Full-Stack Developer
+                  </p>
+                </div>
+
+                <!-- Status pill -->
+                <div class="mt-4 flex justify-center">
+                  <span
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium font-code"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
+                    ></span>
+                    Available for work
+                  </span>
+                </div>
+
+                <!-- Divider -->
+                <div class="my-5 h-px bg-white/5"></div>
+
+                <!-- Stats row -->
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="about-stat-item">
+                    <span class="about-stat-num gradient-text">1+</span>
+                    <span class="about-stat-label">Years Exp.</span>
+                  </div>
+                  <div class="about-stat-item">
+                    <span class="about-stat-num gradient-text">10+</span>
+                    <span class="about-stat-label">Projects</span>
+                  </div>
+                  <div class="about-stat-item">
+                    <span class="about-stat-num gradient-text">15+</span>
+                    <span class="about-stat-label">Tech Stack</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Currently building badge -->
+              <div class="about-building-badge reveal">
+                <span class="text-base">🔨</span>
+                <div>
+                  <p class="font-code text-gray-500 text-xs leading-none mb-1">
+                    currently building
+                  </p>
+                  <p class="text-white text-sm font-semibold">This Portfolio</p>
+                </div>
+                <span
+                  class="ml-auto w-2 h-2 rounded-full bg-indigo-400 animate-pulse shrink-0"
+                ></span>
+              </div>
+            </div>
+
+            <!-- ── Right: Content ── -->
+            <div class="md:col-span-3 space-y-7">
+              <!-- Bio paragraphs -->
+              <div class="about-bio-block reveal">
+                <p class="text-gray-300 leading-relaxed">
+                  Halo! Saya
+                  <span class="text-white font-semibold"
+                    >Dinu Kurniawan Cahyadi</span
+                  >, seorang
+                  <span class="text-indigo-400 font-medium"
+                    >Full-Stack Web Developer</span
+                  >
+                  yang berbasis di Indonesia. Saya memiliki passion yang besar
+                  dalam membangun aplikasi web yang tidak hanya fungsional,
+                  tetapi juga indah dan memberikan pengalaman terbaik bagi
+                  pengguna.
+                </p>
+              </div>
+
+              <p class="text-gray-400 leading-relaxed reveal">
+                Perjalanan saya di dunia pemrograman dimulai dari rasa penasaran
+                sederhana — bagaimana sebuah website bisa hidup dan
+                berinteraksi. Kini saya menggeluti teknologi modern seperti
+                <span class="tech-inline">React</span>,
+                <span class="tech-inline">Next.js</span>, dan
+                <span class="tech-inline">Laravel</span>
+                untuk mewujudkan ide-ide menjadi produk digital nyata.
+              </p>
+
+              <p class="text-gray-400 leading-relaxed reveal">
+                Di luar coding, saya senang belajar hal-hal baru di bidang
+                teknologi, berkontribusi pada open-source, dan berbagi ilmu
+                dengan komunitas developer Indonesia. Saya percaya bahwa kode
+                yang baik bukan hanya yang berjalan — tetapi yang bisa dipahami
+                dan dirawat oleh siapa pun.
+              </p>
+
+              <!-- Info grid -->
+              <div class="grid grid-cols-2 gap-3 reveal">
+                <div class="about-info-card">
+                  <div class="about-info-icon">📍</div>
+                  <div>
+                    <p
+                      class="text-xs text-gray-500 uppercase tracking-widest mb-0.5"
+                    >
+                      Lokasi
+                    </p>
+                    <p class="text-sm text-white font-semibold">Indonesia</p>
+                  </div>
+                </div>
+                <div class="about-info-card">
+                  <div class="about-info-icon">🎓</div>
+                  <div>
+                    <p
+                      class="text-xs text-gray-500 uppercase tracking-widest mb-0.5"
+                    >
+                      Pendidikan
+                    </p>
+                    <p class="text-sm text-white font-semibold">
+                      Teknologi Informasi
+                    </p>
+                  </div>
+                </div>
+                <div class="about-info-card">
+                  <div class="about-info-icon">💼</div>
+                  <div>
+                    <p
+                      class="text-xs text-gray-500 uppercase tracking-widest mb-0.5"
+                    >
+                      Status
+                    </p>
+                    <p class="text-sm text-emerald-400 font-semibold">
+                      Open to Work
+                    </p>
+                  </div>
+                </div>
+                <div class="about-info-card">
+                  <div class="about-info-icon">🌐</div>
+                  <div>
+                    <p
+                      class="text-xs text-gray-500 uppercase tracking-widest mb-0.5"
+                    >
+                      Bahasa
+                    </p>
+                    <p class="text-sm text-white font-semibold">ID</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="flex flex-wrap gap-4 reveal">
+                <a href="#contact" class="btn-primary"
+                  >Hubungi Saya <span class="ml-1">→</span></a
+                >
+                <a href="#" download class="btn-outline">Download CV</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ SKILLS ═══════════════ -->
+      <section
+        id="skills"
+        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative"
+      >
+        <div class="stripe-divider top-0"></div>
+        <div class="max-w-6xl mx-auto">
+          <div class="reveal">
+            <p class="font-code text-indigo-400 text-sm mb-2">02. skills</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">Tech Stack</h2>
+          </div>
+          <div class="space-y-10">
+            <div class="reveal">
+              <p
+                class="text-gray-600 text-xs font-medium uppercase tracking-widest mb-5"
+              >
+                Frontend
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-badge">🌐 HTML</span>
+                <span class="skill-badge">🎨 CSS</span>
+                <span class="skill-badge">⚡ JavaScript</span>
+                <span class="skill-badge">⚛️ React</span>
+                <span class="skill-badge">▲ Next.js</span>
+              </div>
+            </div>
+            <div class="reveal">
+              <p
+                class="text-gray-600 text-xs font-medium uppercase tracking-widest mb-5"
+              >
+                Backend
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-badge">🔴 Laravel</span>
+              </div>
+            </div>
+            <div class="reveal">
+              <p
+                class="text-gray-600 text-xs font-medium uppercase tracking-widest mb-5"
+              >
+                Tools
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="skill-badge">💻 VS Code</span>
+                <span class="skill-badge">🚀 Antigravity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stripe-divider bottom-0"></div>
+      </section>
+
+      <!-- ═══════════════ PROJECTS ═══════════════ -->
+      <section id="projects" class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="reveal">
+            <p class="font-code text-indigo-400 text-sm mb-2">03. projects</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">Featured Work</h2>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+          >
+            <!-- Card 1 -->
+            <div class="project-card reveal group">
+              <div class="project-thumb overflow-hidden relative">
+                <img
+                  src="./src/images/project-nusafood.svg"
+                  alt="NusaFood App Preview"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h4
+                class="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors"
+              >
+                NusaFood &mdash; Food Delivery App
+              </h4>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Platform pemesanan makanan online dengan fitur real-time order
+                tracking, manajemen restoran, dan payment gateway terintegrasi.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Express</span>
+              </div>
+              <div class="flex gap-5">
+                <a href="#" class="project-link">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Code
+                </a>
+                <a href="#" class="project-link">
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="project-card reveal group">
+              <div class="project-thumb overflow-hidden relative">
+                <img
+                  src="./src/images/project-taskflow.svg"
+                  alt="TaskFlow App Preview"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h4
+                class="text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors"
+              >
+                TaskFlow &mdash; Project Management
+              </h4>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Aplikasi manajemen proyek kolaboratif dengan Kanban board, task
+                assignment, deadline tracking, dan notifikasi real-time.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+              <div class="flex gap-5">
+                <a href="#" class="project-link">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Code
+                </a>
+                <a href="#" class="project-link">
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="project-card reveal group">
+              <div class="project-thumb overflow-hidden relative">
+                <img
+                  src="./src/images/project-datasight.svg"
+                  alt="DataSight Dashboard Preview"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h4
+                class="text-lg font-bold mb-2 group-hover:text-cyan-300 transition-colors"
+              >
+                DataSight &mdash; Analytics Dashboard
+              </h4>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Dashboard analitik real-time dengan visualisasi interaktif,
+                laporan otomatis, dan integrasi berbagai sumber data bisnis.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+              </div>
+              <div class="flex gap-5">
+                <a href="#" class="project-link">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Code
+                </a>
+                <a href="#" class="project-link">
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ CONTACT ═══════════════ -->
+      <section
+        id="contact"
+        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative"
+      >
+        <div class="stripe-divider top-0"></div>
+        <div class="max-w-6xl mx-auto">
+          <!-- heading -->
+          <div class="reveal text-center mb-14">
+            <p class="font-code text-indigo-400 text-sm mb-2">04. contact</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Let's Work Together
+            </h2>
+            <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">
+              Whether you have a project in mind, a question, or just want to
+              say hi — my inbox is always open.
+            </p>
+          </div>
+
+          <!-- 2-column: info + form -->
+          <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <!-- Left: info -->
+            <div class="reveal space-y-8">
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 uppercase tracking-widest mb-1"
+                  >
+                    Email
+                  </p>
+                  <a
+                    href="mailto:dinukurniawan28@gmail.com"
+                    class="text-white hover:text-indigo-400 transition-colors font-medium"
+                    >dinukurniawan28@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 uppercase tracking-widest mb-1"
+                  >
+                    Location
+                  </p>
+                  <p class="text-white font-medium">Indonesia</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="contact-icon-wrap">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="text-xs text-gray-500 uppercase tracking-widest mb-1"
+                  >
+                    Response Time
+                  </p>
+                  <p class="text-white font-medium">Within 24 hours</p>
+                </div>
+              </div>
+
+              <div class="pt-4">
+                <p class="text-xs text-gray-600 uppercase tracking-widest mb-4">
+                  Find me on
+                </p>
+                <div class="flex gap-3">
+                  <a
+                    href="https://github.com/DinuKurniawan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="GitHub"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                      />
+                    </svg>
+                  </a>
+                  <a href="#" class="social-link" aria-label="LinkedIn">
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                      />
+                    </svg>
+                  </a>
+                  <a href="#" class="social-link" aria-label="Twitter / X">
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/dkc_2863/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link"
+                    aria-label="Instagram"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: form -->
+            <div class="reveal" id="contact-right-col">
+              <form id="contact-form" novalidate class="space-y-5">
+                <div class="grid sm:grid-cols-2 gap-5">
+                  <div class="form-group">
+                    <label for="cf-name" class="form-label"
+                      >Name <span class="text-indigo-400">*</span></label
+                    >
+                    <input
+                      id="cf-name"
+                      name="name"
+                      type="text"
+                      placeholder="Your name"
+                      class="form-input"
+                      autocomplete="name"
+                    />
+                    <p class="form-error" id="err-name"></p>
+                  </div>
+                  <div class="form-group">
+                    <label for="cf-email" class="form-label"
+                      >Email <span class="text-indigo-400">*</span></label
+                    >
+                    <input
+                      id="cf-email"
+                      name="email"
+                      type="email"
+                      placeholder="you@example.com"
+                      class="form-input"
+                      autocomplete="email"
+                    />
+                    <p class="form-error" id="err-email"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="cf-subject" class="form-label">Subject</label>
+                  <input
+                    id="cf-subject"
+                    name="subject"
+                    type="text"
+                    placeholder="What's this about?"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cf-message" class="form-label"
+                    >Message <span class="text-indigo-400">*</span></label
+                  >
+                  <textarea
+                    id="cf-message"
+                    name="message"
+                    rows="5"
+                    placeholder="Tell me about your project or idea..."
+                    class="form-input resize-none"
+                  ></textarea>
+                  <p class="form-error" id="err-message"></p>
+                </div>
+                <button
+                  type="submit"
+                  id="cf-submit"
+                  class="btn-primary w-full flex items-center justify-center gap-2"
+                >
+                  <span id="cf-btn-text">Send Message</span>
+                  <svg
+                    id="cf-btn-icon"
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
+                  </svg>
+                  <svg
+                    id="cf-spinner"
+                    class="w-4 h-4 hidden animate-spin"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    />
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8H4z"
+                    />
+                  </svg>
+                </button>
+                <!-- Success / error toast -->
+                <div id="cf-toast" class="cf-toast hidden"></div>
+              </form>
+
+              <!-- ── Email Sent Panel ── -->
+              <div id="email-sent-panel" class="email-sent-panel hidden">
+                <!-- Envelope icon with pulsing rings -->
+                <div class="esp-envelope-wrap">
+                  <div class="esp-rings">
+                    <div class="esp-ring"></div>
+                    <div class="esp-ring"></div>
+                    <div class="esp-ring"></div>
+                  </div>
+                  <div class="esp-icon-bg">
+                    <svg class="esp-icon" viewBox="0 0 48 48" fill="none">
+                      <rect
+                        x="4"
+                        y="11"
+                        width="40"
+                        height="26"
+                        rx="4"
+                        fill="rgba(99,102,241,0.12)"
+                        stroke="#6366f1"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M4 15L24 28L44 15"
+                        stroke="#6366f1"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <!-- checkmark badge -->
+                      <circle cx="38" cy="36" r="8.5" fill="#0a0a0f" />
+                      <circle
+                        cx="38"
+                        cy="36"
+                        r="7"
+                        fill="none"
+                        stroke="#22c55e"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M35 36L37.5 38.5L42 33"
+                        stroke="#22c55e"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Heading -->
+                <div class="esp-text">
+                  <h3 class="esp-title">Message Sent!</h3>
+                  <p class="esp-subtitle">
+                    Thanks for reaching out. I'll get back to you within 24
+                    hours.
+                  </p>
+                </div>
+
+                <!-- Sent-to badge -->
+                <div class="esp-sent-to">
+                  <svg
+                    class="w-3 h-3 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span
+                    id="esp-email-display"
+                    class="overflow-hidden text-ellipsis whitespace-nowrap"
+                    >you@example.com</span
+                  >
+                </div>
+
+                <!-- Resend button with countdown ring -->
+                <div class="esp-resend-wrap">
+                  <button id="esp-resend-btn" class="esp-resend-btn" disabled>
+                    <!-- Ring: countdown phase -->
+                    <div id="esp-ring-phase" class="esp-ring-progress">
+                      <svg viewBox="0 0 28 28" fill="none">
+                        <circle
+                          cx="14"
+                          cy="14"
+                          r="11"
+                          stroke="rgba(255,255,255,0.08)"
+                          stroke-width="2.5"
+                        />
+                        <circle
+                          id="esp-ring-fill"
+                          cx="14"
+                          cy="14"
+                          r="11"
+                          stroke="#6366f1"
+                          stroke-width="2.5"
+                          stroke-dasharray="69.12"
+                          stroke-dashoffset="0"
+                          stroke-linecap="round"
+                          transform="rotate(-90 14 14)"
+                        />
+                      </svg>
+                      <span id="esp-countdown-num" class="esp-countdown-num"
+                        >60</span
+                      >
+                    </div>
+                    <!-- Refresh icon: active/sending phase -->
+                    <svg
+                      id="esp-refresh-icon"
+                      class="esp-refresh-icon hidden w-4 h-4 shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                      />
+                    </svg>
+                    <span id="esp-resend-label"></span>
+                  </button>
+                </div>
+
+                <!-- Inline feedback -->
+                <div id="esp-feedback" class="esp-feedback hidden"></div>
+
+                <!-- Back to form -->
+                <button id="esp-back-btn" class="esp-back-link">
+                  ← Send another message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stripe-divider bottom-0"></div>
+      </section>
+    </main>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="py-8 text-center">
+      <p class="font-code text-gray-600 text-sm">
+        Designed &amp; Built by
+        <span class="text-indigo-400">Dinu Kurniawan Cahyadi</span> &mdash;
+        &copy; 2026
+      </p>
+    </footer>
+
+    <!-- ═══════════════ WHATSAPP FLOATING BUTTON ═══════════════ -->
+    <a
+      href="https://wa.me/6281384634526"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="wa-float"
+      aria-label="Chat via WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        fill="white"
+        width="28"
+        height="28"
+      >
+        <path
+          d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.027 7.773L0 32l8.418-2.004A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.091a13.04 13.04 0 0 1-6.647-1.818l-.476-.283-4.997 1.19 1.237-4.863-.31-.497A13.043 13.043 0 0 1 2.91 16C2.91 9.333 8.333 3.91 16 3.91S29.09 9.333 29.09 16 23.667 29.09 16 29.09zm7.158-9.766c-.392-.196-2.322-1.145-2.682-1.276-.36-.131-.622-.196-.883.196-.262.392-.914 1.276-1.12 1.538-.207.261-.414.294-.806.098-.392-.196-1.655-.61-3.152-1.946-1.165-1.04-1.952-2.324-2.181-2.717-.229-.392-.024-.604.172-.799.176-.175.392-.457.588-.686.196-.229.261-.392.392-.653.131-.261.065-.49-.033-.686-.098-.196-.883-2.127-1.21-2.912-.319-.764-.642-.66-.883-.672-.229-.01-.49-.013-.752-.013-.261 0-.686.098-1.046.49-.36.392-1.374 1.342-1.374 3.273 0 1.931 1.407 3.797 1.603 4.059.196.261 2.769 4.228 6.71 5.928.938.405 1.67.647 2.24.828.941.3 1.797.257 2.474.156.754-.113 2.322-.949 2.65-1.866.326-.916.326-1.701.228-1.866-.098-.164-.36-.261-.752-.457z"
+        />
+      </svg>
+      <span class="wa-tooltip">Chat WhatsApp</span>
+    </a>
+
+    <script src="./src/js/main.js" defer></script>
+  </body>
+</html>

@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "noreply@my-portofolio.com",
+      from: "Portfolio Contact <onboarding@resend.dev>",
       to: process.env.TO_EMAIL,
       subject: `[Portfolio] ${subject ? subject.trim() : "New message from " + name.trim()}`,
       html: `

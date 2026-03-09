@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="566" viewBox="0 0 800 566">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1f3a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981" />
+      <stop offset="100%" style="stop-color:#34d399" />
+    </linearGradient>
+    <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b" />
+      <stop offset="100%" style="stop-color:#fbbf24" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="566" rx="12" fill="url(#bg2)"/>
+  <!-- Border -->
+  <rect x="8" y="8" width="784" height="550" rx="8" fill="none" stroke="url(#accent2)" stroke-width="2" opacity="0.4"/>
+  <rect x="20" y="20" width="760" height="526" rx="4" fill="none" stroke="#10b981" stroke-width="1" opacity="0.15" stroke-dasharray="6 4"/>
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="800" height="6" rx="3" fill="url(#accent2)"/>
+  <!-- Medal icon -->
+  <circle cx="400" cy="110" r="40" fill="none" stroke="url(#gold2)" stroke-width="3"/>
+  <circle cx="400" cy="110" r="28" fill="#f59e0b" opacity="0.15"/>
+  <text x="400" y="120" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="30" fill="#fbbf24">★</text>
+  <!-- Title -->
+  <text x="400" y="195" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="600" fill="#10b981" letter-spacing="4">CERTIFICATE OF COMPLETION</text>
+  <!-- Divider -->
+  <line x1="250" y1="215" x2="550" y2="215" stroke="#10b981" stroke-width="1" opacity="0.3"/>
+  <!-- Presented to -->
+  <text x="400" y="255" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#9ca3af">This is proudly presented to</text>
+  <!-- Name -->
+  <text x="400" y="300" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="800" fill="#ffffff">Dinu Kurniawan Cahyadi</text>
+  <!-- Underline name -->
+  <line x1="200" y1="315" x2="600" y2="315" stroke="url(#accent2)" stroke-width="1.5" opacity="0.4"/>
+  <!-- Course name -->
+  <text x="400" y="355" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#9ca3af">For successfully completing the course</text>
+  <text x="400" y="390" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700" fill="#34d399">React &amp; Next.js Development</text>
+  <text x="400" y="418" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" fill="#6b7280">Modern Frontend Framework Mastery</text>
+  <!-- Bottom info -->
+  <line x1="150" y1="460" x2="350" y2="460" stroke="#374151" stroke-width="1"/>
+  <text x="250" y="480" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#6b7280">Date: March 2025</text>
+  <line x1="450" y1="460" x2="650" y2="460" stroke="#374151" stroke-width="1"/>
+  <text x="550" y="480" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" fill="#6b7280">Certificate ID: RNX-2025-042</text>
+  <!-- Issuer -->
+  <text x="400" y="525" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600" fill="#4b5563">Issued by TechAcademy Online</text>
+  <!-- Corner decorations -->
+  <path d="M30 50 L30 30 L50 30" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <path d="M770 50 L770 30 L750 30" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <path d="M30 516 L30 536 L50 536" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <path d="M770 516 L770 536 L750 536" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+</svg>

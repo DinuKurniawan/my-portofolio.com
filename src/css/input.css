@@ -348,6 +348,7 @@ body {
 .skill-badge {
   display: inline-flex;
   align-items: center;
+  gap: 0.4rem;
   padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   font-size: 0.8125rem;
@@ -1449,4 +1450,79 @@ img[data-src].lazy-error {
 .nav-link.active::after {
   background: linear-gradient(90deg, #818cf8, #c084fc);
   box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+}
+
+/* ── Certificate Card ──────────────────────────────────────────────────── */
+.cert-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  background:
+    radial-gradient(
+        300px circle at var(--mouse-x) var(--mouse-y),
+        rgba(99, 102, 241, 0.06),
+        transparent 70%
+      )
+      no-repeat,
+    #12121a;
+}
+
+/* ── Certificate Modal / Lightbox ──────────────────────────────────────── */
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+.cert-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+.cert-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #9ca3af;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background 0.2s;
+  z-index: 10;
+}
+.cert-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+.cert-modal-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cert-modal.active .cert-modal-content {
+  transform: scale(1);
+}
+.cert-modal-content img {
+  width: 80vw;
+  max-width: 800px;
+  max-height: 85vh;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }

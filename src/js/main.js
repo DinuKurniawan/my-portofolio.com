@@ -11,7 +11,7 @@ if (progressBar) {
 }
 
 // ── Card 3D Tilt + Mouse Glow ────────────────────────────────────────────────
-document.querySelectorAll(".project-card").forEach((card) => {
+document.querySelectorAll(".project-card, .cert-card").forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -153,9 +153,8 @@ document
 const typedEl = document.getElementById("typed-text");
 const roles = [
   "Full Stack Developer",
-  "UI/UX Enthusiast",
-  "Open Source Contributor",
-  "Problem Solver",
+  "Frontend Developer",
+  "Backend Developer",
 ];
 
 let roleIdx = 0,
@@ -554,4 +553,126 @@ document.querySelectorAll(".btn-primary, .btn-outline").forEach((btn) => {
     btn.style.transition =
       "transform 0.55s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s, background 0.3s";
   });
+});
+
+// ── Certificate Card Carousel ─────────────────────────────────────────────────
+function slideCert(btn, dir) {
+  const thumb = btn.closest(".cert-thumb");
+  const slides = thumb.querySelectorAll(".cert-slide");
+  const dots = thumb.querySelectorAll(".cert-dot");
+  if (slides.length < 2) return;
+
+  let current = Array.from(slides).findIndex(
+    (s) => !s.classList.contains("opacity-0"),
+  );
+  slides[current].classList.add("opacity-0");
+  slides[current].classList.remove("opacity-100");
+  if (dots[current]) {
+    dots[current].classList.remove("bg-white");
+    dots[current].classList.add("bg-white/40");
+  }
+
+  let next = (current + dir + slides.length) % slides.length;
+  slides[next].classList.remove("opacity-0");
+  slides[next].classList.add("opacity-100");
+  if (dots[next]) {
+    dots[next].classList.remove("bg-white/40");
+    dots[next].classList.add("bg-white");
+  }
+}
+
+// ── Certificate Lightbox ──────────────────────────────────────────────────────
+let certModalImages = [];
+let certModalIndex = 0;
+
+function openCertModal(card) {
+  const modal = document.getElementById("cert-modal");
+  const modalImg = document.getElementById("cert-modal-img");
+  const prevBtn = document.getElementById("cert-modal-prev");
+  const nextBtn = document.getElementById("cert-modal-next");
+  const dotsWrap = document.getElementById("cert-modal-dots");
+
+  // Check if card has multiple images
+  const imagesAttr = card.getAttribute("data-cert-images");
+  if (imagesAttr) {
+    certModalImages = JSON.parse(imagesAttr);
+  } else {
+    const img = card.querySelector(".cert-thumb img");
+    certModalImages = img ? [img.src] : [];
+  }
+
+  if (!certModalImages.length) return;
+  certModalIndex = 0;
+
+  modalImg.src = certModalImages[0];
+  modalImg.alt = card.querySelector(".cert-thumb img")?.alt || "Certificate";
+
+  // Show/hide nav for multi-image
+  if (certModalImages.length > 1) {
+    prevBtn.classList.remove("hidden");
+    prevBtn.classList.add("flex");
+    nextBtn.classList.remove("hidden");
+    nextBtn.classList.add("flex");
+    dotsWrap.classList.remove("hidden");
+    dotsWrap.classList.add("flex");
+    dotsWrap.innerHTML = certModalImages
+      .map(
+        (_, i) =>
+          `<span class="w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${i === 0 ? "bg-white" : "bg-white/40"}" onclick="event.stopPropagation(); goModalCert(${i})"></span>`,
+      )
+      .join("");
+  } else {
+    prevBtn.classList.add("hidden");
+    prevBtn.classList.remove("flex");
+    nextBtn.classList.add("hidden");
+    nextBtn.classList.remove("flex");
+    dotsWrap.classList.add("hidden");
+    dotsWrap.classList.remove("flex");
+  }
+
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function slideModalCert(dir) {
+  if (certModalImages.length < 2) return;
+  certModalIndex =
+    (certModalIndex + dir + certModalImages.length) % certModalImages.length;
+  updateModalCert();
+}
+
+function goModalCert(idx) {
+  certModalIndex = idx;
+  updateModalCert();
+}
+
+function updateModalCert() {
+  const modalImg = document.getElementById("cert-modal-img");
+  const dotsWrap = document.getElementById("cert-modal-dots");
+  modalImg.src = certModalImages[certModalIndex];
+  dotsWrap.querySelectorAll("span").forEach((dot, i) => {
+    dot.classList.toggle("bg-white", i === certModalIndex);
+    dot.classList.toggle("bg-white/40", i !== certModalIndex);
+  });
+}
+
+function closeCertModal(e, force) {
+  if (force || e.target === document.getElementById("cert-modal")) {
+    const modal = document.getElementById("cert-modal");
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+document.addEventListener("keydown", (e) => {
+  const modal = document.getElementById("cert-modal");
+  if (!modal || !modal.classList.contains("active")) return;
+  if (e.key === "Escape") {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  } else if (e.key === "ArrowLeft") {
+    slideModalCert(-1);
+  } else if (e.key === "ArrowRight") {
+    slideModalCert(1);
+  }
 });

@@ -1,17 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%234f46e5'/><text x='50' y='72' font-family='Inter,Arial,sans-serif' font-size='65' font-weight='800' text-anchor='middle' fill='white'>D</text></svg>"
-    />
-    <link rel="stylesheet" href="./src/css/output.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    >
+    <link rel="stylesheet" href="./src/css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="preload"
       as="style"
@@ -20,12 +20,12 @@
         this.onload = null;
         this.rel = 'stylesheet';
       "
-    />
+    >
     <noscript>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
-      />
+      >
     </noscript>
   </head>
   <body class="bg-[#0a0a0f] text-white antialiased">
@@ -59,6 +59,7 @@
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <button
+          type="button"
           id="menu-btn"
           class="md:hidden text-gray-400 hover:text-white transition-colors"
           aria-label="Toggle menu"
@@ -165,8 +166,8 @@
               <h1
                 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-tight mb-5 reveal"
               >
-                Hi, I'm<br />
-                <span class="gradient-text">Dinu Kurniawan</span><br />
+                Hi, I'm<br>
+                <span class="gradient-text">Dinu Kurniawan</span><br>
                 <span class="gradient-text">Cahyadi</span>
               </h1>
 
@@ -252,7 +253,7 @@
                           .getElementById('hero-photo-inner')
                           .classList.add('photo-fallback');
                       "
-                    />
+                    >
                   </div>
                 </div>
                 <!-- Floating tech badges -->
@@ -263,7 +264,7 @@
                     alt="React"
                     width="16"
                     height="16"
-                  />
+                  >
                   React
                 </div>
                 <div class="hero-badge hero-badge--br">
@@ -273,7 +274,7 @@
                     alt="Laravel"
                     width="16"
                     height="16"
-                  />
+                  >
                   Laravel
                 </div>
                 <!-- Corner accents -->
@@ -331,7 +332,7 @@
                       this.style.display = 'none';
                       this.parentElement.classList.add('photo-fallback');
                     "
-                  />
+                  >
                 </div>
 
                 <!-- Name -->
@@ -518,7 +519,7 @@
                     alt="HTML"
                     width="16"
                     height="16"
-                  />
+                  >
                   HTML</span
                 >
                 <span class="skill-badge"
@@ -528,7 +529,7 @@
                     alt="CSS"
                     width="16"
                     height="16"
-                  />
+                  >
                   CSS</span
                 >
                 <span class="skill-badge"
@@ -538,7 +539,7 @@
                     alt="JavaScript"
                     width="16"
                     height="16"
-                  />
+                  >
                   JavaScript</span
                 >
                 <span class="skill-badge"
@@ -548,7 +549,7 @@
                     alt="React"
                     width="16"
                     height="16"
-                  />
+                  >
                   React</span
                 >
                 <span class="skill-badge"
@@ -558,7 +559,7 @@
                     alt="Next.js"
                     width="16"
                     height="16"
-                  />
+                  >
                   Next.js</span
                 >
               </div>
@@ -577,7 +578,7 @@
                     alt="Laravel"
                     width="16"
                     height="16"
-                  />
+                  >
                   Laravel</span
                 >
               </div>
@@ -641,7 +642,7 @@
               03. certificates
             </p>
             <h2 class="text-3xl md:text-4xl font-bold mb-16">
-              Sertifikat & Pencapaian
+              Sertifikat &amp; Pencapaian
             </h2>
           </div>
 
@@ -664,16 +665,17 @@
                     alt="BNSP Sertifikat Kompetensi - Depan"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
                     loading="lazy"
-                  />
+                  >
                   <img
                     src="./src/images/blkng.jpg"
                     alt="BNSP Sertifikat Kompetensi - Belakang"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-0"
                     loading="lazy"
-                  />
+                  >
                 </div>
                 <!-- Carousel nav arrows -->
                 <button
+                  type="button"
                   class="cert-carousel-btn absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/70 transition-all opacity-0 group-hover:opacity-100"
                   onclick="
                     event.stopPropagation();
@@ -696,6 +698,7 @@
                   </svg>
                 </button>
                 <button
+                  type="button"
                   class="cert-carousel-btn absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/70 transition-all opacity-0 group-hover:opacity-100"
                   onclick="
                     event.stopPropagation();
@@ -797,7 +800,7 @@
                   alt="NusaFood App Preview"
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
-                />
+                >
               </div>
               <h4
                 class="text-lg font-bold mb-2 group-hover:text-indigo-300 transition-colors"
@@ -850,7 +853,7 @@
                   alt="TaskFlow App Preview"
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
-                />
+                >
               </div>
               <h4
                 class="text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors"
@@ -903,7 +906,7 @@
                   alt="DataSight Dashboard Preview"
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
-                />
+                >
               </div>
               <h4
                 class="text-lg font-bold mb-2 group-hover:text-cyan-300 transition-colors"
@@ -1140,7 +1143,7 @@
                       placeholder="Your name"
                       class="form-input"
                       autocomplete="name"
-                    />
+                    >
                     <p class="form-error" id="err-name"></p>
                   </div>
                   <div class="form-group">
@@ -1154,7 +1157,7 @@
                       placeholder="you@example.com"
                       class="form-input"
                       autocomplete="email"
-                    />
+                    >
                     <p class="form-error" id="err-email"></p>
                   </div>
                 </div>
@@ -1166,7 +1169,7 @@
                     type="text"
                     placeholder="What's this about?"
                     class="form-input"
-                  />
+                  >
                 </div>
                 <div class="form-group">
                   <label for="cf-message" class="form-label"
@@ -1308,9 +1311,9 @@
 
                 <!-- Resend button with countdown ring -->
                 <div class="esp-resend-wrap">
-                  <button id="esp-resend-btn" class="esp-resend-btn" disabled>
+                  <button type="button" id="esp-resend-btn" class="esp-resend-btn" disabled>
                     <!-- Ring: countdown phase -->
-                    <div id="esp-ring-phase" class="esp-ring-progress">
+                    <span id="esp-ring-phase" class="esp-ring-progress">
                       <svg viewBox="0 0 28 28" fill="none">
                         <circle
                           cx="14"
@@ -1335,7 +1338,7 @@
                       <span id="esp-countdown-num" class="esp-countdown-num"
                         >60</span
                       >
-                    </div>
+                    </span>
                     <!-- Refresh icon: active/sending phase -->
                     <svg
                       id="esp-refresh-icon"
@@ -1359,7 +1362,7 @@
                 <div id="esp-feedback" class="esp-feedback hidden"></div>
 
                 <!-- Back to form -->
-                <button id="esp-back-btn" class="esp-back-link">
+                <button type="button" id="esp-back-btn" class="esp-back-link">
                   ← Send another message
                 </button>
               </div>
@@ -1404,6 +1407,7 @@
     <!-- Certificate Modal / Lightbox -->
     <div id="cert-modal" class="cert-modal" onclick="closeCertModal(event)">
       <button
+        type="button"
         class="cert-modal-close"
         onclick="closeCertModal(event, true)"
         aria-label="Close modal"
@@ -1423,9 +1427,10 @@
         </svg>
       </button>
       <div class="cert-modal-content" onclick="event.stopPropagation()">
-        <img id="cert-modal-img" src="" alt="Certificate Preview" />
+        <img id="cert-modal-img" src="#" alt="Certificate Preview">
         <!-- Modal carousel nav (hidden for single-image certs) -->
         <button
+          type="button"
           id="cert-modal-prev"
           class="hidden absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 items-center justify-center text-white hover:bg-black/80 transition-all"
           onclick="
@@ -1449,6 +1454,7 @@
           </svg>
         </button>
         <button
+          type="button"
           id="cert-modal-next"
           class="hidden absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 items-center justify-center text-white hover:bg-black/80 transition-all"
           onclick="

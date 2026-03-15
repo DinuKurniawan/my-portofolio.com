@@ -1,7 +1,4 @@
-require("dotenv").config();
 const { Resend } = require("resend");
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ── Escape HTML to prevent XSS in email body ─────────────────────────────
 function escapeHtml(str) {
@@ -14,39 +11,61 @@ function escapeHtml(str) {
 }
 
 module.exports = async (req, res) => {
+  // Set CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, subject, message } = req.body;
+  // Guard: pastikan env vars tersedia
+  if (!process.env.RESEND_API_KEY) {
+    console.error("Missing RESEND_API_KEY environment variable");
+    return res.status(500).json({ error: "Server configuration error. Please contact the admin." });
+  }
+  if (!process.env.TO_EMAIL) {
+    console.error("Missing TO_EMAIL environment variable");
+    return res.status(500).json({ error: "Server configuration error. Please contact the admin." });
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  // Parse body (Vercel sudah otomatis parse JSON)
+  const body = req.body || {};
+  const { name, email, subject, message } = body;
 
   // Server-side validation
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!name || !name.trim()) {
+  if (!name || !String(name).trim()) {
     return res.status(400).json({ error: "Name is required." });
   }
-  if (!email || !emailRe.test(email.trim())) {
+  if (!email || !emailRe.test(String(email).trim())) {
     return res.status(400).json({ error: "Valid email is required." });
   }
-  if (!message || !message.trim()) {
+  if (!message || !String(message).trim()) {
     return res.status(400).json({ error: "Message is required." });
   }
-  if (message.trim().length > 5000) {
-    return res
-      .status(400)
-      .json({ error: "Message is too long (max 5000 chars)." });
+  if (String(message).trim().length > 5000) {
+    return res.status(400).json({ error: "Message is too long (max 5000 chars)." });
   }
 
-  const safeName = escapeHtml(name.trim());
-  const safeEmail = escapeHtml(email.trim());
-  const safeSubject = subject ? escapeHtml(subject.trim()) : "-";
-  const safeMessage = escapeHtml(message.trim()).replace(/\n/g, "<br/>");
+  const safeName    = escapeHtml(String(name).trim());
+  const safeEmail   = escapeHtml(String(email).trim());
+  const safeSubject = subject ? escapeHtml(String(subject).trim()) : "-";
+  const safeMessage = escapeHtml(String(message).trim()).replace(/\n/g, "<br/>");
 
   try {
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: process.env.TO_EMAIL,
-      subject: `[Portfolio] ${subject ? subject.trim() : "New message from " + name.trim()}`,
+      reply_to: String(email).trim(),
+      subject: `[Portfolio] ${subject ? String(subject).trim() : "New message from " + String(name).trim()}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 24px; background: #f9f9f9; border-radius: 8px;">
           <h2 style="color: #4f46e5; margin-bottom: 16px;">📬 New Contact Form Message</h2>
@@ -74,11 +93,14 @@ module.exports = async (req, res) => {
       `,
     });
 
-    res.json({ success: true });
+    if (error) {
+      console.error("Resend API error:", error);
+      return res.status(500).json({ error: "Failed to send email. Please try again later." });
+    }
+
+    return res.status(200).json({ success: true, id: data?.id });
   } catch (err) {
-    console.error("Resend error:", err);
-    res
-      .status(500)
-      .json({ error: "Failed to send email. Please try again later." });
+    console.error("Unexpected error:", err);
+    return res.status(500).json({ error: "Failed to send email. Please try again later." });
   }
 };

@@ -64,7 +64,7 @@ module.exports = async (req, res) => {
     const { data, error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: process.env.TO_EMAIL,
-      reply_to: String(email).trim(),
+      replyTo: String(email).trim(),
       subject: `[Portfolio] ${subject ? String(subject).trim() : "New message from " + String(name).trim()}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: auto; padding: 24px; background: #f9f9f9; border-radius: 8px;">

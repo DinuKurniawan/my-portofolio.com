@@ -248,7 +248,12 @@ if (contactForm) {
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      let data = {};
+      try {
+        data = await res.json();
+      } catch {
+        throw new Error("Server error. Please try again later.");
+      }
 
       if (!res.ok) {
         throw new Error(data.error || "Something went wrong.");
@@ -377,7 +382,8 @@ if (contactForm) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(lastPayload),
       });
-      const data = await res.json();
+      let data = {};
+      try { data = await res.json(); } catch { throw new Error("Server error. Please try again."); }
       if (!res.ok) throw new Error(data.error || "Failed to resend.");
       showFeedback("✓ Email resent successfully!", "success");
     } catch (err) {

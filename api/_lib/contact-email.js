@@ -1,6 +1,6 @@
 const { Resend } = require("resend");
 
-const DEFAULT_FROM_EMAIL = "Portfolio Contact <noreply@my-portofolio.com>";
+const DEFAULT_FROM_EMAIL = "Portfolio Contact <onboarding@resend.dev>";
 
 class ContactValidationError extends Error {
   constructor(message) {

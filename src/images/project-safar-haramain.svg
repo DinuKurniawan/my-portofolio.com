@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="400" height="220">
+  <rect width="400" height="220" fill="#0d1310"/>
+
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#133d2e"/>
+      <stop offset="100%" stop-color="#0e6b4b"/>
+    </linearGradient>
+    <linearGradient id="overlay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#08110d" stop-opacity="0.82"/>
+      <stop offset="65%" stop-color="#0e6b4b" stop-opacity="0.48"/>
+      <stop offset="100%" stop-color="#0e6b4b" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="10" y="10" width="380" height="200" rx="16" fill="#f7fbf9"/>
+  <rect x="10" y="10" width="380" height="118" rx="16" fill="url(#hero)"/>
+  <rect x="10" y="10" width="380" height="118" rx="16" fill="url(#overlay)"/>
+
+  <rect x="10" y="10" width="380" height="32" rx="16" fill="rgba(7,18,13,0.18)"/>
+  <rect x="24" y="18" width="18" height="18" rx="5" fill="#ffffff"/>
+  <text x="33" y="30.5" font-family="Arial,sans-serif" font-size="8.5" font-weight="700" fill="#0e6b4b" text-anchor="middle">SH</text>
+  <text x="48" y="30.5" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#ffffff">Safar Haramain</text>
+  <text x="268" y="30.5" font-family="Arial,sans-serif" font-size="7.5" fill="#ebfff7">Paket</text>
+  <text x="302" y="30.5" font-family="Arial,sans-serif" font-size="7.5" fill="#ebfff7">Layanan</text>
+  <text x="347" y="30.5" font-family="Arial,sans-serif" font-size="7.5" fill="#ebfff7">Jadwal</text>
+
+  <text x="24" y="58" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#d8f6ea">Bimbingan Haji dan Umroh berizin resmi</text>
+  <text x="24" y="78" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#ffffff">Perjalanan ibadah yang</text>
+  <text x="24" y="96" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#ffffff">tenang dan tertata.</text>
+  <text x="24" y="111" font-family="Arial,sans-serif" font-size="7.5" fill="#e7fff5">Paket, jadwal, konsultasi, dan review jamaah</text>
+
+  <rect x="24" y="118" width="54" height="16" rx="8" fill="#d7a84d"/>
+  <text x="51" y="129.5" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#16201b" text-anchor="middle">Lihat Paket</text>
+  <rect x="84" y="118" width="68" height="16" rx="8" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <text x="118" y="129.5" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#ffffff" text-anchor="middle">Konsultasi</text>
+
+  <circle cx="322" cy="78" r="34" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="322" cy="78" r="24" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="3"/>
+  <rect x="309" y="71" width="26" height="16" rx="2" fill="rgba(255,255,255,0.38)"/>
+  <rect x="304" y="67" width="36" height="5" rx="2.5" fill="rgba(255,255,255,0.38)"/>
+  <rect x="317" y="76" width="10" height="11" rx="1.5" fill="rgba(255,255,255,0.28)"/>
+
+  <rect x="24" y="146" width="78" height="28" rx="8" fill="#ffffff"/>
+  <text x="34" y="160" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#0e6b4b">12+</text>
+  <text x="34" y="169" font-family="Arial,sans-serif" font-size="6.5" fill="#5a6b63">Tahun pengalaman</text>
+
+  <rect x="110" y="146" width="78" height="28" rx="8" fill="#ffffff"/>
+  <text x="120" y="160" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#0e6b4b">8.700+</text>
+  <text x="120" y="169" font-family="Arial,sans-serif" font-size="6.5" fill="#5a6b63">Jamaah berangkat</text>
+
+  <rect x="196" y="146" width="78" height="28" rx="8" fill="#ffffff"/>
+  <text x="206" y="160" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#0e6b4b">24/7</text>
+  <text x="206" y="169" font-family="Arial,sans-serif" font-size="6.5" fill="#5a6b63">Tim operasional</text>
+
+  <rect x="282" y="146" width="84" height="28" rx="8" fill="#ffffff"/>
+  <text x="292" y="160" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#0e6b4b">98%</text>
+  <text x="292" y="169" font-family="Arial,sans-serif" font-size="6.5" fill="#5a6b63">Rekomendasi positif</text>
+
+  <text x="24" y="191" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#0e6b4b">Paket Pilihan</text>
+  <text x="196" y="191" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#0e6b4b">Konsultasi</text>
+
+  <rect x="24" y="198" width="72" height="8" rx="4" fill="#d9ebe3"/>
+  <rect x="24" y="198" width="44" height="8" rx="4" fill="#0f9f8f"/>
+  <rect x="104" y="198" width="72" height="8" rx="4" fill="#d9ebe3"/>
+  <rect x="104" y="198" width="58" height="8" rx="4" fill="#d7a84d"/>
+
+  <rect x="196" y="196" width="92" height="12" rx="6" fill="#e8f5f1"/>
+  <rect x="294" y="196" width="72" height="12" rx="6" fill="#0e6b4b"/>
+  <text x="330" y="204.5" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#ffffff" text-anchor="middle">Kirim Permintaan</text>
+</svg>

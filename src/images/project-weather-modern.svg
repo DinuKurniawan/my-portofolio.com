@@ -1,0 +1,48 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#040B1F"/>
+  <rect x="28" y="28" width="1144" height="664" rx="34" fill="url(#bg)" stroke="#7DD3FC" stroke-opacity="0.24" stroke-width="2"/>
+  <circle cx="204" cy="150" r="180" fill="#38BDF8" fill-opacity="0.18"/>
+  <circle cx="1038" cy="592" r="210" fill="#A78BFA" fill-opacity="0.18"/>
+  <circle cx="968" cy="140" r="86" fill="#FDE68A" fill-opacity="0.95"/>
+  <circle cx="938" cy="170" r="42" fill="#E2E8F0"/>
+  <circle cx="986" cy="186" r="36" fill="#E2E8F0"/>
+  <circle cx="1030" cy="168" r="46" fill="#E2E8F0"/>
+  <rect x="918" y="184" width="150" height="44" rx="22" fill="#E2E8F0"/>
+
+  <text x="88" y="136" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="4">MODERN WEATHER</text>
+  <text x="88" y="236" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">Live weather</text>
+  <text x="88" y="308" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">dashboard</text>
+  <text x="88" y="380" fill="#C7D8EE" font-family="Arial, Helvetica, sans-serif" font-size="28">Search city, use geolocation, and read the next-day forecast</text>
+  <text x="88" y="420" fill="#C7D8EE" font-family="Arial, Helvetica, sans-serif" font-size="28">with a compact glassmorphism UI.</text>
+
+  <rect x="88" y="490" width="180" height="54" rx="27" fill="#0EA5E9" fill-opacity="0.24" stroke="#7DD3FC" stroke-opacity="0.55"/>
+  <text x="126" y="524" fill="#E0F2FE" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">LIVE DATA</text>
+  <rect x="288" y="490" width="192" height="54" rx="27" fill="#0EA5E9" fill-opacity="0.18" stroke="#7DD3FC" stroke-opacity="0.42"/>
+  <text x="324" y="524" fill="#E0F2FE" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">GEOLOCATION</text>
+
+  <rect x="680" y="176" width="392" height="348" rx="30" fill="#09152D" fill-opacity="0.74" stroke="#A5B4FC" stroke-opacity="0.24"/>
+  <text x="718" y="222" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">WEATHER DASHBOARD</text>
+  <text x="718" y="290" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Jakarta</text>
+  <text x="718" y="330" fill="#C7D8EE" font-family="Arial, Helvetica, sans-serif" font-size="24">light rain</text>
+  <text x="718" y="402" fill="#E0F2FE" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700">28 C</text>
+  <text x="718" y="448" fill="#C7D8EE" font-family="Arial, Helvetica, sans-serif" font-size="24">Humidity 81%</text>
+  <rect x="716" y="472" width="116" height="26" rx="13" fill="#22C55E" fill-opacity="0.2" stroke="#4ADE80" stroke-opacity="0.4"/>
+  <text x="744" y="490" fill="#BBF7D0" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">UPDATED</text>
+
+  <rect x="680" y="548" width="392" height="90" rx="24" fill="#081224" fill-opacity="0.9" stroke="#7DD3FC" stroke-opacity="0.2"/>
+  <rect x="708" y="572" width="72" height="42" rx="18" fill="#102544"/>
+  <rect x="804" y="572" width="72" height="42" rx="18" fill="#102544"/>
+  <rect x="900" y="572" width="72" height="42" rx="18" fill="#102544"/>
+  <rect x="996" y="572" width="48" height="42" rx="18" fill="#102544"/>
+  <text x="726" y="598" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">29</text>
+  <text x="822" y="598" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">27</text>
+  <text x="918" y="598" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">30</text>
+  <text x="1007" y="598" fill="#F8FBFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">4D</text>
+
+  <defs>
+    <linearGradient id="bg" x1="67" y1="70" x2="1090" y2="654" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071429"/>
+      <stop offset="1" stop-color="#101B35"/>
+    </linearGradient>
+  </defs>
+</svg>

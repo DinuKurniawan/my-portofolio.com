@@ -1,0 +1,48 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#0B0B0D"/>
+  <rect x="32" y="32" width="1136" height="656" rx="36" fill="url(#bg)" stroke="#9D7A3C" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="989" cy="148" r="180" fill="#C79A47" fill-opacity="0.08"/>
+  <circle cx="197" cy="612" r="220" fill="#C79A47" fill-opacity="0.06"/>
+  <rect x="92" y="92" width="320" height="42" rx="21" fill="#1B1B20" stroke="#9D7A3C" stroke-opacity="0.3"/>
+  <text x="124" y="120" fill="#C79A47" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="4">EST. 2012  JAKARTA</text>
+  <text x="92" y="250" fill="#F6E6C9" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">THE BLADE</text>
+  <text x="92" y="308" fill="#D1B98A" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="6">PREMIUM BARBERSHOP</text>
+  <text x="92" y="382" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="28">Services, gallery, team, testimonials, booking.</text>
+  <text x="92" y="422" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="28">Modern editorial feel with dark luxury styling.</text>
+
+  <rect x="92" y="496" width="192" height="64" rx="12" fill="#C79A47"/>
+  <text x="128" y="537" fill="#101012" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">BOOK NOW</text>
+
+  <rect x="306" y="496" width="220" height="64" rx="12" fill="#1A1A1F" stroke="#C79A47" stroke-opacity="0.5"/>
+  <text x="349" y="537" fill="#F6E6C9" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">SEE OUR WORK</text>
+
+  <rect x="730" y="128" width="346" height="458" rx="28" fill="#141418" stroke="#C79A47" stroke-opacity="0.35"/>
+  <rect x="760" y="164" width="286" height="180" rx="22" fill="#1E1E24"/>
+  <rect x="784" y="190" width="42" height="128" rx="21" fill="#C79A47"/>
+  <rect x="784" y="208" width="42" height="18" fill="#B23B3B"/>
+  <rect x="784" y="244" width="42" height="18" fill="#F2EFE9"/>
+  <rect x="784" y="280" width="42" height="18" fill="#B23B3B"/>
+  <rect x="846" y="194" width="170" height="18" rx="9" fill="#C79A47" fill-opacity="0.75"/>
+  <rect x="846" y="226" width="146" height="14" rx="7" fill="#6B6258"/>
+  <rect x="846" y="258" width="162" height="14" rx="7" fill="#6B6258"/>
+  <rect x="846" y="290" width="130" height="14" rx="7" fill="#6B6258"/>
+
+  <rect x="760" y="376" width="132" height="162" rx="18" fill="#18181D" stroke="#9D7A3C" stroke-opacity="0.2"/>
+  <text x="786" y="415" fill="#F6E6C9" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">SERVICES</text>
+  <text x="786" y="454" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="18">Classic Cut</text>
+  <text x="786" y="486" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="18">Fade &amp; Taper</text>
+  <text x="786" y="518" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="18">Beard Trim</text>
+
+  <rect x="910" y="376" width="136" height="162" rx="18" fill="#18181D" stroke="#9D7A3C" stroke-opacity="0.2"/>
+  <text x="937" y="415" fill="#F6E6C9" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">HOURS</text>
+  <text x="936" y="454" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="18">Mon-Fri</text>
+  <text x="936" y="486" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="18">09.00-20.00</text>
+  <text x="936" y="518" fill="#D8D0C2" font-family="Arial, Helvetica, sans-serif" font-size="18">Sat-Sun</text>
+
+  <defs>
+    <linearGradient id="bg" x1="70" y1="76" x2="1074" y2="648" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#131317"/>
+      <stop offset="1" stop-color="#0D0D10"/>
+    </linearGradient>
+  </defs>
+</svg>

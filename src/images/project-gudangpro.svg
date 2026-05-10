@@ -1,0 +1,52 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#0B0D0B"/>
+  <rect x="32" y="32" width="1136" height="656" rx="36" fill="url(#bg-gdg)" stroke="#34D399" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="970" cy="150" r="180" fill="#34D399" fill-opacity="0.06"/>
+  <circle cx="210" cy="610" r="200" fill="#34D399" fill-opacity="0.04"/>
+
+  <rect x="92" y="92" width="340" height="42" rx="21" fill="#121A14" stroke="#34D399" stroke-opacity="0.3"/>
+  <text x="124" y="120" fill="#34D399" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">INVENTORY MANAGEMENT</text>
+
+  <text x="92" y="250" fill="#E0FFF0" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">GudangPro</text>
+  <text x="92" y="310" fill="#6EE7B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">WAREHOUSE SYSTEM</text>
+  <text x="92" y="382" fill="#C0E8D8" font-family="Arial, Helvetica, sans-serif" font-size="26">Kelola stok, barang masuk/keluar,</text>
+  <text x="92" y="418" fill="#C0E8D8" font-family="Arial, Helvetica, sans-serif" font-size="26">laporan inventaris, dan notifikasi stok.</text>
+
+  <rect x="92" y="480" width="200" height="58" rx="12" fill="#34D399"/>
+  <text x="118" y="517" fill="#0B0D0B" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">ADD STOCK</text>
+  <rect x="312" y="480" width="200" height="58" rx="12" fill="#121A14" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="348" y="517" fill="#E0FFF0" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">REPORTS</text>
+
+  <!-- Inventory panel -->
+  <rect x="700" y="120" width="380" height="480" rx="28" fill="#0F1A12" stroke="#34D399" stroke-opacity="0.3"/>
+  <rect x="730" y="156" width="320" height="60" rx="14" fill="#162018"/>
+  <text x="762" y="193" fill="#E0FFF0" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">📦 Stock Overview</text>
+
+  <rect x="730" y="240" width="150" height="100" rx="16" fill="#162018" stroke="#34D399" stroke-opacity="0.2"/>
+  <text x="760" y="280" fill="#34D399" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">847</text>
+  <text x="760" y="318" fill="#6EE7B7" font-family="Arial, Helvetica, sans-serif" font-size="16">Total Items</text>
+  <rect x="900" y="240" width="150" height="100" rx="16" fill="#162018" stroke="#FBBF24" stroke-opacity="0.2"/>
+  <text x="930" y="280" fill="#FBBF24" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">12</text>
+  <text x="930" y="318" fill="#FDE68A" font-family="Arial, Helvetica, sans-serif" font-size="16">Low Stock</text>
+
+  <!-- Table rows -->
+  <rect x="730" y="370" width="320" height="44" rx="10" fill="#162018"/>
+  <text x="750" y="398" fill="#C0E8D8" font-family="Arial, Helvetica, sans-serif" font-size="16">Laptop Asus</text>
+  <text x="960" y="398" fill="#34D399" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">+50</text>
+  <rect x="730" y="424" width="320" height="44" rx="10" fill="#162018"/>
+  <text x="750" y="452" fill="#C0E8D8" font-family="Arial, Helvetica, sans-serif" font-size="16">Mouse Wireless</text>
+  <text x="960" y="452" fill="#FF6B6B" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">-20</text>
+  <rect x="730" y="478" width="320" height="44" rx="10" fill="#162018"/>
+  <text x="750" y="506" fill="#C0E8D8" font-family="Arial, Helvetica, sans-serif" font-size="16">Keyboard Mech</text>
+  <text x="960" y="506" fill="#34D399" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">+30</text>
+  <rect x="730" y="532" width="320" height="44" rx="10" fill="#162018"/>
+  <text x="750" y="560" fill="#C0E8D8" font-family="Arial, Helvetica, sans-serif" font-size="16">Monitor 24"</text>
+  <text x="960" y="560" fill="#FBBF24" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">5 left</text>
+
+  <defs>
+    <linearGradient id="bg-gdg" x1="70" y1="76" x2="1074" y2="648" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D120E"/>
+      <stop offset="1" stop-color="#090D0A"/>
+    </linearGradient>
+  </defs>
+</svg>

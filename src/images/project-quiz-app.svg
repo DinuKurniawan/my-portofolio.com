@@ -1,0 +1,50 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#0B0D0F"/>
+  <rect x="32" y="32" width="1136" height="656" rx="36" fill="url(#bg-quiz)" stroke="#A78BFA" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="980" cy="160" r="180" fill="#A78BFA" fill-opacity="0.07"/>
+  <circle cx="200" cy="600" r="200" fill="#A78BFA" fill-opacity="0.05"/>
+
+  <rect x="92" y="92" width="280" height="42" rx="21" fill="#151820" stroke="#A78BFA" stroke-opacity="0.3"/>
+  <text x="124" y="120" fill="#A78BFA" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">INTERACTIVE QUIZ</text>
+
+  <text x="92" y="250" fill="#F4F0FF" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">Quiz App</text>
+  <text x="92" y="310" fill="#C4B5FD" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4">UJI PENGETAHUANMU</text>
+  <text x="92" y="382" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="26">Pilih topik, jawab sebelum waktu habis, dan</text>
+  <text x="92" y="418" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="26">kumpulkan skor terbaik di setiap kategori.</text>
+
+  <rect x="92" y="480" width="180" height="58" rx="12" fill="#A78BFA"/>
+  <text x="126" y="517" fill="#0B0D0F" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">MULAI KUIS</text>
+  <rect x="292" y="480" width="180" height="58" rx="12" fill="#151820" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <text x="322" y="517" fill="#F4F0FF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">TOP SKOR</text>
+
+  <!-- Question card -->
+  <rect x="700" y="120" width="380" height="480" rx="28" fill="#151020" stroke="#A78BFA" stroke-opacity="0.3"/>
+  <rect x="730" y="156" width="320" height="60" rx="14" fill="#1A1530"/>
+  <text x="762" y="192" fill="#F4F0FF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Soal 4 / 10</text>
+  <circle cx="1016" cy="186" r="18" fill="#A78BFA" fill-opacity="0.6"/>
+  <text x="1008" y="193" fill="#F4F0FF" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Q4</text>
+
+  <!-- Timer bar -->
+  <rect x="730" y="232" width="320" height="10" rx="5" fill="#1A1530"/>
+  <rect x="730" y="232" width="200" height="10" rx="5" fill="#A78BFA"/>
+
+  <text x="730" y="292" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Planet mana yang dikenal</text>
+  <text x="730" y="324" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">sebagai "Planet Merah"?</text>
+
+  <!-- Options -->
+  <rect x="730" y="356" width="320" height="52" rx="12" fill="#34D399" stroke-opacity="0.3"/>
+  <text x="762" y="389" fill="#0B0D0F" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">A. Mars ✓</text>
+  <rect x="730" y="420" width="320" height="52" rx="12" fill="#1A1530" stroke="#3F4050"/>
+  <text x="762" y="453" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="18">B. Venus</text>
+  <rect x="730" y="484" width="320" height="52" rx="12" fill="#1A1530" stroke="#3F4050"/>
+  <text x="762" y="517" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="18">C. Merkurius</text>
+  <rect x="730" y="548" width="320" height="52" rx="12" fill="#1A1530" stroke="#3F4050"/>
+  <text x="762" y="581" fill="#DDD6FE" font-family="Arial, Helvetica, sans-serif" font-size="18">D. Jupiter</text>
+
+  <defs>
+    <linearGradient id="bg-quiz" x1="70" y1="76" x2="1074" y2="648" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#140E20"/>
+      <stop offset="1" stop-color="#0A0D12"/>
+    </linearGradient>
+  </defs>
+</svg>

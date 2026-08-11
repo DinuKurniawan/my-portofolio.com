@@ -1,0 +1,51 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#080B14"/>
+  <rect x="32" y="32" width="1136" height="656" rx="36" fill="url(#bg-movie)" stroke="#F472B6" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="1000" cy="130" r="190" fill="#F472B6" fill-opacity="0.08"/>
+  <circle cx="180" cy="620" r="220" fill="#38BDF8" fill-opacity="0.06"/>
+
+  <rect x="92" y="92" width="262" height="42" rx="21" fill="#151525" stroke="#F472B6" stroke-opacity="0.3"/>
+  <text x="124" y="120" fill="#F9A8D4" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">CINEMA SEARCH</text>
+
+  <text x="92" y="250" fill="#FDF2F8" font-family="Georgia, 'Times New Roman', serif" font-size="70" font-weight="700">Find your</text>
+  <text x="92" y="326" fill="#F472B6" font-family="Georgia, 'Times New Roman', serif" font-size="70" font-weight="700">next story.</text>
+  <text x="92" y="392" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="26">Search movies and series, explore trending titles,</text>
+  <text x="92" y="428" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="26">and discover details worth watching.</text>
+
+  <rect x="92" y="482" width="392" height="58" rx="14" fill="#151525" stroke="#F472B6" stroke-opacity="0.45"/>
+  <circle cx="126" cy="511" r="13" stroke="#F9A8D4" stroke-width="4"/>
+  <path d="M136 521L147 532" stroke="#F9A8D4" stroke-width="4" stroke-linecap="round"/>
+  <text x="168" y="519" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">Search for a movie...</text>
+
+  <rect x="710" y="112" width="348" height="490" rx="28" fill="#101522" stroke="#F472B6" stroke-opacity="0.28"/>
+  <rect x="740" y="144" width="288" height="54" rx="12" fill="#181D2D"/>
+  <circle cx="770" cy="171" r="11" stroke="#F9A8D4" stroke-width="3"/>
+  <path d="M778 179L787 188" stroke="#F9A8D4" stroke-width="3" stroke-linecap="round"/>
+  <text x="808" y="179" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="19">Interstellar</text>
+
+  <rect x="740" y="226" width="128" height="174" rx="14" fill="#292244"/>
+  <rect x="884" y="226" width="144" height="174" rx="14" fill="#183046"/>
+  <rect x="740" y="418" width="128" height="154" rx="14" fill="#352136"/>
+  <rect x="884" y="418" width="144" height="154" rx="14" fill="#24283C"/>
+
+  <circle cx="804" cy="294" r="38" fill="#F472B6" fill-opacity="0.45"/>
+  <path d="M790 294L821 277V311L790 294Z" fill="#FDF2F8"/>
+  <circle cx="956" cy="294" r="38" fill="#38BDF8" fill-opacity="0.4"/>
+  <path d="M942 294L973 277V311L942 294Z" fill="#E0F2FE"/>
+  <circle cx="804" cy="480" r="32" fill="#FB7185" fill-opacity="0.45"/>
+  <path d="M790 480L821 463V497L790 480Z" fill="#FFF1F2"/>
+  <circle cx="956" cy="480" r="32" fill="#A78BFA" fill-opacity="0.45"/>
+  <path d="M942 480L973 463V497L942 480Z" fill="#F5F3FF"/>
+
+  <text x="754" y="426" fill="#F9A8D4" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">TRENDING</text>
+  <text x="898" y="426" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">POPULAR</text>
+  <text x="754" y="594" fill="#FDA4AF" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">MOVIES</text>
+  <text x="898" y="594" fill="#C4B5FD" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">SERIES</text>
+
+  <defs>
+    <linearGradient id="bg-movie" x1="70" y1="76" x2="1074" y2="648" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151324"/>
+      <stop offset="1" stop-color="#090D16"/>
+    </linearGradient>
+  </defs>
+</svg>

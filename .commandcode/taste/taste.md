@@ -1,1 +1,2 @@
 - Prefers communication in Indonesian (Bahasa Indonesia). Confidence: 0.65
+- Classifies Next.js and Node.js as Backend technologies in the portfolio's tech-stack section, rather than Frontend. Confidence: 0.95

@@ -149,6 +149,72 @@ document
   .querySelectorAll(".reveal")
   .forEach((el) => revealObserver.observe(el));
 
+// ── Projects Pagination ───────────────────────────────────────────────────
+(function initProjectsPagination() {
+  const grid = document.getElementById("projects-grid");
+  const pagination = document.getElementById("projects-pagination");
+  const pages = document.getElementById("projects-pages");
+  const previous = document.getElementById("projects-prev");
+  const next = document.getElementById("projects-next");
+  if (!grid || !pagination || !pages || !previous || !next) return;
+
+  const cards = Array.from(grid.querySelectorAll(".project-card"));
+  const perPage = 6;
+  const pageCount = Math.ceil(cards.length / perPage);
+  let currentPage = 1;
+
+  if (pageCount <= 1) {
+    pagination.hidden = true;
+    return;
+  }
+
+  function renderPage(page) {
+    currentPage = page;
+    const firstCard = (currentPage - 1) * perPage;
+
+    cards.forEach((card, index) => {
+      const isVisible = index >= firstCard && index < firstCard + perPage;
+      card.hidden = !isVisible;
+      card.classList.toggle("visible", isVisible);
+      card.style.transitionDelay = isVisible
+        ? `${(index - firstCard) * 90}ms`
+        : "";
+    });
+
+    previous.disabled = currentPage === 1;
+    next.disabled = currentPage === pageCount;
+    pages.replaceChildren();
+
+    for (let pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "pagination-page";
+      button.textContent = pageNumber;
+      button.setAttribute("aria-label", `Go to project page ${pageNumber}`);
+      if (pageNumber === currentPage) {
+        button.setAttribute("aria-current", "page");
+      }
+      button.addEventListener("click", () => {
+        renderPage(pageNumber);
+        grid.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      pages.append(button);
+    }
+  }
+
+  previous.addEventListener("click", () => {
+    if (currentPage > 1) renderPage(currentPage - 1);
+  });
+  next.addEventListener("click", () => {
+    if (currentPage < pageCount) {
+      renderPage(currentPage + 1);
+      grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+
+  renderPage(currentPage);
+})();
+
 // ── Typing animation ──────────────────────────────────────────────────────
 const typedEl = document.getElementById("typed-text");
 const roles = [

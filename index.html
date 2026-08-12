@@ -53,6 +53,8 @@
         </a>
         <nav class="hidden md:flex gap-8 text-sm font-medium">
           <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#experience" class="nav-link">Experience</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#certificates" class="nav-link">Certificates</a>
           <a href="#projects" class="nav-link">Projects</a>
@@ -102,7 +104,19 @@
           href="#about"
           class="text-gray-400 hover:text-white transition-colors"
           onclick="closeMobileMenu()"
-          >About</a
+           >About</a
+        >
+        <a
+          href="#education"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+           >Education</a
+        >
+        <a
+          href="#experience"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+          >Experience</a
         >
         <a
           href="#skills"
@@ -493,6 +507,88 @@
         </div>
       </section>
 
+      <!-- ═══════════════ EDUCATION ═══════════════ -->
+      <section
+        id="education"
+        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden"
+      >
+        <div class="stripe-divider top-0"></div>
+        <div class="max-w-6xl mx-auto">
+          <div class="reveal mb-14">
+            <p class="font-code text-indigo-400 text-sm mb-2">02. education</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Pendidikan</h2>
+          </div>
+
+          <div class="education-timeline">
+            <article class="education-item reveal">
+              <div class="education-marker" aria-hidden="true">
+                <span class="education-dot"></span>
+              </div>
+              <div class="education-card">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <p class="education-period">2019 &mdash; 2022</p>
+                  <span class="education-status">Selesai</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">
+                  SMK Bangun Nusantara
+                </h3>
+                <p class="text-indigo-300 font-medium">Teknik Kendaraan Ringan</p>
+              </div>
+            </article>
+
+            <article class="education-item reveal">
+              <div class="education-marker" aria-hidden="true">
+                <span class="education-dot education-dot--active"></span>
+              </div>
+              <div class="education-card education-card--active">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <p class="education-period">2022 &mdash; Sekarang</p>
+                  <span class="education-status education-status--active">Sedang Berlangsung</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">
+                  Universitas Bina Sarana Informatika
+                </h3>
+                <p class="text-indigo-300 font-medium">Teknologi Informasi</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="stripe-divider bottom-0"></div>
+      </section>
+
+      <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+      <section
+        id="experience"
+        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden"
+      >
+        <div class="stripe-divider top-0"></div>
+        <div class="max-w-6xl mx-auto">
+          <div class="reveal mb-14">
+            <p class="font-code text-indigo-400 text-sm mb-2">03. experience</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Pengalaman Kerja</h2>
+          </div>
+
+          <div class="education-timeline">
+            <article class="education-item reveal">
+              <div class="education-marker" aria-hidden="true">
+                <span class="education-dot education-dot--active"></span>
+              </div>
+              <div class="education-card education-card--active">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <p class="education-period">Oktober 2025 &mdash; Maret 2026</p>
+                  <span class="education-status education-status--active">Pengalaman Terbaru</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">
+                  Frontend Developer
+                </h3>
+                <p class="text-indigo-300 font-medium">PT Golan Digital Kreatif</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="stripe-divider bottom-0"></div>
+      </section>
+
       <!-- ═══════════════ SKILLS ═══════════════ -->
       <section
         id="skills"
@@ -501,7 +597,7 @@
         <div class="stripe-divider top-0"></div>
         <div class="max-w-6xl mx-auto">
           <div class="reveal">
-            <p class="font-code text-indigo-400 text-sm mb-2">02. skills</p>
+            <p class="font-code text-indigo-400 text-sm mb-2">04. skills</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-16">Tech Stack</h2>
           </div>
           <div class="space-y-10">
@@ -687,7 +783,7 @@
         <div class="max-w-6xl mx-auto">
           <div class="reveal">
             <p class="font-code text-indigo-400 text-sm mb-2">
-              03. certificates
+              05. certificates
             </p>
             <h2 class="text-3xl md:text-4xl font-bold mb-16">
               Sertifikat &amp; Pencapaian
@@ -833,11 +929,12 @@
       <section id="projects" class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
           <div class="reveal">
-            <p class="font-code text-indigo-400 text-sm mb-2">04. projects</p>
+            <p class="font-code text-indigo-400 text-sm mb-2">06. projects</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-16">Featured Work</h2>
           </div>
 
           <div
+            id="projects-grid"
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
           >
             <!-- Card 1 -->
@@ -1410,6 +1507,30 @@
               </div>
             </div>
           </div>
+
+          <div
+            id="projects-pagination"
+            class="projects-pagination"
+            aria-label="Project pagination"
+          >
+            <button
+              type="button"
+              id="projects-prev"
+              class="pagination-button"
+              aria-label="Previous projects"
+            >
+              &larr; Prev
+            </button>
+            <div id="projects-pages" class="projects-pages"></div>
+            <button
+              type="button"
+              id="projects-next"
+              class="pagination-button"
+              aria-label="Next projects"
+            >
+              Next &rarr;
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1422,7 +1543,7 @@
         <div class="max-w-6xl mx-auto">
           <!-- heading -->
           <div class="reveal text-center mb-14">
-            <p class="font-code text-indigo-400 text-sm mb-2">05. contact</p>
+            <p class="font-code text-indigo-400 text-sm mb-2">07. contact</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
               Let's Work Together
             </h2>

@@ -467,6 +467,7 @@ if (contactForm) {
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   let particles = [];
+  let running = true;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
@@ -475,7 +476,7 @@ if (contactForm) {
 
   function createParticles() {
     particles = [];
-    const count = Math.floor((canvas.width * canvas.height) / 9000);
+    const count = Math.floor((canvas.width * canvas.height) / 14000);
     const colors = ["#818cf8", "#c084fc", "#67e8f9", "#a5b4fc"];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -493,8 +494,10 @@ if (contactForm) {
   }
 
   function animate() {
+    if (!running) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p) => {
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
       p.x += p.vx;
       p.y += p.vy;
       p.alpha += p.alphaDir * p.alphaSpeed;
@@ -503,18 +506,23 @@ if (contactForm) {
       if (p.x > canvas.width) p.x = 0;
       if (p.y < 0) p.y = canvas.height;
       if (p.y > canvas.height) p.y = 0;
-      ctx.save();
       ctx.globalAlpha = p.alpha;
       ctx.fillStyle = p.color;
-      ctx.shadowBlur = 5;
-      ctx.shadowColor = p.color;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fill();
-      ctx.restore();
-    });
+    }
     requestAnimationFrame(animate);
   }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      running = false;
+    } else {
+      running = true;
+      animate();
+    }
+  });
 
   let resizeTimer;
   window.addEventListener("resize", () => {

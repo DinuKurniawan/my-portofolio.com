@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio Dinu Kurniawan Cahyadi — Full-Stack Web Developer specializing in React, Next.js, and Laravel. Based in Indonesia.">
+    <meta property="og:title" content="Dinu Kurniawan Cahyadi — Full-Stack Developer">
+    <meta property="og:description" content="Crafting beautiful, performant, and user-centered digital products.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myportofolio.codeunchs.my.id/">
+    <meta property="og:image" content="https://myportofolio.codeunchs.my.id/src/images/profile.jpg">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>Dinu Kurniawan Cahyadi — Full-Stack Developer</title>
     <link
       rel="icon"
       type="image/svg+xml"
@@ -261,6 +268,9 @@
                       src="./src/images/profile.jpg"
                       alt="Dinu Kurniawan Cahyadi"
                       class="w-full h-full object-cover object-center"
+                      width="300"
+                      height="390"
+                      fetchpriority="high"
                       onerror="
                         this.style.display = 'none';
                         document
@@ -272,23 +282,20 @@
                 </div>
                 <!-- Floating tech badges -->
                 <div class="hero-badge hero-badge--tl">
-                  <img
-                    src="https://img.icons8.com/color/48/react-native--v1.png"
-                    class="w-4 h-4 inline-block"
-                    alt="React"
-                    width="16"
-                    height="16"
-                  >
+                  <svg class="w-4 h-4 inline-block" viewBox="-11.5 -10.23 23 20.46" aria-hidden="true">
+                    <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
+                    <g stroke="#61dafb" stroke-width="1" fill="none">
+                      <ellipse rx="11" ry="4.2"/>
+                      <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                      <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+                    </g>
+                  </svg>
                   React
                 </div>
                 <div class="hero-badge hero-badge--br">
-                  <img
-                    src="https://cdn.simpleicons.org/laravel/FF2D20"
-                    class="w-4 h-4 inline-block"
-                    alt="Laravel"
-                    width="16"
-                    height="16"
-                  >
+                  <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="#FF2D20" aria-hidden="true">
+                    <path d="M23.642 5.43a.364.364 0 0 1 .012.1v5.165a.36.36 0 0 1-.186.314l-4.35 2.489V7.914l3.378-1.926a.182.182 0 0 0 .09-.157V5.43a.182.182 0 0 0-.09-.157L12.365-.003a.182.182 0 0 0-.182 0L2.092 5.274a.182.182 0 0 0-.09.157v.401c0 .064.034.123.09.157L5.47 7.914v10.331l-3.378-1.926a.182.182 0 0 0-.09-.157v-.401c0-.064.034-.123.09-.157l10.09-5.755a.182.182 0 0 1 .182 0l4.35 2.489a.36.36 0 0 1 .186.314v5.165a.36.36 0 0 1-.186.314l-10.09 5.755a.182.182 0 0 1-.182 0L.37 19.247a.36.36 0 0 1-.186-.314V13.28a.364.364 0 0 1 .012-.1l.078-.05 10.09-5.755a.364.364 0 0 1 .364 0L20.818 13.13l.078.05a.364.364 0 0 1 .012.1v5.653a.36.36 0 0 1-.186.314l-4.35 2.489V14.556l3.378-1.926a.182.182 0 0 0 .09-.157v-.401c0-.064.034-.123.09-.157l3.378-1.926a.182.182 0 0 0 .09-.157V5.43a.182.182 0 0 0-.09-.157L12.365-.003a.182.182 0 0 0-.182 0z"/>
+                  </svg>
                   Laravel
                 </div>
                 <!-- Corner accents -->
@@ -342,6 +349,8 @@
                     src="./src/images/profile.jpg"
                     alt="Dinu Kurniawan Cahyadi"
                     class="w-full h-full object-cover object-center rounded-full"
+                    width="110"
+                    height="110"
                     onerror="
                       this.style.display = 'none';
                       this.parentElement.classList.add('photo-fallback');
@@ -808,12 +817,16 @@
                     src="./src/images/dpn.jpg"
                     alt="BNSP Sertifikat Kompetensi - Depan"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
+                    width="400"
+                    height="283"
                     loading="lazy"
                   >
                   <img
                     src="./src/images/blkng.jpg"
                     alt="BNSP Sertifikat Kompetensi - Belakang"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-0"
+                    width="400"
+                    height="283"
                     loading="lazy"
                   >
                 </div>
@@ -944,6 +957,8 @@
                   src="./src/images/project-safar-haramain.svg"
                   alt="Safar Haramain Website Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1008,6 +1023,8 @@
                   src="./src/images/project-the-blade.svg"
                   alt="THE BLADE Barbershop Website Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1060,6 +1077,8 @@
                   src="./src/images/project-weather-modern.svg"
                   alt="Modern Weather App Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1112,6 +1131,8 @@
                   src="./src/images/project-absensiku.svg"
                   alt="Absensiku Attendance App Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1163,6 +1184,8 @@
                   src="./src/images/project-gudangpro.svg"
                   alt="GudangPro Warehouse Management Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1214,6 +1237,8 @@
                   src="./src/images/project-travelnusa.svg"
                   alt="TravelNusa Tourism Website Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1265,6 +1290,8 @@
                   src="./src/images/project-poskasirku.svg"
                   alt="POS Kasirku Cashier App Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1316,6 +1343,8 @@
                   src="./src/images/project-bookingmobil.svg"
                   alt="BookingMobil.id Car Rental Platform Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1384,6 +1413,8 @@
                   src="./src/images/project-quiz-app.svg"
                   alt="Quiz App Interactive Quiz Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>
@@ -1449,6 +1480,8 @@
                   src="./src/images/project-movie-search.svg"
                   alt="Cinema Search Movie Search App Preview"
                   class="absolute inset-0 w-full h-full object-cover"
+                  width="400"
+                  height="250"
                   loading="lazy"
                 >
               </div>

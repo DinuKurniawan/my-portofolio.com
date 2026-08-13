@@ -1,4 +1,7 @@
-- Prefers communication in Indonesian (Bahasa Indonesia). Confidence: 0.65
+- Prefers communication in Indonesian (Bahasa Indonesia). Confidence: 0.75
 - Classifies Next.js and Node.js as Backend technologies in the portfolio's tech-stack section, rather than Frontend. Confidence: 0.95
 - Prefers consistent section/container widths across pages, matching new sections to the existing layout rather than using a narrower custom width. Confidence: 0.95
 - Prefers project galleries to use pagination with at least six project posters visible per page. Confidence: 0.9
+- Portfolio site uses vanilla HTML/CSS/JS with Tailwind CSS (no SPA framework); prefers this simple stack for static sites. Confidence: 0.85
+- Shares URLs without context and expects the assistant to infer intent and take action. Confidence: 0.8
+- Cares about web performance and PageSpeed scores — proactively requests optimization. Confidence: 0.8

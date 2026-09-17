@@ -15,14 +15,14 @@ Personal portfolio website showcasing projects, skills, certificates, and contac
 
 ## Features
 
-- **Hero** — typing animation, particle canvas, floating tech badges
+- **Hero** — typing animation, particle canvas, floating tech badges, electric border photo effect
 - **About** — profile card with stats, bio, info grid
 - **Education & Experience** — timeline layout
-- **Skills** — categorized tech stack badges (Frontend, Backend, Tools)
+- **Skills** — categorized tech stack badges, infinite tech logo loop
 - **Certificates** — card carousel with lightbox modal
 - **Projects** — paginated gallery (6 per page), 3D tilt on hover
 - **Contact** — validated form with Resend email delivery, resend with countdown
-- **Extras** — custom cursor, scroll progress bar, reveal-on-scroll animations, noise overlay, WhatsApp floating button
+- **Extras** — custom cursor, scroll progress bar, reveal-on-scroll animations, noise overlay, WhatsApp floating button, interactive 3D Lanyard widget
 
 ## Project Structure
 
@@ -30,13 +30,20 @@ Personal portfolio website showcasing projects, skills, certificates, and contac
 .
 ├── api/
 │   └── contact.js          # Vercel serverless function for contact form
+├── lanyard-widget/         # 3D interactive Discord status widget source (React + Vite)
+├── public/
+│   └── lanyard/            # Built Lanyard widget
 ├── src/
 │   ├── css/
 │   │   ├── input.css        # Tailwind entry + custom styles
+│   │   ├── electric-border.css
+│   │   ├── logo-loop.css
 │   │   └── output.css       # Compiled Tailwind output
 │   ├── images/              # Profile, project, certificate images
 │   └── js/
-│       └── main.js          # All client-side interactivity
+│       ├── main.js          # All client-side interactivity
+│       ├── electric-border.js
+│       └── logo-loop.js
 ├── index.html               # Single-page portfolio
 ├── server.js                # Express server (local dev)
 ├── vercel.json              # Vercel deployment config

@@ -693,6 +693,9 @@
   .object-center {
     object-position: center;
   }
+  .object-top {
+    object-position: top;
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }

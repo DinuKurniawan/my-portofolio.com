@@ -38,9 +38,6 @@
   <body class="bg-[#0a0a0f] text-white antialiased">
     <!-- Noise overlay -->
     <div class="noise-overlay" aria-hidden="true"></div>
-    <!-- Custom cursor (desktop) -->
-    <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
-    <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress" class="scroll-progress-bar"></div>
 
@@ -260,51 +257,32 @@
             <div
               class="order-1 md:order-2 flex justify-center md:justify-end reveal"
             >
-              <div class="hero-photo-wrap">
-                <div class="hero-photo-glow"></div>
-                <div class="hero-photo-ring">
-                  <div class="hero-photo-inner" id="hero-photo-inner">
-                    <img
-                      src="./src/images/profile.jpg"
-                      alt="Dinu Kurniawan Cahyadi"
-                      class="w-full h-full object-cover object-center"
-                      width="300"
-                      height="390"
-                      fetchpriority="high"
-                      onerror="
-                        this.style.display = 'none';
-                        document
-                          .getElementById('hero-photo-inner')
-                          .classList.add('photo-fallback');
-                      "
-                    >
-                  </div>
+              <div
+                class="electric-border hero-photo-wrap"
+                data-electric-border
+                data-eb-color="#818cf8"
+                data-eb-speed="1"
+                data-eb-chaos="0.3"
+                data-eb-radius="24"
+                style="border-radius: 24px;"
+              >
+                <div class="eb-canvas-container">
+                  <canvas class="eb-canvas"></canvas>
                 </div>
-                <!-- Floating tech badges -->
-                <div class="hero-badge hero-badge--tl">
-                  <svg class="w-4 h-4 inline-block" viewBox="-11.5 -10.23 23 20.46" aria-hidden="true">
-                    <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
-                    <g stroke="#61dafb" stroke-width="1" fill="none">
-                      <ellipse rx="11" ry="4.2"/>
-                      <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-                      <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
-                    </g>
-                  </svg>
-                  React
+                <div class="eb-layers">
+                  <div class="eb-glow-1"></div>
+                  <div class="eb-glow-2"></div>
+                  <div class="eb-background-glow"></div>
                 </div>
-                <div class="hero-badge hero-badge--br">
-                  <svg class="w-4 h-4 inline-block" viewBox="0 0 24 24" fill="#FF2D20" aria-hidden="true">
-                    <path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"/>
-                  </svg>
-                  Laravel
+                <div class="eb-content hero-photo-inner">
+                  <img
+                    src="./public/images/picture/pp.png"
+                    alt="Dinu Kurniawan Cahyadi"
+                    class="w-full h-full object-cover object-top"
+                    width="300"
+                    height="390"
+                  >
                 </div>
-                <!-- Corner accents -->
-                <div
-                  class="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-indigo-500/80 blur-sm pointer-events-none"
-                ></div>
-                <div
-                  class="absolute -bottom-3 -left-3 w-4 h-4 rounded-full bg-purple-500/80 blur-sm pointer-events-none"
-                ></div>
               </div>
             </div>
           </div>
@@ -346,7 +324,7 @@
                 <!-- Avatar -->
                 <div class="about-avatar-wrap">
                   <img
-                    src="./src/images/profile.jpg"
+                    src="./public/images/picture/pp.png"
                     alt="Dinu Kurniawan Cahyadi"
                     class="w-full h-full object-cover object-center rounded-full"
                     width="110"
@@ -609,176 +587,8 @@
             <p class="font-code text-indigo-400 text-sm mb-2">04. skills</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-16">Tech Stack</h2>
           </div>
-          <div class="space-y-10">
-            <div class="reveal">
-              <p
-                class="text-gray-600 text-xs font-medium uppercase tracking-widest mb-5"
-              >
-                Frontend
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <span class="skill-badge"
-                  ><img
-                    src="https://img.icons8.com/color/48/html-5--v1.png"
-                    class="w-4 h-4 inline-block"
-                    alt="HTML"
-                    width="16"
-                    height="16"
-                  >
-                  HTML</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://img.icons8.com/color/48/css3.png"
-                    class="w-4 h-4 inline-block"
-                    alt="CSS"
-                    width="16"
-                    height="16"
-                  >
-                  CSS</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://img.icons8.com/color/48/javascript--v1.png"
-                    class="w-4 h-4 inline-block"
-                    alt="JavaScript"
-                    width="16"
-                    height="16"
-                  >
-                  JavaScript</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://cdn.simpleicons.org/typescript/3178C6"
-                    class="w-4 h-4 inline-block"
-                    alt="TypeScript"
-                    width="16"
-                    height="16"
-                  >
-                  TypeScript</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://img.icons8.com/color/48/react-native--v1.png"
-                    class="w-4 h-4 inline-block"
-                    alt="React"
-                    width="16"
-                    height="16"
-                  >
-                  React</span
-                >
-              </div>
-            </div>
-            <div class="reveal">
-              <p
-                class="text-gray-600 text-xs font-medium uppercase tracking-widest mb-5"
-              >
-                Backend
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <span class="skill-badge"
-                  ><img
-                    src="https://cdn.simpleicons.org/laravel/FF2D20"
-                    class="w-4 h-4 inline-block"
-                    alt="Laravel"
-                    width="16"
-                    height="16"
-                  >
-                  Laravel</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://cdn.simpleicons.org/nextdotjs/FFFFFF"
-                    class="w-4 h-4 inline-block"
-                    alt="Next.js"
-                    width="16"
-                    height="16"
-                  >
-                  Next.js</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://cdn.simpleicons.org/nodedotjs/5FA04E"
-                    class="w-4 h-4 inline-block"
-                    alt="Node.js"
-                    width="16"
-                    height="16"
-                  >
-                  Node.js</span
-                >
-              </div>
-            </div>
-            <div class="reveal">
-              <p
-                class="text-gray-600 text-xs font-medium uppercase tracking-widest mb-5"
-              >
-                Tools
-              </p>
-              <div class="flex flex-wrap gap-5">
-                <span class="skill-badge"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 inline-block"
-                    viewBox="0 0 48 48"
-                  >
-                    <path
-                      fill="#29b6f6"
-                      d="M44,11.11v25.78c0,1.27-0.79,2.4-1.98,2.82l-8.82,4.14L34,33V15L33.2,4.15l8.82,4.14 C43.21,8.71,44,9.84,44,11.11z"
-                    ></path>
-                    <path
-                      fill="#0277bd"
-                      d="M9,33.896L34,15V5.353c0-1.198-1.482-1.758-2.275-0.86L4.658,29.239 c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"
-                    ></path>
-                    <path
-                      fill="#0288d1"
-                      d="M9,14.104L34,33v9.647c0,1.198-1.482,1.758-2.275,0.86L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
-                    ></path>
-                  </svg>
-                  Visual Studio Code</span
-                >
-                <span class="skill-badge"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 inline-block"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="m19.94,20.59c1.09.82,2.73.27,1.23-1.23-4.5-4.36-3.55-16.36-9.14-16.36S7.39,15,2.89,19.36c-1.64,1.64.14,2.05,1.23,1.23,4.23-2.86,3.95-7.91,7.91-7.91s3.68,5.05,7.91,7.91Z"
-                    />
-                  </svg>
-                  Antigravity</span
-                >
-                <span class="skill-badge"
-                  ><img
-                    src="https://cdn.simpleicons.org/githubcopilot/FFFFFF"
-                    class="w-4 h-4 inline-block"
-                    alt="GitHub Copilot"
-                    width="16"
-                    height="16"
-                  >
-                  GitHub Copilot</span
-                >
-                <span class="skill-badge"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 inline-block"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.8"
-                      d="M8.25 7.5 4.5 12l3.75 4.5M15.75 7.5 19.5 12l-3.75 4.5M13.5 4.5 10.5 19.5"
-                    />
-                  </svg>
-                  Codex</span
-                >
-              </div>
-            </div>
+          <div class="reveal relative overflow-hidden flex items-center" style="height: 140px;">
+            <div id="tech-logo-loop"></div>
           </div>
         </div>
         <div class="stripe-divider bottom-0"></div>
@@ -800,6 +610,7 @@
           </div>
 
           <div
+            id="certs-grid"
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
           >
             <!-- Certificate 4 — BNSP Sertifikat Kompetensi -->
@@ -934,6 +745,154 @@
                 </div>
               </div>
             </div>
+
+            <!-- Certificate 2 — Front-End Web untuk Pemula -->
+            <div
+              class="cert-card group relative rounded-2xl border border-white/5 bg-[#12121a] overflow-hidden hover:border-amber-500/30 transition-all duration-300 reveal cursor-pointer"
+              data-cert-images='["./public/images/certificate/Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula-1_page-0001.webp"]'
+              onclick="openCertModal(this)"
+            >
+              <div
+                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-[#1a1a2e]"
+              >
+                <!-- Carousel wrapper -->
+                <div class="cert-carousel relative w-full h-full">
+                  <img
+                    src="./public/images/certificate/Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula-1_page-0001.webp"
+                    alt="Belajar Membuat Front-End Web untuk Pemula"
+                    class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
+                    width="400"
+                    height="283"
+                    loading="lazy"
+                  >
+                </div>
+                <div
+                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                >
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
+                    </svg>
+                    Lihat Sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="font-code text-amber-400/60 text-xs mb-2">2024</p>
+                <h4
+                  class="text-white font-bold text-base mb-2 group-hover:text-amber-300 transition-colors"
+                >
+                  Belajar Membuat Front-End Web untuk Pemula
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-3">
+                  Sertifikat kompetensi kelulusan kelas Belajar Membuat Front-End Web untuk Pemula dari Dicoding.
+                </p>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-2.5 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-code"
+                    >Dicoding</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Certificate 3 — Course 123 -->
+            <div
+              class="cert-card group relative rounded-2xl border border-white/5 bg-[#12121a] overflow-hidden hover:border-amber-500/30 transition-all duration-300 reveal cursor-pointer"
+              data-cert-images='["./public/images/certificate/Belajar%20Dasar%20Pemrograman%20Web.webp"]'
+              onclick="openCertModal(this)"
+            >
+              <div
+                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-[#1a1a2e]"
+              >
+                <!-- Carousel wrapper -->
+                <div class="cert-carousel relative w-full h-full">
+                  <img
+                    src="./public/images/certificate/Belajar Dasar Pemrograman Web.webp"
+                    alt="Sertifikat Course"
+                    class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
+                    width="400"
+                    height="283"
+                    loading="lazy"
+                  >
+                </div>
+                <div
+                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                >
+                  <span
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
+                    </svg>
+                    Lihat Sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="font-code text-amber-400/60 text-xs mb-2">2024</p>
+                <h4
+                  class="text-white font-bold text-base mb-2 group-hover:text-amber-300 transition-colors"
+                >
+                  Belajar Dasar Pemrograman Web
+                </h4>
+                <p class="text-gray-500 text-sm leading-relaxed mb-3">
+                  Sertifikat kompetensi kelulusan kelas Belajar Dasar Pemrograman Web dari Dicoding.
+                </p>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-2.5 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-code"
+                    >Dicoding</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="certs-pagination"
+            class="projects-pagination"
+            aria-label="Certificate pagination"
+          >
+            <button
+              type="button"
+              id="certs-prev"
+              class="pagination-button"
+              aria-label="Previous certificates"
+            >
+              &larr; Prev
+            </button>
+            <div id="certs-pages" class="projects-pages"></div>
+            <button
+              type="button"
+              id="certs-next"
+              class="pagination-button"
+              aria-label="Next certificates"
+            >
+              Next &rarr;
+            </button>
           </div>
         </div>
       </section>
@@ -2097,6 +2056,8 @@
       </div>
     </div>
 
+    <script src="./src/js/logo-loop.js" defer></script>
+    <script src="./src/js/electric-border.js" defer></script>
     <script src="./src/js/main.js" defer></script>
   </body>
 </html>

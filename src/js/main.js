@@ -149,16 +149,24 @@ document
   .querySelectorAll(".reveal")
   .forEach((el) => revealObserver.observe(el));
 
-// ── Projects Pagination ───────────────────────────────────────────────────
-(function initProjectsPagination() {
-  const grid = document.getElementById("projects-grid");
-  const pagination = document.getElementById("projects-pagination");
-  const pages = document.getElementById("projects-pages");
-  const previous = document.getElementById("projects-prev");
-  const next = document.getElementById("projects-next");
+// ── Card Pagination (projects + certificates) ─────────────────────────────
+function initCardPagination({
+  gridId,
+  paginationId,
+  pagesId,
+  prevId,
+  nextId,
+  cardSelector,
+  label,
+}) {
+  const grid = document.getElementById(gridId);
+  const pagination = document.getElementById(paginationId);
+  const pages = document.getElementById(pagesId);
+  const previous = document.getElementById(prevId);
+  const next = document.getElementById(nextId);
   if (!grid || !pagination || !pages || !previous || !next) return;
 
-  const cards = Array.from(grid.querySelectorAll(".project-card"));
+  const cards = Array.from(grid.querySelectorAll(cardSelector));
   const perPage = 6;
   const pageCount = Math.ceil(cards.length / perPage);
   let currentPage = 1;
@@ -190,7 +198,7 @@ document
       button.type = "button";
       button.className = "pagination-page";
       button.textContent = pageNumber;
-      button.setAttribute("aria-label", `Go to project page ${pageNumber}`);
+      button.setAttribute("aria-label", `Go to ${label} page ${pageNumber}`);
       if (pageNumber === currentPage) {
         button.setAttribute("aria-current", "page");
       }
@@ -213,7 +221,27 @@ document
   });
 
   renderPage(currentPage);
-})();
+}
+
+initCardPagination({
+  gridId: "projects-grid",
+  paginationId: "projects-pagination",
+  pagesId: "projects-pages",
+  prevId: "projects-prev",
+  nextId: "projects-next",
+  cardSelector: ".project-card",
+  label: "project",
+});
+
+initCardPagination({
+  gridId: "certs-grid",
+  paginationId: "certs-pagination",
+  pagesId: "certs-pages",
+  prevId: "certs-prev",
+  nextId: "certs-next",
+  cardSelector: ".cert-card",
+  label: "certificate",
+});
 
 // ── Typing animation ──────────────────────────────────────────────────────
 const typedEl = document.getElementById("typed-text");
@@ -538,54 +566,18 @@ if (contactForm) {
   animate();
 })();
 
-// ── Custom Cursor ──────────────────────────────────────────────────────────
-(function initCursor() {
-  const dot = document.getElementById("cursor-dot");
-  const ring = document.getElementById("cursor-ring");
-  if (!dot || !ring) return;
-  // Only enable on true pointer devices
-  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    dot.style.display = "none";
-    ring.style.display = "none";
-    return;
-  }
+// ── Hero Photo Swing Animation ─────────────────────────────────────────────
+(function initHeroSwing() {
+  const heroWrap = document.querySelector(".hero-photo-wrap");
+  if (!heroWrap) return;
 
-  let mouseX = -200,
-    mouseY = -200,
-    ringX = -200,
-    ringY = -200;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-  });
-
-  (function animateRing() {
-    ringX += (mouseX - ringX) * 0.1;
-    ringY += (mouseY - ringY) * 0.1;
-    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateRing);
-  })();
-
-  document
-    .querySelectorAll("a, button, .skill-badge, .project-card, input, textarea")
-    .forEach((el) => {
-      el.addEventListener("mouseenter", () =>
-        ring.classList.add("cursor-hover"),
-      );
-      el.addEventListener("mouseleave", () =>
-        ring.classList.remove("cursor-hover"),
-      );
-    });
-
-  document.addEventListener("mouseleave", () => {
-    dot.style.opacity = "0";
-    ring.style.opacity = "0";
-  });
-  document.addEventListener("mouseenter", () => {
-    dot.style.opacity = "1";
-    ring.style.opacity = "1";
+  heroWrap.addEventListener("click", () => {
+    if (!heroWrap.classList.contains("swinging")) {
+      heroWrap.classList.add("swinging");
+      setTimeout(() => {
+        heroWrap.classList.remove("swinging");
+      }, 2000);
+    }
   });
 })();
 

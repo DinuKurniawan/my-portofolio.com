@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./logo-loop.css";
+@import "./electric-border.css";
 
 /* ── WhatsApp Floating Button ─────────────────────────────────────────── */
 .wa-float {
@@ -1221,6 +1223,21 @@ img[data-src].lazy-error {
 .hero-photo-wrap {
   position: relative;
   z-index: 1;
+  transform-origin: top center;
+  cursor: pointer;
+}
+
+.swinging {
+  animation: swing 2s ease-in-out;
+}
+
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(5deg); }
+  80% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
 }
 
 /* Glow blob behind photo */
@@ -1439,54 +1456,7 @@ img[data-src].lazy-error {
   background-size: 200px 200px;
 }
 
-/* ── Custom Cursor ──────────────────────────────────────────────────────── */
-@media (hover: hover) and (pointer: fine) {
-  body,
-  a,
-  button {
-    cursor: none;
-  }
-}
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #818cf8;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 999999;
-  will-change: transform;
-  box-shadow:
-    0 0 8px rgba(129, 140, 248, 0.9),
-    0 0 20px rgba(129, 140, 248, 0.4);
-  transition: opacity 0.3s;
-}
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(129, 140, 248, 0.5);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 999998;
-  will-change: transform;
-  transition:
-    width 0.25s ease,
-    height 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    opacity 0.3s;
-}
-.cursor-ring.cursor-hover {
-  width: 54px;
-  height: 54px;
-  border-color: rgba(129, 140, 248, 0.9);
-  background: rgba(99, 102, 241, 0.08);
-}
+
 
 /* ── Particles Canvas ───────────────────────────────────────────────────── */
 #particles-canvas {

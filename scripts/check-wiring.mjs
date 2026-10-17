@@ -130,5 +130,22 @@ check(
 );
 check(!/thrift-corner\.html/.test(html), "link mati thrift-corner.html sudah dibuang");
 
+// F6: kontak & footer
+check(
+  /href="https:\/\/wa\.me\/6281384634526"[\s\S]{0,200}?\+62 813-8463-4526/.test(html),
+  "kartu WhatsApp → wa.me (FR-CT04)",
+);
+check(/Follow Me/.test(html), "blok Follow Me ada (FR-CT05)");
+check(!/stripe-divider/.test(html), "stripe-divider sudah dibersihkan (FR-CT07)");
+check(!/indigo-/.test(html), "tidak ada kelas indigo tersisa di HTML (§14)");
+check(
+  /id="email-sent-panel"/.test(html) && /id="esp-countdown-num"/.test(html),
+  "panel email + countdown resend utuh (FR-CT03)",
+);
+check(
+  /Made with[\s\S]{0,60}?by Dinu/.test(html) && /All rights\s+reserved/.test(html),
+  "footer: copyright + Made with (FR-F02)",
+);
+
 console.log(fail ? `\n✗ ${fail} gagal\n` : "\n✓ semua lulus\n");
 process.exit(fail ? 1 : 0);

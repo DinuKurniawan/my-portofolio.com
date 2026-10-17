@@ -271,7 +271,7 @@
                   href="https://wa.me/6281384634526"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="font-code text-xs text-gray-600 hover:text-indigo-400 transition-colors"
+                  class="font-code text-xs text-gray-500 hover:text-accent transition-colors"
                   >wa.me/dinu</a
                 >
               </div>
@@ -1883,17 +1883,16 @@
       <!-- ═══════════════ CONTACT ═══════════════ -->
       <section
         id="contact"
-        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative"
+        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden"
       >
-        <div class="stripe-divider top-0"></div>
-        <div class="max-w-6xl mx-auto">
-          <!-- heading -->
-          <div class="reveal text-center mb-14">
-            <p class="font-code text-indigo-400 text-sm mb-2">07. contact</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              Let's Work Together
-            </h2>
-            <p class="text-gray-500 max-w-xl mx-auto leading-relaxed">
+        <div class="violet-glow w-[520px] h-[520px] left-1/2 -translate-x-1/2 -bottom-40" aria-hidden="true"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+          <!-- heading (FR-CT01) -->
+          <div class="section-header items-center text-center reveal">
+            <span class="badge-section">Let's Work Together</span>
+            <h2 class="section-title">Have a project in mind?</h2>
+            <p class="text-gray-400 max-w-xl leading-relaxed">
               Whether you have a project in mind, a question, or just want to
               say hi — my inbox is always open.
             </p>
@@ -1901,10 +1900,10 @@
 
           <!-- 2-column: info + form -->
           <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
-            <!-- Left: info -->
-            <div class="reveal space-y-8">
-              <div class="flex items-start gap-4">
-                <div class="contact-icon-wrap">
+            <!-- Left: info (FR-CT04) + Follow Me (FR-CT05) -->
+            <div class="reveal space-y-4">
+              <div class="card contact-info-card">
+                <div class="contact-icon-wrap" aria-hidden="true">
                   <svg
                     class="w-5 h-5"
                     fill="none"
@@ -1914,26 +1913,23 @@
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2"
+                      stroke-width="1.8"
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
                 </div>
-                <div>
-                  <p
-                    class="text-xs text-gray-500 uppercase tracking-widest mb-1"
-                  >
-                    Email
-                  </p>
+                <div class="min-w-0">
+                  <p class="contact-info-label">Email</p>
                   <a
                     href="mailto:dinukurniawan28@gmail.com"
-                    class="text-white hover:text-indigo-400 transition-colors font-medium"
+                    class="contact-info-value break-all"
                     >dinukurniawan28@gmail.com</a
                   >
                 </div>
               </div>
-              <div class="flex items-start gap-4">
-                <div class="contact-icon-wrap">
+
+              <div class="card contact-info-card">
+                <div class="contact-icon-wrap" aria-hidden="true">
                   <svg
                     class="w-5 h-5"
                     fill="none"
@@ -1943,56 +1939,53 @@
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2"
+                      stroke-width="1.8"
+                      d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+                    />
+                  </svg>
+                </div>
+                <div class="min-w-0">
+                  <p class="contact-info-label">WhatsApp</p>
+                  <a
+                    href="https://wa.me/6281384634526"
+                    target="_blank"
+                    rel="noopener"
+                    class="contact-info-value"
+                    >+62 813-8463-4526</a
+                  >
+                </div>
+              </div>
+
+              <div class="card contact-info-card">
+                <div class="contact-icon-wrap" aria-hidden="true">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
                       d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                     />
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      stroke-width="2"
+                      stroke-width="1.8"
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
                 </div>
-                <div>
-                  <p
-                    class="text-xs text-gray-500 uppercase tracking-widest mb-1"
-                  >
-                    Location
-                  </p>
-                  <p class="text-white font-medium">Indonesia</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-4">
-                <div class="contact-icon-wrap">
-                  <svg
-                    class="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p
-                    class="text-xs text-gray-500 uppercase tracking-widest mb-1"
-                  >
-                    Response Time
-                  </p>
-                  <p class="text-white font-medium">Within 24 hours</p>
+                <div class="min-w-0">
+                  <p class="contact-info-label">Lokasi</p>
+                  <p class="contact-info-value">Indonesia</p>
                 </div>
               </div>
 
-              <div class="pt-4">
-                <p class="text-xs text-gray-600 uppercase tracking-widest mb-4">
-                  Find me on
-                </p>
+              <div class="pt-6">
+                <p class="follow-label">Follow Me</p>
                 <div class="flex gap-3">
                   <a
                     href="https://github.com/DinuKurniawan"
@@ -2049,13 +2042,13 @@
               </div>
             </div>
 
-            <!-- Right: form -->
-            <div class="reveal" id="contact-right-col">
+            <!-- Right: form (FR-CT02) -->
+            <div class="reveal contact-form-card" id="contact-right-col">
               <form id="contact-form" novalidate class="space-y-5">
                 <div class="grid sm:grid-cols-2 gap-5">
                   <div class="form-group">
                     <label for="cf-name" class="form-label"
-                      >Name <span class="text-indigo-400">*</span></label
+                      >Name <span class="text-accent">*</span></label
                     >
                     <input
                       id="cf-name"
@@ -2069,7 +2062,7 @@
                   </div>
                   <div class="form-group">
                     <label for="cf-email" class="form-label"
-                      >Email <span class="text-indigo-400">*</span></label
+                      >Email <span class="text-accent">*</span></label
                     >
                     <input
                       id="cf-email"
@@ -2094,7 +2087,7 @@
                 </div>
                 <div class="form-group">
                   <label for="cf-message" class="form-label"
-                    >Message <span class="text-indigo-400">*</span></label
+                    >Message <span class="text-accent">*</span></label
                   >
                   <textarea
                     id="cf-message"
@@ -2290,17 +2283,23 @@
             </div>
           </div>
         </div>
-        <div class="stripe-divider bottom-0"></div>
       </section>
     </main>
 
-    <!-- ═══════════════ FOOTER ═══════════════ -->
-    <footer class="py-8 text-center">
-      <p class="font-code text-gray-600 text-sm">
-        Designed &amp; Built by
-        <span class="text-indigo-400">Dinu Kurniawan Cahyadi</span> &mdash;
-        &copy; 2026
-      </p>
+    <!-- ═══════════════ FOOTER (PRD §9.11) ═══════════════ -->
+    <footer class="site-footer">
+      <div
+        class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-center sm:text-left"
+      >
+        <p class="footer-copy">
+          &copy; 2026
+          <span class="footer-name">Dinu Kurniawan Cahyadi</span>. All rights
+          reserved.
+        </p>
+        <p class="footer-copy">
+          Made with <span aria-hidden="true">❤️</span> by Dinu
+        </p>
+      </div>
     </footer>
 
     <!-- ═══════════════ WHATSAPP FLOATING BUTTON ═══════════════ -->

@@ -7,6 +7,7 @@
     "start": "node server.js",
     "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css",
     "watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "verify": "node scripts/check-tokens.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

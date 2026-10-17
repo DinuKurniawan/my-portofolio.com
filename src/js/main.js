@@ -23,11 +23,12 @@ document.querySelectorAll(".project-card, .cert-card").forEach((card) => {
     const cy = rect.height / 2;
     const mx = e.clientX - rect.left - cx;
     const my = e.clientY - rect.top - cy;
-    const rotX = (my / cy) * -7;
-    const rotY = (mx / cx) * 7;
+    // Intensitas diturunkan agar selaras gaya baru (PRD FR-P05)
+    const rotX = (my / cy) * -4;
+    const rotY = (mx / cx) * 4;
     card.style.transition =
       "box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s";
-    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-6px) scale(1.01)`;
+    card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px) scale(1.005)`;
   });
   card.addEventListener("mouseleave", () => {
     card.style.transition =

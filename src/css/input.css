@@ -894,6 +894,72 @@ img[data-src].lazy-error {
   padding: 1rem 1.125rem;
 }
 
+/* ══ KARTU SERTIFIKAT (PRD §9.8) ══ */
+.cert-year {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+.cert-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+.cert-card:hover .cert-title {
+  color: var(--color-accent);
+}
+.cert-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-body);
+  margin-bottom: 0.75rem;
+}
+.cert-publisher {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-violet-a12);
+  border: 1px solid var(--color-violet-a35);
+  color: var(--color-accent);
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+}
+
+/* ══ SKILL BAR (PRD §9.7) ══ */
+.skill-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.skill-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.skill-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.skill-name svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+.skill-value {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
 /* ══ TIMELINE (PRD §9.5–9.6) — satu komponen untuk Education & Experience ══ */
 .timeline {
   position: relative;
@@ -2131,11 +2197,11 @@ img[data-src].lazy-error {
   background:
     radial-gradient(
         300px circle at var(--mouse-x) var(--mouse-y),
-        rgba(99, 102, 241, 0.06),
+        rgb(109 99 248 / 0.08),
         transparent 70%
       )
       no-repeat,
-    #12121a;
+    var(--color-surface);
 }
 
 /* ── Certificate Modal / Lightbox ──────────────────────────────────────── */

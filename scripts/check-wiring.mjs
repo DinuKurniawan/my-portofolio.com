@@ -96,5 +96,28 @@ check(
 );
 check(/prefers-reduced-motion/.test(readFileSync(new URL("src/css/output.css", root), "utf8")), "reduced-motion ter-emit");
 
+// F4: 9 skill bar dengan data-value + --value yang sama (FR-S02/S04/S06)
+const bars = [...html.matchAll(/class="progress-fill" data-value="(\d+)" style="--value: (\d+)%"/g)];
+const labelled = [...html.matchAll(/aria-label="([^"]+? \d+%)"/g)].map((m) => m[1]);
+check(
+  (html.match(/class="progress-fill"/g) || []).length === 9,
+  `jumlah skill bar = 9 (FR-S04): ${(html.match(/class="progress-fill"/g) || []).length}`,
+);
+check(bars.length === 9 && bars.every((m) => m[1] === m[2]), "tiap bar: data-value = --value");
+check(
+  ["HTML 95%", "CSS 90%", "JavaScript 90%", "React 85%", "Next.js 80%", "TypeScript 85%", "Node.js 80%", "Tailwind CSS 90%", "Git 85%"].every((l) =>
+    labelled.includes(l),
+  ),
+  `aria-label lengkap (FR-S06): ${labelled.length} label`,
+);
+
+// F3: 4 kartu statistik dengan angka final (§17.3)
+for (const v of ["1+", "10+", "15+", "3"])
+  check(
+    new RegExp(`class="stat-value">${v.replace("+", "\\+")}<`).test(html),
+    `stat card ${v} ada (FR-A04)`,
+  );
+check(/href="#education"[\s\S]{0,80}?Learn More About Me/.test(html), "CTA About → #education (FR-A03)");
+
 console.log(fail ? `\n✗ ${fail} gagal\n` : "\n✓ semua lulus\n");
 process.exit(fail ? 1 : 0);

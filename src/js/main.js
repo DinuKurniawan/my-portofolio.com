@@ -156,6 +156,25 @@ document
   .querySelectorAll(".reveal")
   .forEach((el) => revealObserver.observe(el));
 
+// ── Skill bar: isi sekali saat masuk viewport (PRD FR-S03) ────────────────
+(() => {
+  const fills = document.querySelectorAll(".progress-fill[data-value]");
+  if (!fills.length) return;
+
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.dataset.filled = "true";
+        obs.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.4 },
+  );
+
+  fills.forEach((el) => obs.observe(el));
+})();
+
 // ── Card Pagination (projects + certificates) ─────────────────────────────
 function initCardPagination({
   gridId,

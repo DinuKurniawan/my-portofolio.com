@@ -726,18 +726,154 @@
       <!-- ═══════════════ SKILLS ═══════════════ -->
       <section
         id="skills"
-        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative"
+        class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden"
       >
-        <div class="stripe-divider top-0"></div>
-        <div class="max-w-6xl mx-auto">
-          <div class="reveal">
-            <p class="font-code text-indigo-400 text-sm mb-2">04. skills</p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-16">Tech Stack</h2>
-          </div>
-          <!-- Marquee logo dipindah ke hero (FR-H07/FR-S05); skill bar menyusul di F4 -->
+        <div class="violet-glow w-[460px] h-[460px] -left-40 top-1/4" aria-hidden="true"></div>
 
+        <div class="max-w-6xl mx-auto relative z-10">
+          <div class="section-header reveal">
+            <span class="badge-section">My Skills</span>
+            <h2 class="section-title">Technologies I Master</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+            <div class="skill-bar reveal" role="img" aria-label="HTML 95%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                  </svg>
+                  HTML
+                </span>
+                <span class="skill-value">95%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="95" style="--value: 95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="CSS 90%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763" />
+                  </svg>
+                  CSS
+                </span>
+                <span class="skill-value">90%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="90" style="--value: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="JavaScript 90%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                  JavaScript
+                </span>
+                <span class="skill-value">90%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="90" style="--value: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="React 85%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9a3 3 0 100 6 3 3 0 000-6z" />
+                  </svg>
+                  React
+                </span>
+                <span class="skill-value">85%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="85" style="--value: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="Next.js 80%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                  Next.js
+                </span>
+                <span class="skill-value">80%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="80" style="--value: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="TypeScript 85%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  TypeScript
+                </span>
+                <span class="skill-value">85%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="85" style="--value: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="Node.js 80%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3V9a3 3 0 013-3h13.5a3 3 0 013 3v2.25a3 3 0 01-3 3m-13.5 0v3.75a1.5 1.5 0 003 0V15m10.5 0v3.75a1.5 1.5 0 01-3 0V15" />
+                  </svg>
+                  Node.js
+                </span>
+                <span class="skill-value">80%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="80" style="--value: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="Tailwind CSS 90%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                  Tailwind CSS
+                </span>
+                <span class="skill-value">90%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="90" style="--value: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar reveal" role="img" aria-label="Git 85%">
+              <div class="skill-head">
+                <span class="skill-name">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 3v12m0 0a3 3 0 103 3m-3-3a3 3 0 013 3m6-15a3 3 0 11-6 0 3 3 0 016 0zm0 0v6m0 0a3 3 0 01-3 3m3-3a3 3 0 003 3" />
+                  </svg>
+                  Git
+                </span>
+                <span class="skill-value">85%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" data-value="85" style="--value: 85%"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stripe-divider bottom-0"></div>
       </section>
 
       <!-- ═══════════════ CERTIFICATES ═══════════════ -->
@@ -745,14 +881,12 @@
         id="certificates"
         class="py-16 sm:py-24 lg:py-28 px-4 sm:px-6 relative overflow-hidden"
       >
-        <div class="max-w-6xl mx-auto">
-          <div class="reveal">
-            <p class="font-code text-indigo-400 text-sm mb-2">
-              05. certificates
-            </p>
-            <h2 class="text-3xl md:text-4xl font-bold mb-16">
-              Sertifikat &amp; Pencapaian
-            </h2>
+        <div class="violet-glow w-[480px] h-[480px] -right-40 top-1/4" aria-hidden="true"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+          <div class="section-header reveal">
+            <span class="badge-section">Certificates</span>
+            <h2 class="section-title">Certificates &amp; Credentials</h2>
           </div>
 
           <div
@@ -761,12 +895,12 @@
           >
             <!-- Certificate 4 — BNSP Sertifikat Kompetensi -->
             <div
-              class="cert-card group relative rounded-2xl border border-white/5 bg-[#12121a] overflow-hidden hover:border-amber-500/30 transition-all duration-300 reveal cursor-pointer"
+              class="cert-card card group relative overflow-hidden reveal cursor-pointer"
               data-cert-images='["./src/images/dpn.jpg","./src/images/blkng.jpg"]'
               onclick="openCertModal(this)"
             >
               <div
-                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-[#1a1a2e]"
+                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-navy-950"
               >
                 <!-- Carousel wrapper -->
                 <div class="cert-carousel relative w-full h-full">
@@ -869,23 +1003,23 @@
                 </div>
               </div>
               <div class="p-5">
-                <p class="font-code text-amber-400/60 text-xs mb-2">2025</p>
+                <p class="cert-year">2025</p>
                 <h4
-                  class="text-white font-bold text-base mb-2 group-hover:text-amber-300 transition-colors"
+                  class="cert-title"
                 >
                   Pengembang Perangkat Lunak — BNSP
                 </h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-3">
+                <p class="cert-desc">
                   Sertifikat Kompetensi dari Badan Nasional Sertifikasi Profesi
                   dengan kualifikasi Analis Program (Program Analyst).
                 </p>
                 <div class="flex items-center gap-2">
                   <span
-                    class="px-2.5 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-code"
+                    class="cert-publisher"
                     >BNSP</span
                   >
                   <span
-                    class="px-2.5 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-code"
+                    class="cert-publisher"
                     >LSP UBSI</span
                   >
                 </div>
@@ -894,12 +1028,12 @@
 
             <!-- Certificate 2 — Front-End Web untuk Pemula -->
             <div
-              class="cert-card group relative rounded-2xl border border-white/5 bg-[#12121a] overflow-hidden hover:border-amber-500/30 transition-all duration-300 reveal cursor-pointer"
+              class="cert-card card group relative overflow-hidden reveal cursor-pointer"
               data-cert-images='["./public/images/certificate/Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula-1_page-0001.webp"]'
               onclick="openCertModal(this)"
             >
               <div
-                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-[#1a1a2e]"
+                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-navy-950"
               >
                 <!-- Carousel wrapper -->
                 <div class="cert-carousel relative w-full h-full">
@@ -936,18 +1070,18 @@
                 </div>
               </div>
               <div class="p-5">
-                <p class="font-code text-amber-400/60 text-xs mb-2">2024</p>
+                <p class="cert-year">2024</p>
                 <h4
-                  class="text-white font-bold text-base mb-2 group-hover:text-amber-300 transition-colors"
+                  class="cert-title"
                 >
                   Belajar Membuat Front-End Web untuk Pemula
                 </h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-3">
+                <p class="cert-desc">
                   Sertifikat kompetensi kelulusan kelas Belajar Membuat Front-End Web untuk Pemula dari Dicoding.
                 </p>
                 <div class="flex items-center gap-2">
                   <span
-                    class="px-2.5 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-code"
+                    class="cert-publisher"
                     >Dicoding</span
                   >
                 </div>
@@ -956,12 +1090,12 @@
 
             <!-- Certificate 3 — Course 123 -->
             <div
-              class="cert-card group relative rounded-2xl border border-white/5 bg-[#12121a] overflow-hidden hover:border-amber-500/30 transition-all duration-300 reveal cursor-pointer"
+              class="cert-card card group relative overflow-hidden reveal cursor-pointer"
               data-cert-images='["./public/images/certificate/Belajar%20Dasar%20Pemrograman%20Web.webp"]'
               onclick="openCertModal(this)"
             >
               <div
-                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-[#1a1a2e]"
+                class="cert-thumb relative aspect-[4/2.83] overflow-hidden bg-navy-950"
               >
                 <!-- Carousel wrapper -->
                 <div class="cert-carousel relative w-full h-full">
@@ -998,18 +1132,18 @@
                 </div>
               </div>
               <div class="p-5">
-                <p class="font-code text-amber-400/60 text-xs mb-2">2024</p>
+                <p class="cert-year">2024</p>
                 <h4
-                  class="text-white font-bold text-base mb-2 group-hover:text-amber-300 transition-colors"
+                  class="cert-title"
                 >
                   Belajar Dasar Pemrograman Web
                 </h4>
-                <p class="text-gray-500 text-sm leading-relaxed mb-3">
+                <p class="cert-desc">
                   Sertifikat kompetensi kelulusan kelas Belajar Dasar Pemrograman Web dari Dicoding.
                 </p>
                 <div class="flex items-center gap-2">
                   <span
-                    class="px-2.5 py-1 rounded-full bg-white/5 text-gray-400 text-xs font-code"
+                    class="cert-publisher"
                     >Dicoding</span
                   >
                 </div>

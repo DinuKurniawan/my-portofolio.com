@@ -588,36 +588,6 @@ if (contactForm) {
   });
 })();
 
-// ── Stats Counter Animation ───────────────────────────────────────────────
-(function initCounters() {
-  const counters = document.querySelectorAll(".counter-num");
-  if (!counters.length) return;
-
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = parseInt(el.dataset.target, 10);
-        const suffix = el.dataset.suffix || "";
-        const duration = 1500;
-        const t0 = performance.now();
-        function tick(now) {
-          const p = Math.min((now - t0) / duration, 1);
-          const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.floor(eased * target) + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-        obs.unobserve(el);
-      });
-    },
-    { threshold: 0.5 },
-  );
-
-  counters.forEach((el) => obs.observe(el));
-})();
-
 // ── Magnetic Buttons ───────────────────────────────────────────────────────
 document.querySelectorAll(".btn-primary, .btn-outline").forEach((btn) => {
   btn.addEventListener("mousemove", (e) => {

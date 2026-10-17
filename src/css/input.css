@@ -824,21 +824,175 @@ img[data-src].lazy-error {
   transform: translateY(0);
 }
 
-/* ── About Section ─────────────────────────────────────────────────────── */
-.about-bg-orb {
+/* ══ ABOUT (PRD §9.4) ══════════════════════════════════════════════════════ */
+
+/* Header section dipakai di semua section: badge + heading */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.section-title {
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Kartu statistik 2×2 (FR-A04) */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem;
+}
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+.stat-label {
+  font-family: var(--font-code);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+}
+
+/* Paragraf bio */
+.bio-copy {
+  color: var(--color-text-body);
+  line-height: 1.75;
+}
+.bio-copy strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Chip teknologi inline di dalam bio */
+.tech-inline {
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  background: var(--color-violet-a12);
+  border: 1px solid var(--color-violet-a35);
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+/* Kartu info ringkas (lokasi, pendidikan, status, bahasa) */
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 1.125rem;
+}
+
+/* ══ TIMELINE (PRD §9.5–9.6) — satu komponen untuk Education & Experience ══ */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+}
+.timeline::before {
+  content: "";
   position: absolute;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse,
-    rgba(99, 102, 241, 0.07) 0%,
-    transparent 70%
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 0.75rem;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-violet-400),
+    transparent
   );
-  top: 50%;
-  right: -250px;
-  transform: translateY(-50%);
-  pointer-events: none;
+  box-shadow: 0 0 12px var(--color-violet-a35);
+}
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.timeline-marker {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+.timeline-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-bg);
+  box-shadow:
+    0 0 0 3px var(--color-violet-a35),
+    0 0 18px var(--color-violet-a40);
+}
+.timeline-card {
+  min-width: 0;
+  padding: 1.5rem;
+}
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.timeline-period {
+  color: var(--color-accent);
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.timeline-role {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+.timeline-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+/* Pill tahun / status */
+.timeline-pill {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  background: rgb(255 255 255 / 0.04);
+  font-family: var(--font-code);
+  font-size: 0.6875rem;
+  white-space: nowrap;
+}
+.timeline-pill--active {
+  border-color: var(--color-violet-a35);
+  color: var(--color-accent);
+  background: var(--color-violet-a12);
+}
+
+@media (max-width: 640px) {
+  .timeline-card {
+    padding: 1.25rem;
+  }
+  .timeline-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .about-profile-card {

@@ -39,9 +39,8 @@ const REQUIRED_IDS = [
 ];
 
 // [selector, dipakai untuk apa] — class yang di-query JS.
-// Catatan: .counter-num TIDAK dicek di sini meski initCounters() di main.js
-// mencarinya — class itu tidak pernah ada di markup (sudah mati sebelum
-// redesign). F3 akan membuat stat card baru, dan guard-nya dipasang di sana.
+// F3: initCounters() (dead code, mencari .counter-num yang tak pernah ada)
+// sudah dihapus dari main.js — angka statis di markup.
 const REQUIRED_CLASSES = [
   ["nav-link", "observer link aktif"],
   ["hero-photo-wrap", "animasi swing foto"],

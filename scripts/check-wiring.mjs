@@ -119,5 +119,16 @@ for (const v of ["1+", "10+", "15+", "3"])
   );
 check(/href="#education"[\s\S]{0,80}?Learn More About Me/.test(html), "CTA About → #education (FR-A03)");
 
+// F5: kartu proyek bernomor + tidak ada link mati ke halaman yang sudah dihapus
+check(
+  (html.match(/class="project-card reveal group"/g) || []).length === 11,
+  `11 kartu proyek (FR-P06): ${(html.match(/class="project-card reveal group"/g) || []).length}`,
+);
+check(
+  /\.project-card::after[\s\S]{0,200}?attr\(data-num\)/.test(readFileSync(new URL("src/css/input.css", root), "utf8")),
+  "nomor kartu proyek via attr(data-num) (FR-P02)",
+);
+check(!/thrift-corner\.html/.test(html), "link mati thrift-corner.html sudah dibuang");
+
 console.log(fail ? `\n✗ ${fail} gagal\n` : "\n✓ semua lulus\n");
 process.exit(fail ? 1 : 0);

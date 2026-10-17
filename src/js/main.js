@@ -197,14 +197,23 @@ function initCardPagination({
   const pageCount = Math.ceil(cards.length / perPage);
   let currentPage = 1;
 
+  // Nomor 01–06 per halaman (FR-P02), dipakai kartu proyek lewat ::before
+  const numberCards = (firstCard) =>
+    cards.forEach((card, index) => {
+      if (gridId === "projects-grid")
+        card.dataset.num = String(index - firstCard + 1).padStart(2, "0");
+    });
+
   if (pageCount <= 1) {
     pagination.hidden = true;
+    numberCards(0);
     return;
   }
 
   function renderPage(page) {
     currentPage = page;
     const firstCard = (currentPage - 1) * perPage;
+    numberCards(firstCard);
 
     cards.forEach((card, index) => {
       const isVisible = index >= firstCard && index < firstCard + perPage;

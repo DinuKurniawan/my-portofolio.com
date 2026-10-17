@@ -894,6 +894,142 @@ img[data-src].lazy-error {
   padding: 1rem 1.125rem;
 }
 
+/* ══ KARTU PROYEK (PRD §9.9) ══ */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.project-card:hover {
+  background: var(--color-surface-elevated);
+  border-color: var(--color-violet-a40);
+  box-shadow: var(--shadow-card-hover);
+}
+/* Nomor kartu 01–06, diisi JS lewat data-num (FR-P02) */
+.project-card::after {
+  content: attr(data-num);
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  z-index: 2;
+  font-family: var(--font-code);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+  opacity: 0.14;
+  pointer-events: none;
+}
+.project-card:hover::after {
+  opacity: 0.35;
+  color: var(--color-accent);
+}
+
+.project-thumb {
+  border-radius: 0.75rem;
+  height: 10rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.25rem;
+  background: var(--color-navy-950);
+}
+.project-thumb img {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.project-card:hover .project-thumb img {
+  transform: scale(1.06);
+}
+
+.project-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+.project-card:hover .project-title {
+  color: var(--color-accent);
+}
+.project-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-body);
+  margin-bottom: 1rem;
+}
+.project-desc-en {
+  color: var(--color-text-muted);
+}
+
+/* Tag teknologi di kartu proyek */
+.tag {
+  font-family: var(--font-code);
+  font-size: 0.6875rem;
+  color: var(--color-accent);
+  background: var(--color-violet-a12);
+  border: 1px solid var(--color-violet-a35);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-body);
+  transition: color 0.2s ease;
+}
+.project-link:hover {
+  color: var(--color-accent);
+}
+
+/* Pagination (proyek + sertifikat) — indikator ungu (FR-P04) */
+.pagination-button,
+.pagination-page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-btn);
+  color: var(--color-text-body);
+  background: rgb(255 255 255 / 0.04);
+  font-family: var(--font-code);
+  font-size: 0.8125rem;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.pagination-button:hover:not(:disabled),
+.pagination-page:hover {
+  color: var(--color-text);
+  background: var(--color-violet-a12);
+  border-color: var(--color-violet-a40);
+  transform: translateY(-2px);
+}
+.pagination-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+.pagination-page[aria-current="page"] {
+  color: var(--color-text);
+  background: var(--color-primary-btn);
+  border-color: var(--color-violet-a40);
+  box-shadow: 0 0 18px var(--color-violet-a35);
+}
+
 /* ══ KARTU SERTIFIKAT (PRD §9.8) ══ */
 .cert-year {
   font-family: var(--font-code);

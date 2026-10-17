@@ -281,7 +281,7 @@
       hoverSpeed: 20,
       scaleOnHover: true,
       fadeOut: true,
-      fadeOutColor: "#0a0a0f",
+      fadeOutColor: "#020816",
       ariaLabel: "Tech stack",
     });
   }

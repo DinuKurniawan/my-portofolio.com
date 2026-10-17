@@ -48,20 +48,27 @@ const mobileMenu = document.getElementById("mobile-menu");
 const iconMenu = document.getElementById("icon-menu");
 const iconClose = document.getElementById("icon-close");
 
+function setMobileMenu(open) {
+  mobileMenu.classList.toggle("hidden", !open);
+  mobileMenu.classList.toggle("flex", open);
+  iconMenu.classList.toggle("hidden", open);
+  iconClose.classList.toggle("hidden", !open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+}
+
 menuBtn.addEventListener("click", () => {
-  const isOpen = !mobileMenu.classList.contains("hidden");
-  mobileMenu.classList.toggle("hidden", isOpen);
-  mobileMenu.classList.toggle("flex", !isOpen);
-  iconMenu.classList.toggle("hidden", !isOpen);
-  iconClose.classList.toggle("hidden", isOpen);
+  setMobileMenu(mobileMenu.classList.contains("hidden"));
 });
 
 function closeMobileMenu() {
-  mobileMenu.classList.add("hidden");
-  mobileMenu.classList.remove("flex");
-  iconMenu.classList.remove("hidden");
-  iconClose.classList.add("hidden");
+  setMobileMenu(false);
 }
+
+// Esc menutup drawer (PRD §10 Aksesibilitas)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !mobileMenu.classList.contains("hidden"))
+    closeMobileMenu();
+});
 
 // ── Active nav link on scroll ─────────────────────────────────────────────
 const sections = document.querySelectorAll("section[id]");

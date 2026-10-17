@@ -49,26 +49,41 @@
       <div
         class="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex justify-between items-center"
       >
-        <a href="#home" class="logo-text text-lg font-bold">
-          <span class="text-indigo-400">&lt;</span>D<span
-            class="text-indigo-400"
+        <a
+          href="#home"
+          class="logo-text text-lg font-bold"
+          aria-label="Dinu Kurniawan Cahyadi — beranda"
+        >
+          <span class="text-accent">&lt;</span>D<span class="text-accent"
             >/&gt;</span
           >
         </a>
-        <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <nav
+          class="hidden md:flex gap-8 text-sm font-medium"
+          aria-label="Navigasi utama"
+        >
+          <a href="#home" class="nav-link">Home</a>
           <a href="#about" class="nav-link">About</a>
-          <a href="#education" class="nav-link">Education</a>
-          <a href="#experience" class="nav-link">Experience</a>
           <a href="#skills" class="nav-link">Skills</a>
-          <a href="#certificates" class="nav-link">Certificates</a>
           <a href="#projects" class="nav-link">Projects</a>
+          <a href="#certificates" class="nav-link">Certificates</a>
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
+        <!-- Hire Me → WhatsApp (PRD FR-N02, §17.7) -->
+        <a
+          href="https://wa.me/6281384634526"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary hidden md:inline-flex px-5 py-2.5 text-[0.8125rem]"
+          >Hire Me <span aria-hidden="true">↗</span></a
+        >
         <button
           type="button"
           id="menu-btn"
           class="md:hidden text-gray-400 hover:text-white transition-colors"
           aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <svg
             id="icon-menu"
@@ -102,19 +117,25 @@
       </div>
       <div
         id="mobile-menu"
-        class="hidden md:hidden border-t border-white/5 bg-[#0d0d1a]/95 backdrop-blur-xl px-6 py-6 flex-col gap-5 text-sm font-medium"
+        class="hidden md:hidden border-t border-white/5 bg-navy-950/95 backdrop-blur-xl px-6 py-6 flex-col gap-5 text-sm font-medium"
       >
+        <a
+          href="#home"
+          class="text-gray-400 hover:text-white transition-colors"
+          onclick="closeMobileMenu()"
+          >Home</a
+        >
         <a
           href="#about"
           class="text-gray-400 hover:text-white transition-colors"
           onclick="closeMobileMenu()"
-           >About</a
+          >About</a
         >
         <a
           href="#education"
           class="text-gray-400 hover:text-white transition-colors"
           onclick="closeMobileMenu()"
-           >Education</a
+          >Education</a
         >
         <a
           href="#experience"
@@ -126,8 +147,7 @@
           href="#skills"
           class="text-gray-400 hover:text-white transition-colors"
           onclick="closeMobileMenu()"
-          >Skills</a
-        >
+          >Skills</a>
         <a
           href="#certificates"
           class="text-gray-400 hover:text-white transition-colors"
@@ -146,6 +166,13 @@
           onclick="closeMobileMenu()"
           >Contact</a
         >
+        <a
+          href="https://wa.me/6281384634526"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary justify-center"
+          >Hire Me <span aria-hidden="true">↗</span></a
+        >
       </div>
     </header>
 
@@ -158,9 +185,8 @@
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
-        <div class="grid-pattern"></div>
+        <div class="hero-grid-pattern" aria-hidden="true"></div>
         <canvas id="particles-canvas" aria-hidden="true"></canvas>
-        <div class="aurora-bg" aria-hidden="true"></div>
 
         <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6">
           <div
@@ -168,17 +194,13 @@
           >
             <!-- Left: Text -->
             <div class="order-2 md:order-1">
-              <!-- Status badge -->
-              <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-8 reveal"
-              >
+              <!-- Badge: status + role (PRD FR-H01) -->
+              <div class="badge-section mb-7 reveal">
                 <span
-                  class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+                  class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
+                  aria-hidden="true"
                 ></span>
-                <span
-                  class="text-emerald-400 text-xs font-medium font-code tracking-wide"
-                  >Available for work</span
-                >
+                Full-Stack Web Developer
               </div>
 
               <h1
@@ -189,8 +211,12 @@
                 <span class="gradient-text">Cahyadi</span>
               </h1>
 
-              <div class="text-lg md:text-xl text-gray-400 mb-5 reveal">
-                <span id="typed-text" class="font-code text-indigo-300"></span
+              <p class="text-lg sm:text-xl text-gray-400 font-medium mb-3 reveal">
+                I build things for the web.
+              </p>
+
+              <div class="text-base sm:text-lg text-gray-400 mb-5 reveal">
+                <span id="typed-text" class="font-code text-accent"></span
                 ><span class="typed-cursor">|</span>
               </div>
 
@@ -244,37 +270,42 @@
                 >
               </div>
 
-              <!-- CTA -->
+              <!-- CTA (PRD FR-H05) -->
               <div class="flex flex-wrap gap-4 reveal">
                 <a href="#projects" class="btn-primary">
-                  View My Work <span class="ml-1">→</span>
+                  View My Work <span aria-hidden="true">→</span>
                 </a>
-                <a href="#contact" class="btn-outline">Get In Touch</a>
+                <a
+                  href="./public/cv/Curriculum%20Vitae.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener"
+                  class="btn-outline"
+                >
+                  Download CV <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+
+              <!-- Marquee teknologi (FR-H07, dipindah dari section Skills) -->
+              <div class="reveal mt-10">
+                <p class="tech-marquee-label mb-4">
+                  Technologies I work with
+                </p>
+                <!-- Height dipakai LogoLoop untuk menghitung jumlah salinan (JS) -->
+                <div class="tech-marquee h-[52px]">
+                  <div id="tech-logo-loop"></div>
+                </div>
               </div>
             </div>
 
-            <!-- Right: Photo -->
+            <!-- Right: Photo (FR-H08) + code card (FR-H09) -->
             <div
               class="order-1 md:order-2 flex justify-center md:justify-end reveal"
             >
-              <div
-                class="electric-border hero-photo-wrap"
-                data-electric-border
-                data-eb-color="#818cf8"
-                data-eb-speed="1"
-                data-eb-chaos="0.3"
-                data-eb-radius="24"
-                style="border-radius: 24px;"
-              >
-                <div class="eb-canvas-container">
-                  <canvas class="eb-canvas"></canvas>
-                </div>
-                <div class="eb-layers">
-                  <div class="eb-glow-1"></div>
-                  <div class="eb-glow-2"></div>
-                  <div class="eb-background-glow"></div>
-                </div>
-                <div class="eb-content hero-photo-inner">
+              <div class="hero-photo-wrap">
+                <div class="hero-photo-glow" aria-hidden="true"></div>
+                <div class="hero-photo-circle" aria-hidden="true"></div>
+                <div class="hero-photo-inner">
                   <img
                     src="./public/images/picture/pp.png"
                     alt="Dinu Kurniawan Cahyadi"
@@ -282,6 +313,43 @@
                     width="300"
                     height="390"
                   >
+                  <span class="hero-photo-status">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-emerald-400"
+                      aria-hidden="true"
+                    ></span>
+                    open to work
+                  </span>
+                </div>
+
+                <!-- Kartu code snippet (FR-H09) -->
+                <div class="code-card code-card-float hero-code-card">
+                  <div class="hero-code-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <p class="hero-code-line">
+                    <span class="tok-key">const</span>
+                    <span class="tok-prop"> developer</span> = {
+                  </p>
+                  <p class="hero-code-line">
+                    &nbsp;&nbsp;<span class="tok-prop">name</span>:
+                    <span class="tok-str">"Dinu Kurniawan"</span>,
+                  </p>
+                  <p class="hero-code-line">
+                    &nbsp;&nbsp;<span class="tok-prop">role</span>:
+                    <span class="tok-str">"Full-Stack Dev"</span>,
+                  </p>
+                  <p class="hero-code-line">
+                    &nbsp;&nbsp;<span class="tok-prop">stack</span>: [<span
+                      class="tok-str"
+                      >"React"</span
+                    >, <span class="tok-str">"Node"</span>],
+                  </p>
+                  <p class="hero-code-line">
+                    &nbsp;&nbsp;<span class="tok-prop">passion</span>:
+                    <span class="tok-str">"clean code"</span>,
+                  </p>
+                  <p class="hero-code-line">};</p>
                 </div>
               </div>
             </div>
@@ -587,9 +655,8 @@
             <p class="font-code text-indigo-400 text-sm mb-2">04. skills</p>
             <h2 class="text-3xl md:text-4xl font-bold mb-16">Tech Stack</h2>
           </div>
-          <div class="reveal relative overflow-hidden flex items-center" style="height: 140px;">
-            <div id="tech-logo-loop"></div>
-          </div>
+          <!-- Marquee logo dipindah ke hero (FR-H07/FR-S05); skill bar menyusul di F4 -->
+
         </div>
         <div class="stripe-divider bottom-0"></div>
       </section>
@@ -2133,7 +2200,6 @@
     </div>
 
     <script src="./src/js/logo-loop.js" defer></script>
-    <script src="./src/js/electric-border.js" defer></script>
     <script src="./src/js/main.js" defer></script>
   </body>
 </html>

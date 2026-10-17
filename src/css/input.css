@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./logo-loop.css";
-@import "./electric-border.css";
+/* electric-border.css dipensiunkan (PRD §11.3) — foto hero kini pakai
+   lingkaran ungu + glow + kartu kode. File dibiarkan sebagai arsip. */
 
 /* ══ DESIGN TOKENS (PRD §7.2–7.4) ══════════════════════════════════════════
    Tiga lapisan: primitive → semantic → component.
@@ -347,17 +348,17 @@ body {
 .gradient-text {
   background: linear-gradient(
     130deg,
-    #818cf8 0%,
-    #c084fc 40%,
-    #67e8f9 80%,
-    #818cf8 100%
+    var(--color-violet-400) 0%,
+    var(--color-violet-300) 35%,
+    var(--color-primary) 70%,
+    var(--color-violet-400) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradientTextShift 4s linear infinite;
-  filter: drop-shadow(0 0 18px rgba(129, 140, 248, 0.35));
+  filter: drop-shadow(0 0 18px rgb(109 99 248 / 0.4));
 }
 @keyframes gradientTextShift {
   0% {
@@ -375,10 +376,11 @@ body {
   filter: blur(100px);
   pointer-events: none;
 }
+/* Palet orb diselaraskan ke ungu & intensitas diturunkan (PRD §13, FR-H11) */
 .orb-1 {
   width: 650px;
   height: 650px;
-  background: rgba(79, 70, 229, 0.14);
+  background: rgb(109 99 248 / 0.1);
   top: -120px;
   left: 50%;
   animation: floatCenter 9s ease-in-out infinite;
@@ -386,7 +388,7 @@ body {
 .orb-2 {
   width: 380px;
   height: 380px;
-  background: rgba(168, 85, 247, 0.11);
+  background: rgb(124 108 249 / 0.08);
   bottom: 8%;
   right: 4%;
   animation: float 11s ease-in-out infinite reverse;
@@ -394,7 +396,7 @@ body {
 .orb-3 {
   width: 260px;
   height: 260px;
-  background: rgba(34, 211, 238, 0.08);
+  background: rgb(167 139 250 / 0.06);
   top: 25%;
   left: 3%;
   animation: float 13s ease-in-out infinite;
@@ -442,7 +444,7 @@ body {
 /* ── Navbar ────────────────────────────────────────────────────────────── */
 .nav-link {
   position: relative;
-  color: #9ca3af;
+  color: var(--color-text-body);
   transition: color 0.3s;
 }
 .nav-link::after {
@@ -452,36 +454,41 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: #6366f1;
+  background: var(--color-primary);
   transition: width 0.3s;
 }
 .nav-link:hover {
-  color: #fff;
+  color: var(--color-text);
 }
 .nav-link:hover::after {
   width: 100%;
 }
 .nav-link.active {
-  color: #a5b4fc;
+  color: var(--color-accent);
 }
 .nav-link.active::after {
   width: 100%;
 }
 
 #navbar.scrolled {
-  background: rgba(10, 10, 15, 0.8);
+  background: rgb(2 8 22 / 0.82);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* ── Scroll Indicator ──────────────────────────────────────────────────── */
 .scroll-line {
   width: 1px;
   height: 56px;
-  background: linear-gradient(to bottom, #818cf8, #c084fc, transparent);
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-violet-400),
+    transparent
+  );
   animation: scrollDrop 2s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+  box-shadow: 0 0 8px var(--color-violet-a40);
 }
 @keyframes scrollDrop {
   0% {
@@ -497,7 +504,7 @@ body {
 /* ── Typed Cursor ──────────────────────────────────────────────────────── */
 .typed-cursor {
   display: inline-block;
-  color: #6366f1;
+  color: var(--color-primary);
   font-weight: 300;
   animation: blink 1s step-end infinite;
 }
@@ -511,47 +518,50 @@ body {
   }
 }
 
-/* ── Buttons ───────────────────────────────────────────────────────────── */
+/* ── Buttons (PRD §7.4) ────────────────────────────────────────────────── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #4f46e5;
-  color: #fff;
+  gap: 0.5rem;
+  background: var(--color-primary-btn);
+  color: var(--color-primary-fg);
   padding: 0.875rem 2rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 0.9rem;
+  box-shadow: var(--shadow-primary);
   transition:
     background 0.3s,
     transform 0.3s,
     box-shadow 0.3s;
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow:
-    0 20px 50px rgba(99, 102, 241, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 0 40px rgba(139, 92, 246, 0.3);
+  background: var(--color-primary-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-hover);
 }
 .btn-outline {
-  display: inline-block;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #d1d5db;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
   padding: 0.875rem 2rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-btn);
   font-weight: 600;
   font-size: 0.9rem;
   transition:
     border-color 0.3s,
-    color 0.3s,
+    background 0.3s,
     transform 0.3s;
   backdrop-filter: blur(6px);
 }
 .btn-outline:hover {
-  border-color: rgba(99, 102, 241, 0.6);
-  color: #fff;
+  background: rgb(255 255 255 / 0.05);
+  border-color: var(--color-line-strong);
   transform: translateY(-2px);
 }
 
@@ -744,16 +754,16 @@ body {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  color: #6b7280;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
   transition: all 0.3s;
 }
 .social-link:hover {
-  color: #fff;
-  border-color: #818cf8;
-  background: rgba(99, 102, 241, 0.2);
+  color: var(--color-text);
+  border-color: var(--color-violet-a40);
+  background: var(--color-violet-a12);
   transform: translateY(-3px);
-  box-shadow: 0 0 22px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 22px var(--color-violet-a35);
 }
 
 /* ── Lazy Image Loading ─────────────────────────────────────────────────── */
@@ -1473,78 +1483,14 @@ img[data-src].lazy-error {
   left: 0;
   height: 2px;
   width: 0%;
-  background: linear-gradient(90deg, #4f46e5 0%, #c084fc 50%, #67e8f9 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-violet-400) 100%
+  );
   z-index: 9999;
   transition: width 0.08s linear;
-  box-shadow:
-    0 0 10px rgba(99, 102, 241, 0.7),
-    0 0 20px rgba(192, 132, 252, 0.4);
-}
-
-/* ── Hero Photo Wrap ────────────────────────────────────────────────────── */
-.hero-photo-wrap {
-  position: relative;
-  z-index: 1;
-  transform-origin: top center;
-  cursor: pointer;
-}
-
-.swinging {
-  animation: swing 2s ease-in-out;
-}
-
-@keyframes swing {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(15deg); }
-  40% { transform: rotate(-10deg); }
-  60% { transform: rotate(5deg); }
-  80% { transform: rotate(-2deg); }
-  100% { transform: rotate(0deg); }
-}
-
-/* Glow blob behind photo */
-.hero-photo-glow {
-  position: absolute;
-  inset: -40px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(99, 102, 241, 0.35) 0%,
-    rgba(168, 85, 247, 0.2) 50%,
-    transparent 75%
-  );
-  border-radius: 50%;
-  filter: blur(24px);
-  z-index: 0;
-  animation: glowPulse 3.5s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%,
-  100% {
-    opacity: 0.65;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-}
-
-/* Animated gradient border ring */
-.hero-photo-ring {
-  position: relative;
-  z-index: 1;
-  padding: 4px;
-  border-radius: 28px;
-  background: linear-gradient(
-    135deg,
-    #4f46e5 0%,
-    #c084fc 33%,
-    #67e8f9 66%,
-    #4f46e5 100%
-  );
-  background-size: 300% 300%;
-  animation: gradientFlow 4s ease infinite;
+  box-shadow: 0 0 10px var(--color-violet-a40);
 }
 
 @keyframes gradientFlow {
@@ -1559,17 +1505,101 @@ img[data-src].lazy-error {
   }
 }
 
-/* Photo container */
-.hero-photo-inner {
-  width: 270px;
-  height: 350px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    rgba(99, 102, 241, 0.15),
-    rgba(168, 85, 247, 0.15)
+/* ── Hero Photo (PRD FR-H08) ────────────────────────────────────────────────
+   Menggantikan electric border: lingkaran ungu + radial glow di belakang foto,
+   ring tipis, dan badge status online. `.hero-photo-wrap` dipertahankan karena
+   dipakai main.js untuk animasi swing (easter egg klik). */
+.hero-photo-wrap {
+  position: relative;
+  z-index: 1;
+  transform-origin: top center;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.swinging {
+  animation: swing 2s ease-in-out;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Glow radial ungu di belakang foto */
+.hero-photo-glow {
+  position: absolute;
+  inset: -18%;
+  z-index: -2;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgb(109 99 248 / 0.45) 0%,
+    rgb(124 108 249 / 0.22) 45%,
+    transparent 72%
   );
+  filter: blur(28px);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Lingkaran ungu (cincin tebal transparan) di belakang foto */
+.hero-photo-circle {
+  position: absolute;
+  inset: -8%;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 45%,
+    var(--color-violet-a12) 0%,
+    transparent 68%
+  );
+  border: 1px solid var(--color-violet-a35);
+  box-shadow:
+    inset 0 0 60px rgb(109 99 248 / 0.15),
+    0 0 90px rgb(109 99 248 / 0.18);
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+/* Foto: rasio potret, ring tipis */
+.hero-photo-inner {
+  position: relative;
+  z-index: 1;
+  width: 270px;
+  aspect-ratio: 300 / 390;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-surface);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1578,7 +1608,72 @@ img[data-src].lazy-error {
 @media (min-width: 480px) {
   .hero-photo-inner {
     width: 300px;
-    height: 390px;
+  }
+}
+
+/* Badge kecil status online di sudut foto */
+.hero-photo-status {
+  position: absolute;
+  z-index: 2;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: rgb(2 8 22 / 0.85);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+  color: var(--color-success);
+  font-family: var(--font-code);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Kartu kode melayang di kanan-bawah foto (PRD FR-H09) */
+.hero-code-card {
+  position: absolute;
+  z-index: 3;
+  right: -0.5rem;
+  bottom: -1.5rem;
+  width: min(19rem, 88vw);
+  padding: 0.9rem 1rem;
+  color: var(--color-text-body);
+}
+.hero-code-dots {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-code-dots span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-line-strong);
+}
+.hero-code-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Syntax highlight ungu */
+.tok-key {
+  color: var(--color-violet-400);
+}
+.tok-str {
+  color: var(--color-success);
+}
+.tok-prop {
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .hero-code-card {
+    right: -2.5rem;
+    bottom: -2rem;
   }
 }
 
@@ -1810,12 +1905,50 @@ img[data-src].lazy-error {
   );
 }
 
-/* ── Hero badge refined ─────────────────────────────────────────────────── */
-.hero-badge {
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(255, 255, 255, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+/* ── Hero: marquee teknologi (PRD FR-H07, dipindah dari section Skills) ──── */
+.tech-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+.tech-marquee-label {
+  font-family: var(--font-code);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ── Hero: grid pattern + glow, intensitas diturunkan (PRD FR-H11) ──────── */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000, transparent 75%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 40%,
+    #000,
+    transparent 75%
+  );
+  opacity: 0.55;
 }
 
 /* ── Contact info icon glow ─────────────────────────────────────────────── */
@@ -1827,14 +1960,14 @@ img[data-src].lazy-error {
     box-shadow 0.3s;
 }
 
-/* ── Nav-link neon active ───────────────────────────────────────────────── */
+/* ── Nav-link active glow (PRD §7.4: aktif = --accent + indikator) ──────── */
 .nav-link.active {
-  color: #a5b4fc;
-  text-shadow: 0 0 12px rgba(165, 180, 252, 0.5);
+  color: var(--color-accent);
+  text-shadow: 0 0 12px rgb(167 139 250 / 0.5);
 }
 .nav-link.active::after {
-  background: linear-gradient(90deg, #818cf8, #c084fc);
-  box-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-violet-a40);
 }
 
 /* ── Certificate Card ──────────────────────────────────────────────────── */

@@ -55,7 +55,7 @@ for (const t of required) check(t in tok, `${t} = ${tok[t] ?? "HILANG"}`);
 console.log("\n[2] Komponen wajib ada (PRD §7.4)");
 for (const cls of [
   "badge-section", "icon-chip", ".card", "progress-track", "progress-fill",
-  "code-card", "violet-glow", "photo-ring",
+  "code-card", "violet-glow", "hero-photo-circle",
 ])
   check(new RegExp(`\\.${cls.replace(".", "")}\\b`).test(css), `.${cls.replace(".", "")}`);
 

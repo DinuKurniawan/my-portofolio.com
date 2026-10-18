@@ -15,14 +15,15 @@ Personal portfolio website showcasing projects, skills, certificates, and contac
 
 ## Features
 
-- **Hero** — typing animation, particle canvas, floating tech badges, electric border photo effect
-- **About** — profile card with stats, bio, info grid
-- **Education & Experience** — timeline layout
-- **Skills** — categorized tech stack badges, infinite tech logo loop
-- **Certificates** — card carousel with lightbox modal
-- **Projects** — paginated gallery (6 per page), 3D tilt on hover
-- **Contact** — validated form with Resend email delivery, resend with countdown
-- **Extras** — custom cursor, scroll progress bar, reveal-on-scroll animations, noise overlay, WhatsApp floating button, interactive 3D Lanyard widget
+- **Design system** — dark navy + ungu; token terpusat (Tailwind v4 `@theme`), komponen badge/kartu/tombol/chip
+- **Hero** — badge status, typed roles, particle canvas, foto dengan glow ungu + kartu kode melayang, marquee teknologi, tombol Download CV
+- **About** — 4 kartu statistik (1+ / 10+ / 15+ / 3), bio dengan highlight teknologi
+- **Education & Experience** — timeline dengan node bercincin & kartu
+- **Skills** — 9 progress bar yang dianimasikan saat masuk viewport
+- **Certificates** — grid kartu dengan carousel + lightbox modal (keyboard: Esc/arrow)
+- **Projects** — kartu bernomor (01–06 per halaman), pagination 6/halaman, 3D tilt halus
+- **Contact** — form tervalidasi dengan Resend, countdown resend, kartu info & Follow Me
+- **Extras** — custom cursor, scroll progress bar, reveal-on-scroll, noise overlay, WhatsApp floating button, `prefers-reduced-motion`
 
 ## Project Structure
 
@@ -35,14 +36,14 @@ Personal portfolio website showcasing projects, skills, certificates, and contac
 │   └── lanyard/            # Built Lanyard widget
 ├── src/
 │   ├── css/
-│   │   ├── input.css        # Tailwind entry + custom styles
-│   │   ├── electric-border.css
+│   │   ├── input.css        # Tailwind entry: token (@theme) + komponen + section styles
+│   │   ├── electric-border.css  # arsip (tidak dipakai lagi, PRD §11.3)
 │   │   ├── logo-loop.css
 │   │   └── output.css       # Compiled Tailwind output
 │   ├── images/              # Profile, project, certificate images
 │   └── js/
 │       ├── main.js          # All client-side interactivity
-│       ├── electric-border.js
+│       ├── electric-border.js   # arsip (tidak dipakai lagi, PRD §11.3)
 │       └── logo-loop.js
 ├── index.html               # Single-page portfolio
 ├── server.js                # Express server (local dev)
@@ -88,6 +89,9 @@ npm run build
 
 # Watch mode (auto-rebuild on changes)
 npm run watch
+
+# Run static checks (HTML/token/kontras/wiring/smoke JS)
+npm run verify
 
 # Start local server
 npm start

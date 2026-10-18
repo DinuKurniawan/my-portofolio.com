@@ -444,7 +444,7 @@ if (contactForm) {
     ringFill.style.strokeDashoffset = offset;
     const rem = TOTAL - elapsed;
     countdownNum.textContent = rem;
-    setLabel(`Resend in <b style="color:#818cf8">${rem}</b>s`);
+    setLabel(`Resend in <b style="color:#a78bfa">${rem}</b>s`);
   }
 
   function startCountdown() {
@@ -541,7 +541,7 @@ if (contactForm) {
   function createParticles() {
     particles = [];
     const count = Math.floor((canvas.width * canvas.height) / 14000);
-    const colors = ["#818cf8", "#c084fc", "#67e8f9", "#a5b4fc"];
+    const colors = ["#a78bfa", "#c084fc", "#67e8f9", "#c4b5fd"];
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * canvas.width,

@@ -1041,9 +1041,8 @@ a.contact-info-value:hover {
   color: var(--color-text);
 }
 .skill-name svg {
-  width: 1rem;
-  height: 1rem;
-  color: var(--color-accent);
+  width: 1.125rem;
+  height: 1.125rem;
   flex-shrink: 0;
 }
 .skill-value {

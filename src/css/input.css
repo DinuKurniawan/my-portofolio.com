@@ -1530,6 +1530,14 @@ a.contact-info-value:hover {
   isolation: isolate;
 }
 
+/* Di layout 1 kolom, kartu kode (absolute, tepat di bawah foto) butuh ruang
+   agar tidak menimpa heading di bawahnya */
+@media (max-width: 767px) {
+  .hero-photo-wrap {
+    margin-bottom: 9.5rem;
+  }
+}
+
 .swinging {
   animation: swing 2s ease-in-out;
 }
@@ -1558,7 +1566,7 @@ a.contact-info-value:hover {
 /* Glow radial ungu di belakang foto */
 .hero-photo-glow {
   position: absolute;
-  inset: -18%;
+  inset: -4% -18%;
   z-index: -2;
   border-radius: 50%;
   pointer-events: none;
@@ -1572,17 +1580,18 @@ a.contact-info-value:hover {
   animation: glowPulse 4s ease-in-out infinite;
 }
 
-/* Lingkaran ungu (cincin tebal transparan) di belakang foto */
+/* Lingkaran ungu (disc + cincin tipis) di belakang foto */
 .hero-photo-circle {
   position: absolute;
-  inset: -8%;
+  inset: 5% -15%;
   z-index: -1;
   border-radius: 50%;
   pointer-events: none;
   background: radial-gradient(
     circle at 50% 45%,
-    var(--color-violet-a12) 0%,
-    transparent 68%
+    rgb(109 99 248 / 0.34) 0%,
+    rgb(109 99 248 / 0.15) 55%,
+    transparent 74%
   );
   border: 1px solid var(--color-violet-a35);
   box-shadow:
@@ -1602,20 +1611,18 @@ a.contact-info-value:hover {
   }
 }
 
-/* Foto: rasio potret, ring tipis */
+/* Foto cutout: subjek berdiri menonjol di depan lingkaran ungu (ala template) */
 .hero-photo-inner {
   position: relative;
   z-index: 1;
   width: 270px;
-  aspect-ratio: 300 / 390;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  border: 1px solid var(--color-line-strong);
-  background: var(--color-surface);
-  box-shadow: 0 24px 60px rgb(0 0 0 / 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 640 / 952;
+}
+
+/* Ujung bawah foto dibuat fade halus agar potongan bust tidak terlihat kaku */
+.hero-photo-inner img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
 }
 
 @media (min-width: 480px) {
@@ -1646,26 +1653,56 @@ a.contact-info-value:hover {
   white-space: nowrap;
 }
 
-/* Kartu kode melayang di kanan-bawah foto (PRD FR-H09) */
+/* Ornamen titik-titik (ala template) di sekitar foto */
+.hero-dots {
+  position: absolute;
+  z-index: 0;
+  width: 6.5rem;
+  height: 4.25rem;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgb(167 139 250 / 0.45) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 0.9rem 0.9rem;
+}
+.hero-dots--tr {
+  top: -18%;
+  right: -16%;
+}
+.hero-dots--bl {
+  bottom: -6%;
+  left: -18%;
+}
+
+/* Kartu kode melayang TEPAT di bawah foto (default); di layar lebar ≥1440px
+   pindah ke kanan-atas ala template — area di kanan kepala transparan
+   sehingga wajah tidak tertutup. */
 .hero-code-card {
   position: absolute;
   z-index: 3;
-  right: -0.5rem;
-  bottom: -1.5rem;
+  right: -1rem;
+  bottom: -10.5rem;
   width: min(19rem, 88vw);
   padding: 0.9rem 1rem;
   color: var(--color-text-body);
 }
-.hero-code-dots {
+.hero-code-head {
   display: flex;
-  gap: 0.3rem;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
 }
-.hero-code-dots span {
+.hero-code-title {
+  color: var(--color-text-muted);
+}
+.hero-code-dot {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: var(--color-line-strong);
+  background: var(--color-success);
+  box-shadow: 0 0 8px rgb(52 211 153 / 0.7);
 }
 .hero-code-line {
   white-space: nowrap;
@@ -1683,10 +1720,13 @@ a.contact-info-value:hover {
   color: var(--color-text);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   .hero-code-card {
-    right: -2.5rem;
-    bottom: -2rem;
+    right: -8.25rem;
+    top: 1.25rem;
+    bottom: auto;
+    width: min(14rem, 88vw);
+    font-size: 0.72rem;
   }
 }
 

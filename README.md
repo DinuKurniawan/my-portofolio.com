@@ -16,7 +16,7 @@ Personal portfolio website showcasing projects, skills, certificates, and contac
 ## Features
 
 - **Design system** — dark navy + ungu; token terpusat (Tailwind v4 `@theme`), komponen badge/kartu/tombol/chip
-- **Hero** — badge status, typed roles, particle canvas, foto dengan glow ungu + kartu kode melayang, marquee teknologi, tombol Download CV
+- **Hero** — badge status, typed roles, particle canvas, foto cutout berdiri di depan lingkaran ungu + kartu kode melayang dengan header `// Code` (kanan-atas di layar lebar), ornamen titik-titik, marquee teknologi, tombol Download CV
 - **About** — 4 kartu statistik (1+ / 10+ / 15+ / 3), bio dengan highlight teknologi
 - **Education & Experience** — timeline dengan node bercincin & kartu
 - **Skills** — 9 progress bar yang dianimasikan saat masuk viewport

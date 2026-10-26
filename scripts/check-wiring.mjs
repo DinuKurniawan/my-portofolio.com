@@ -121,8 +121,8 @@ check(/href="#education"[\s\S]{0,80}?Learn More About Me/.test(html), "CTA About
 
 // F5: kartu proyek bernomor + tidak ada link mati ke halaman yang sudah dihapus
 check(
-  (html.match(/class="project-card reveal group"/g) || []).length === 11,
-  `11 kartu proyek (FR-P06): ${(html.match(/class="project-card reveal group"/g) || []).length}`,
+  (html.match(/class="project-card reveal group"/g) || []).length === 12,
+  `12 kartu proyek (FR-P06): ${(html.match(/class="project-card reveal group"/g) || []).length}`,
 );
 check(
   /\.project-card::after[\s\S]{0,200}?attr\(data-num\)/.test(readFileSync(new URL("src/css/input.css", root), "utf8")),

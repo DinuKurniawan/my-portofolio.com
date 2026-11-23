@@ -3,6 +3,23 @@
 /* electric-border.css dipensiunkan (PRD §11.3) — foto hero kini pakai
    lingkaran ungu + glow + kartu kode. File dibiarkan sebagai arsip. */
 
+/* Font lokal: subset latin, variable weight. Tidak di-preload supaya foto
+   hero (LCP) mendapat bandwidth lebih dulu; font swap setelah CSS siap. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../../public/fonts/inter-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../../public/fonts/fira-code-latin.woff2") format("woff2");
+}
+
 /* ══ DESIGN TOKENS (PRD §7.2–7.4) ══════════════════════════════════════════
    Tiga lapisan: primitive → semantic → component.
    Aturan: TIDAK ada nilai hex baru di luar blok ini (PRD §3.1 G2).

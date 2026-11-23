@@ -23,6 +23,10 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({ success: true, id });
   } catch (err) {
+    if (err instanceof SyntaxError) {
+      return res.status(400).json({ error: "Invalid JSON body." });
+    }
+
     if (err instanceof ContactValidationError) {
       return res.status(400).json({ error: err.message });
     }

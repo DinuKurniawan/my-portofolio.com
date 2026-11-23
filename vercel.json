@@ -8,9 +8,10 @@
     }
   },
   "routes": [
+    { "src": "^/$", "dest": "/index.html" },
     { "src": "^/src/(images|css|js)/([A-Za-z0-9._-]+)$", "dest": "/src/$1/$2" },
     { "src": "^/public/(.*)$", "dest": "/public/$1" },
-    { "src": "^\\.well-known/ard\\.json$", "dest": "/.well-known/ard.json" },
+    { "src": "^/\\.well-known/ard\\.json$", "dest": "/.well-known/ard.json" },
     {
       "src": "^/(index\\.html|robots\\.txt|sitemap\\.xml|llms\\.txt)$",
       "dest": "/$1"

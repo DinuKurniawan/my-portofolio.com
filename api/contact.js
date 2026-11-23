@@ -18,8 +18,15 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
+  let body;
   try {
-    const { id } = await sendContactEmail(req.body);
+    body = req.body;
+  } catch {
+    return res.status(400).json({ error: "Invalid JSON body." });
+  }
+
+  try {
+    const { id } = await sendContactEmail(body);
 
     return res.status(200).json({ success: true, id });
   } catch (err) {

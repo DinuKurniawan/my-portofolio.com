@@ -1890,11 +1890,14 @@ a.contact-info-value:hover {
   visibility: hidden;
   transition:
     opacity 0.35s ease,
-    visibility 0.35s ease;
+    visibility 0s linear 0.35s;
 }
 .cert-modal.active {
   opacity: 1;
   visibility: visible;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s;
 }
 .cert-modal-close {
   position: absolute;

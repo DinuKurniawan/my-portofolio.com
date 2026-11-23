@@ -680,7 +680,16 @@ function slideCert(btn, dir) {
 
 // ── Certificate Lightbox ──────────────────────────────────────────────────────
 let certModalImages = [];
+let certModalAlts = [];
 let certModalIndex = 0;
+let certModalTrigger = null;
+
+// Give every open button a name that includes its certificate.
+document.querySelectorAll(".cert-card").forEach((card) => {
+  const title = card.querySelector(".cert-title")?.textContent.trim();
+  const btn = card.querySelector(".cert-overlay button");
+  if (btn && title) btn.setAttribute("aria-label", `Lihat sertifikat: ${title}`);
+});
 
 function openCertModal(card) {
   const modal = document.getElementById("cert-modal");
@@ -688,6 +697,8 @@ function openCertModal(card) {
   const prevBtn = document.getElementById("cert-modal-prev");
   const nextBtn = document.getElementById("cert-modal-next");
   const dotsWrap = document.getElementById("cert-modal-dots");
+  const slides = Array.from(card.querySelectorAll(".cert-slide"));
+  const fallbackAlt = slides[0]?.alt || "Certificate";
 
   // Check if card has multiple images
   const imagesAttr = card.getAttribute("data-cert-images");
@@ -700,9 +711,11 @@ function openCertModal(card) {
 
   if (!certModalImages.length) return;
   certModalIndex = 0;
+  certModalAlts = certModalImages.map((_, i) => slides[i]?.alt || fallbackAlt);
+  certModalTrigger = document.activeElement;
 
   modalImg.src = certModalImages[0];
-  modalImg.alt = card.querySelector(".cert-thumb img")?.alt || "Certificate";
+  modalImg.alt = certModalAlts[0];
 
   // Show/hide nav for multi-image
   if (certModalImages.length > 1) {
@@ -715,7 +728,7 @@ function openCertModal(card) {
     dotsWrap.innerHTML = certModalImages
       .map(
         (_, i) =>
-          `<span class="w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${i === 0 ? "bg-white" : "bg-white/40"}" onclick="event.stopPropagation(); goModalCert(${i})"></span>`,
+          `<button type="button" aria-label="Sertifikat ${i + 1}" class="w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${i === 0 ? "bg-white" : "bg-white/40"}" onclick="event.stopPropagation(); goModalCert(${i})"></button>`,
       )
       .join("");
   } else {
@@ -727,8 +740,10 @@ function openCertModal(card) {
     dotsWrap.classList.remove("flex");
   }
 
+  modal.setAttribute("aria-hidden", "false");
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
+  modal.querySelector(".cert-modal-close")?.focus();
 }
 
 function slideModalCert(dir) {
@@ -747,7 +762,8 @@ function updateModalCert() {
   const modalImg = document.getElementById("cert-modal-img");
   const dotsWrap = document.getElementById("cert-modal-dots");
   modalImg.src = certModalImages[certModalIndex];
-  dotsWrap.querySelectorAll("span").forEach((dot, i) => {
+  modalImg.alt = certModalAlts[certModalIndex] || "Certificate";
+  dotsWrap.querySelectorAll("button").forEach((dot, i) => {
     dot.classList.toggle("bg-white", i === certModalIndex);
     dot.classList.toggle("bg-white/40", i !== certModalIndex);
   });
@@ -757,7 +773,10 @@ function closeCertModal(e, force) {
   if (force || e.target === document.getElementById("cert-modal")) {
     const modal = document.getElementById("cert-modal");
     modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    certModalTrigger?.focus?.();
+    certModalTrigger = null;
   }
 }
 
@@ -765,11 +784,24 @@ document.addEventListener("keydown", (e) => {
   const modal = document.getElementById("cert-modal");
   if (!modal || !modal.classList.contains("active")) return;
   if (e.key === "Escape") {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
+    closeCertModal(null, true);
   } else if (e.key === "ArrowLeft") {
     slideModalCert(-1);
   } else if (e.key === "ArrowRight") {
     slideModalCert(1);
+  } else if (e.key === "Tab") {
+    const focusable = Array.from(
+      modal.querySelectorAll("button, [href], [tabindex]:not([tabindex='-1'])"),
+    ).filter((el) => el.offsetParent !== null);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 });

@@ -955,7 +955,7 @@
                 <!-- Carousel nav arrows -->
                 <button
                   type="button"
-                  class="cert-carousel-btn absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/70 transition-all opacity-0 group-hover:opacity-100"
+                  class="cert-carousel-btn absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/70 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
                   onclick="
                     event.stopPropagation();
                     slideCert(this, -1);
@@ -978,7 +978,7 @@
                 </button>
                 <button
                   type="button"
-                  class="cert-carousel-btn absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/70 transition-all opacity-0 group-hover:opacity-100"
+                  class="cert-carousel-btn absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/70 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
                   onclick="
                     event.stopPropagation();
                     slideCert(this, 1);
@@ -1011,16 +1011,22 @@
                   ></span>
                 </div>
                 <div
-                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"
                 >
-                  <span
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium"
+                  <button
+                    type="button"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium pointer-events-auto"
+                    onclick="
+                      event.stopPropagation();
+                      openCertModal(this.closest('.cert-card'));
+                    "
                   >
                     <svg
                       class="w-4 h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         stroke-linecap="round"
@@ -1030,7 +1036,7 @@
                       />
                     </svg>
                     Lihat Sertifikat
-                  </span>
+                  </button>
                 </div>
               </div>
               <div class="p-5">
@@ -1078,16 +1084,22 @@
                   >
                 </div>
                 <div
-                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"
                 >
-                  <span
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium"
+                  <button
+                    type="button"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium pointer-events-auto"
+                    onclick="
+                      event.stopPropagation();
+                      openCertModal(this.closest('.cert-card'));
+                    "
                   >
                     <svg
                       class="w-4 h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         stroke-linecap="round"
@@ -1097,7 +1109,7 @@
                       />
                     </svg>
                     Lihat Sertifikat
-                  </span>
+                  </button>
                 </div>
               </div>
               <div class="p-5">
@@ -1140,16 +1152,22 @@
                   >
                 </div>
                 <div
-                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  class="cert-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"
                 >
-                  <span
-                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium"
+                  <button
+                    type="button"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium pointer-events-auto"
+                    onclick="
+                      event.stopPropagation();
+                      openCertModal(this.closest('.cert-card'));
+                    "
                   >
                     <svg
                       class="w-4 h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         stroke-linecap="round"
@@ -1159,7 +1177,7 @@
                       />
                     </svg>
                     Lihat Sertifikat
-                  </span>
+                  </button>
                 </div>
               </div>
               <div class="p-5">
@@ -2477,7 +2495,15 @@
     </a>
 
     <!-- Certificate Modal / Lightbox -->
-    <div id="cert-modal" class="cert-modal" onclick="closeCertModal(event)">
+    <div
+      id="cert-modal"
+      class="cert-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Certificate preview"
+      aria-hidden="true"
+      onclick="closeCertModal(event)"
+    >
       <button
         type="button"
         class="cert-modal-close"

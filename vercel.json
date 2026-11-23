@@ -1,5 +1,7 @@
 {
-  "outputDirectory": ".",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build:static",
+  "outputDirectory": "dist",
   "functions": {
     "api/contact.js": {
       "maxDuration": 10

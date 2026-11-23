@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>404 — Page Not Found</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #020816;
+        --surface: #0c1325;
+        --text: #f6f7f9;
+        --muted: #9aa3b2;
+        --violet: #6d63f8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at 20% 10%, #6d63f82e, transparent 35%),
+          radial-gradient(circle at 85% 80%, #a78bfa1f, transparent 30%),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      .brand {
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        color: var(--text);
+        font-family: ui-monospace, monospace;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      main {
+        max-width: 560px;
+        text-align: center;
+      }
+      .code {
+        margin: 0;
+        color: var(--violet);
+        font-family: ui-monospace, monospace;
+        font-size: clamp(5rem, 18vw, 9rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+      h1 {
+        margin: 12px 0;
+        font-size: clamp(1.6rem, 5vw, 2.4rem);
+      }
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1px solid #ffffff26;
+        border-radius: 999px;
+        background: var(--violet);
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+      a.button:hover {
+        background: #7c6cf9;
+        transform: translateY(-2px);
+      }
+      :focus-visible {
+        outline: 3px solid #a78bfa;
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="brand" href="/" aria-label="Dinu Kurniawan Cahyadi, home"
+      >&lt;D/&gt;</a
+    >
+    <main>
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Page not found</h1>
+      <p>The page you requested doesn't exist or has moved.</p>
+      <a class="button" href="/">Back to home</a>
+    </main>
+  </body>
+</html>

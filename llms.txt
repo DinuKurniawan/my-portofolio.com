@@ -1,0 +1,23 @@
+# Dinu Kurniawan Cahyadi — Portfolio
+
+> Personal portfolio of Dinu Kurniawan Cahyadi, a Full-Stack Web Developer based in Indonesia. Specializes in React, Next.js, Laravel, and Node.js.
+
+## Pages
+
+- [Home](https://myportofolio.codeunchs.my.id/): Hero, current role, and contact links.
+- [About](https://myportofolio.codeunchs.my.id/#about): Bio, experience stats, location, and availability.
+- [Education](https://myportofolio.codeunchs.my.id/#education): Formal education timeline.
+- [Experience](https://myportofolio.codeunchs.my.id/#experience): Work history.
+- [Skills](https://myportofolio.codeunchs.my.id/#skills): Technologies and proficiency levels.
+- [Certificates](https://myportofolio.codeunchs.my.id/#certificates): BNSP and Dicoding credentials.
+- [Projects](https://myportofolio.codeunchs.my.id/#projects): Selected web applications with source and live links.
+- [Contact](https://myportofolio.codeunchs.my.id/#contact): Contact form, email, and WhatsApp.
+
+## Resources
+
+- [Curriculum Vitae](https://myportofolio.codeunchs.my.id/public/cv/Curriculum%20Vitae.pdf): PDF resume.
+- [Agent Resource Discovery manifest](https://myportofolio.codeunchs.my.id/.well-known/ard.json): Machine-readable catalog entry for this site.
+
+## Usage
+
+Content may be indexed and cited with attribution to Dinu Kurniawan Cahyadi and a link to the site. Do not use the contact form to send unsolicited bulk messages.

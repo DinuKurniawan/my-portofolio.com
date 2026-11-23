@@ -529,18 +529,23 @@ if (contactForm) {
 (function initParticles() {
   const canvas = document.getElementById("particles-canvas");
   if (!canvas) return;
+  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
   const ctx = canvas.getContext("2d");
   let particles = [];
   let running = true;
+  let inView = true;
+  let animating = false;
 
   function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    const width = canvas.offsetWidth;
+    const height = canvas.offsetHeight;
+    canvas.width = width;
+    canvas.height = height;
   }
 
   function createParticles() {
     particles = [];
-    const count = Math.floor((canvas.width * canvas.height) / 14000);
+    const count = Math.floor((canvas.width * canvas.height) / 22000);
     const colors = ["#a78bfa", "#c084fc", "#67e8f9", "#c4b5fd"];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -558,7 +563,11 @@ if (contactForm) {
   }
 
   function animate() {
-    if (!running) return;
+    if (!running || !inView) {
+      animating = false;
+      return;
+    }
+    animating = true;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
@@ -577,6 +586,16 @@ if (contactForm) {
       ctx.fill();
     }
     requestAnimationFrame(animate);
+  }
+
+  if (window.IntersectionObserver) {
+    new IntersectionObserver(
+      (entries) => {
+        inView = entries[0].isIntersecting;
+        if (inView && !animating) animate();
+      },
+      { rootMargin: "100px" },
+    ).observe(canvas);
   }
 
   document.addEventListener("visibilitychange", () => {

@@ -1,0 +1,38 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:codeunchs.my.id:portfolio:website",
+      "displayName": "Dinu Kurniawan Cahyadi — Portfolio",
+      "type": "application/agent-skills+json",
+      "data": {
+        "name": "Dinu Kurniawan Cahyadi Portfolio",
+        "description": "Single-page portfolio for a Full-Stack Web Developer based in Indonesia.",
+        "skills": [
+          {
+            "name": "BrowsePortfolio",
+            "description": "Read the developer's bio, skills, projects, certificates, and contact details."
+          },
+          {
+            "name": "ContactDeveloper",
+            "description": "Send a message through the portfolio contact form."
+          }
+        ]
+      },
+      "representativeQueries": [
+        "Who is Dinu Kurniawan Cahyadi?",
+        "Show full-stack web developer projects by Dinu Kurniawan Cahyadi",
+        "How can I contact Dinu Kurniawan Cahyadi?"
+      ],
+      "description": "Portfolio of Dinu Kurniawan Cahyadi: React, Next.js, Laravel, and Node.js projects, certificates, and contact information.",
+      "tags": [
+        "portfolio",
+        "full-stack",
+        "web-developer",
+        "react",
+        "nextjs",
+        "laravel"
+      ],
+      "updatedAt": "2026-11-23T00:00:00Z"
+    }
+  ]
+}

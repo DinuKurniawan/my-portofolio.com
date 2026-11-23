@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --minify",
+    "build:js": "esbuild src/js/logo-loop.js --minify --outfile=src/js/logo-loop.min.js && esbuild src/js/main.js --minify --outfile=src/js/main.min.js",
+    "build": "npm run build:css && npm run build:js",
     "watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
     "verify": "node scripts/check-html.mjs && node scripts/check-tokens.mjs && node scripts/check-classes.mjs && node scripts/check-wiring.mjs && node scripts/smoke-js.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,12 +17,14 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "compression": "^1.8.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "resend": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.1",
+    "esbuild": "^0.28.2",
     "tailwindcss": "^4.2.1"
   }
 }

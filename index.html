@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio Dinu Kurniawan Cahyadi — Full-Stack Web Developer specializing in React, Next.js, and Laravel. Based in Indonesia.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://myportofolio.codeunchs.my.id/">
+    <link rel="ard" href="/.well-known/ard.json">
     <meta property="og:title" content="Dinu Kurniawan Cahyadi — Full-Stack Developer">
     <meta property="og:description" content="Crafting beautiful, performant, and user-centered digital products.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myportofolio.codeunchs.my.id/">
+    <meta property="og:site_name" content="Dinu Kurniawan Cahyadi">
+    <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://myportofolio.codeunchs.my.id/src/images/profile.jpg">
+    <meta property="og:image:alt" content="Dinu Kurniawan Cahyadi — Full-Stack Web Developer">
+    <meta property="og:image:width" content="719">
+    <meta property="og:image:height" content="1600">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Dinu Kurniawan Cahyadi — Full-Stack Developer">
+    <meta name="twitter:description" content="Crafting beautiful, performant, and user-centered digital products.">
+    <meta name="twitter:image" content="https://myportofolio.codeunchs.my.id/src/images/profile.jpg">
     <meta name="theme-color" content="#020816">
     <title>Dinu Kurniawan Cahyadi — Full-Stack Developer</title>
     <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%236d63f8'/><text x='50' y='72' font-family='Inter,Arial,sans-serif' font-size='65' font-weight='800' text-anchor='middle' fill='%23f6f7f9'>D</text></svg>"
+    >
+    <link
+      rel="preload"
+      as="image"
+      href="./public/images/picture/pp-cutout.webp"
+      imagesrcset="./public/images/picture/pp-cutout-320.webp 320w, ./public/images/picture/pp-cutout-480.webp 480w, ./public/images/picture/pp-cutout.webp 640w"
+      imagesizes="(min-width: 480px) 300px, 270px"
+      fetchpriority="high"
     >
     <link rel="stylesheet" href="./src/css/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +54,26 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
       >
     </noscript>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dinu Kurniawan Cahyadi",
+        "url": "https://myportofolio.codeunchs.my.id/",
+        "image": "https://myportofolio.codeunchs.my.id/src/images/profile.jpg",
+        "jobTitle": "Full-Stack Web Developer",
+        "email": "mailto:dinukurniawan28@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "ID"
+        },
+        "sameAs": [
+          "https://github.com/DinuKurniawan",
+          "https://www.linkedin.com/in/dinu-kurniawan-cahyadi-a16852434/",
+          "https://www.instagram.com/dkc_2863/"
+        ]
+      }
+    </script>
   </head>
   <body class="text-white antialiased">
     <!-- Noise overlay -->
@@ -52,7 +92,7 @@
         <a
           href="#home"
           class="logo-text text-lg font-bold"
-          aria-label="Dinu Kurniawan Cahyadi — beranda"
+          aria-label="&lt;D/&gt; — Dinu Kurniawan Cahyadi, beranda"
         >
           <span class="text-accent">&lt;</span>D<span class="text-accent"
             >/&gt;</span
@@ -312,11 +352,18 @@
                 <div class="hero-photo-circle" aria-hidden="true"></div>
                 <div class="hero-photo-inner">
                   <img
-                    src="./public/images/picture/pp-cutout.png"
+                    src="./public/images/picture/pp-cutout.webp"
+                    srcset="
+                      ./public/images/picture/pp-cutout-320.webp 320w,
+                      ./public/images/picture/pp-cutout-480.webp 480w,
+                      ./public/images/picture/pp-cutout.webp     640w
+                    "
+                    sizes="(min-width: 480px) 300px, 270px"
                     alt="Dinu Kurniawan Cahyadi"
                     class="w-full h-full object-cover object-top"
                     width="640"
                     height="952"
+                    fetchpriority="high"
                   >
                   <span class="hero-photo-status">
                     <span
@@ -880,7 +927,7 @@
             <!-- Certificate 4 — BNSP Sertifikat Kompetensi -->
             <div
               class="cert-card card group relative overflow-hidden reveal cursor-pointer"
-              data-cert-images='["./src/images/dpn.jpg","./src/images/blkng.jpg"]'
+              data-cert-images='["./src/images/dpn.webp","./src/images/blkng.webp"]'
               onclick="openCertModal(this)"
             >
               <div
@@ -889,7 +936,7 @@
                 <!-- Carousel wrapper -->
                 <div class="cert-carousel relative w-full h-full">
                   <img
-                    src="./src/images/dpn.jpg"
+                    src="./src/images/dpn.webp"
                     alt="BNSP Sertifikat Kompetensi - Depan"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
                     width="400"
@@ -897,7 +944,7 @@
                     loading="lazy"
                   >
                   <img
-                    src="./src/images/blkng.jpg"
+                    src="./src/images/blkng.webp"
                     alt="BNSP Sertifikat Kompetensi - Belakang"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-0"
                     width="400"
@@ -988,11 +1035,11 @@
               </div>
               <div class="p-5">
                 <p class="cert-year">2025</p>
-                <h4
+                <h3
                   class="cert-title"
                 >
                   Pengembang Perangkat Lunak — BNSP
-                </h4>
+                </h3>
                 <p class="cert-desc">
                   Sertifikat Kompetensi dari Badan Nasional Sertifikasi Profesi
                   dengan kualifikasi Analis Program (Program Analyst).
@@ -1013,7 +1060,7 @@
             <!-- Certificate 2 — Front-End Web untuk Pemula -->
             <div
               class="cert-card card group relative overflow-hidden reveal cursor-pointer"
-              data-cert-images='["./public/images/certificate/Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula-1_page-0001.webp"]'
+              data-cert-images='["./public/images/certificate/belajar-front-end-web-pemula.webp"]'
               onclick="openCertModal(this)"
             >
               <div
@@ -1022,7 +1069,7 @@
                 <!-- Carousel wrapper -->
                 <div class="cert-carousel relative w-full h-full">
                   <img
-                    src="./public/images/certificate/Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula-1_page-0001.webp"
+                    src="./public/images/certificate/belajar-front-end-web-pemula.webp"
                     alt="Belajar Membuat Front-End Web untuk Pemula"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
                     width="400"
@@ -1055,11 +1102,11 @@
               </div>
               <div class="p-5">
                 <p class="cert-year">2024</p>
-                <h4
+                <h3
                   class="cert-title"
                 >
                   Belajar Membuat Front-End Web untuk Pemula
-                </h4>
+                </h3>
                 <p class="cert-desc">
                   Sertifikat kompetensi kelulusan kelas Belajar Membuat Front-End Web untuk Pemula dari Dicoding.
                 </p>
@@ -1075,7 +1122,7 @@
             <!-- Certificate 3 — Course 123 -->
             <div
               class="cert-card card group relative overflow-hidden reveal cursor-pointer"
-              data-cert-images='["./public/images/certificate/Belajar%20Dasar%20Pemrograman%20Web.webp"]'
+              data-cert-images='["./public/images/certificate/belajar-dasar-pemrograman-web.webp"]'
               onclick="openCertModal(this)"
             >
               <div
@@ -1084,7 +1131,7 @@
                 <!-- Carousel wrapper -->
                 <div class="cert-carousel relative w-full h-full">
                   <img
-                    src="./public/images/certificate/Belajar Dasar Pemrograman Web.webp"
+                    src="./public/images/certificate/belajar-dasar-pemrograman-web.webp"
                     alt="Sertifikat Course"
                     class="cert-slide w-full h-full object-contain absolute inset-0 transition-opacity duration-500 opacity-100"
                     width="400"
@@ -1117,11 +1164,11 @@
               </div>
               <div class="p-5">
                 <p class="cert-year">2024</p>
-                <h4
+                <h3
                   class="cert-title"
                 >
                   Belajar Dasar Pemrograman Web
-                </h4>
+                </h3>
                 <p class="cert-desc">
                   Sertifikat kompetensi kelulusan kelas Belajar Dasar Pemrograman Web dari Dicoding.
                 </p>
@@ -1144,7 +1191,7 @@
               type="button"
               id="certs-prev"
               class="pagination-button"
-              aria-label="Previous certificates"
+              aria-label="Prev certificates"
             >
               &larr; Prev
             </button>
@@ -1182,7 +1229,7 @@
             <div class="project-card reveal group">
               <div class="project-thumb overflow-hidden relative">
                 <img
-                  src="./src/images/project-jaya-abadi.png"
+                  src="./src/images/project-jaya-abadi.webp"
                   alt="Jaya Abadi Company Profile and CMS preview"
                   class="absolute inset-0 w-full h-full object-cover"
                   width="400"
@@ -1190,9 +1237,9 @@
                   loading="lazy"
                 >
               </div>
-              <h4 class="project-title">
+              <h3 class="project-title">
                 Jaya Abadi &mdash; Contractor Company Profile &amp; CMS
-              </h4>
+              </h3>
               <p class="project-desc">
                 Company profile kontraktor dengan CMS admin untuk mengelola layanan,
                 proyek, artikel, media, pesan konsultasi, cabang, dan konten pendukung.
@@ -1244,9 +1291,9 @@
                   loading="lazy"
                 >
               </div>
-              <h4 class="project-title">
+              <h3 class="project-title">
                 Pustakaloka &mdash; Modern Library Website
-              </h4>
+              </h3>
               <p class="project-desc">
                 Website perpustakaan multi-halaman dengan katalog buku, filter
                 kategori dan bahasa, detail buku, reservasi, simpanan, berita,
@@ -1311,11 +1358,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 Thrift Corner &mdash; Vintage &amp; Streetwear Store
-              </h4>
+              </h3>
               <p class="project-desc">
                 Katalog toko thrift responsif dengan filter kategori, alur beli
                 via WhatsApp, panduan belanja, storytelling brand, dan ulasan
@@ -1380,11 +1427,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 Safar Haramain &mdash; Travel Haji & Umroh
-              </h4>
+              </h3>
               <p class="project-desc">
                 Landing page travel Haji dan Umroh dengan katalog paket
                 dinamis, jadwal keberangkatan, form konsultasi, dan moderasi
@@ -1446,11 +1493,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 THE BLADE &mdash; Premium Barbershop
-              </h4>
+              </h3>
               <p class="project-desc">
                 Website barbershop premium dengan nuansa editorial, katalog
                 layanan, galeri hasil cukur, profil barber, testimonial,
@@ -1500,11 +1547,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 Modern Weather Dashboard
-              </h4>
+              </h3>
               <p class="project-desc">
                 Aplikasi cuaca modern dengan pencarian kota, deteksi lokasi
                 pengguna, suhu dan kelembapan real-time, serta forecast
@@ -1554,11 +1601,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 Absensiku &mdash; Smart Attendance
-              </h4>
+              </h3>
               <p class="project-desc">
                 Aplikasi absensi modern dengan fitur geolokasi, check-in/out
                 real-time, rekap kehadiran otomatis, dan dashboard monitoring
@@ -1607,11 +1654,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 GudangPro &mdash; Warehouse Management
-              </h4>
+              </h3>
               <p class="project-desc">
                 Sistem manajemen gudang dengan pencatatan barang masuk/keluar,
                 monitoring stok real-time, notifikasi stok rendah, dan
@@ -1660,11 +1707,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 TravelNusa &mdash; Wisata Nusantara
-              </h4>
+              </h3>
               <p class="project-desc">
                 Platform wisata Nusantara dengan katalog destinasi, paket
                 tour, booking online, galeri foto, dan panduan perjalanan
@@ -1713,11 +1760,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 POS Kasirku &mdash; Sistem Kasir
-              </h4>
+              </h3>
               <p class="project-desc">
                 Aplikasi Point of Sale modern untuk manajemen transaksi,
                 produk, laporan penjualan, dan pengelolaan kasir
@@ -1766,11 +1813,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 BookingMobil.id &mdash; Rental Mobil Online
-              </h4>
+              </h3>
               <p class="project-desc">
                 Platform penyewaan mobil online lengkap dengan katalog
                 armada, filter pencarian, form booking dengan upload
@@ -1836,11 +1883,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 Quiz App &mdash; Kuis Interaktif
-              </h4>
+              </h3>
               <p class="project-desc">
                 Aplikasi kuis interaktif dengan pilihan topik, timer per soal
                 dengan progress bar, umpan balik jawaban langsung, skor akhir
@@ -1903,11 +1950,11 @@
                   loading="lazy"
                 >
               </div>
-              <h4
+              <h3
                 class="project-title"
               >
                 Cinema Search &mdash; Movie Search App
-              </h4>
+              </h3>
               <p class="project-desc">
                 Aplikasi pencarian film dan serial TV berbasis TMDB dengan filter
                 tipe, tahun, dan genre, daftar populer serta trending, pagination,
@@ -1968,7 +2015,7 @@
               type="button"
               id="projects-prev"
               class="pagination-button"
-              aria-label="Previous projects"
+              aria-label="Prev projects"
             >
               &larr; Prev
             </button>
@@ -2452,7 +2499,13 @@
         </svg>
       </button>
       <div class="cert-modal-content" onclick="event.stopPropagation()">
-        <img id="cert-modal-img" src="#" alt="Certificate Preview">
+        <img
+      id="cert-modal-img"
+      src="#"
+      alt="Certificate Preview"
+      width="1200"
+      height="849"
+    >
         <!-- Modal carousel nav (hidden for single-image certs) -->
         <button
           type="button"
@@ -2509,7 +2562,7 @@
       </div>
     </div>
 
-    <script src="./src/js/logo-loop.js" defer></script>
-    <script src="./src/js/main.js" defer></script>
+    <script src="./src/js/logo-loop.min.js" defer></script>
+    <script src="./src/js/main.min.js" defer></script>
   </body>
 </html>

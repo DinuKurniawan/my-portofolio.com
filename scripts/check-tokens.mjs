@@ -6,7 +6,7 @@ const css = readFileSync(new URL("../src/css/output.css", import.meta.url), "utf
 
 // Ambil token dari blok :root hasil build (nilai bisa hex atau var() alias)
 const raw = Object.fromEntries(
-  [...css.matchAll(/^\s*(--(?:color|radius|shadow|font|z)-[\w-]+):\s*([^;]+);/gim)].map(
+  [...css.matchAll(/(?<![\w-])(--(?:color|radius|shadow|font|z)-[\w-]+):\s*([^;]+);/gi)].map(
     (m) => [m[1], m[2].trim()],
   ),
 );

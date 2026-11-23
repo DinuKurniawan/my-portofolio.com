@@ -669,6 +669,13 @@ img[data-src].lazy-error {
   transform: translateY(0);
 }
 
+/* Hero is above the fold: paint immediately, do not wait for JS observers. */
+#home .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 /* ══ ABOUT (PRD §9.4) ══════════════════════════════════════════════════════ */
 
 /* Header section dipakai di semua section: badge + heading */

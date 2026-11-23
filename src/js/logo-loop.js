@@ -33,11 +33,14 @@
       this.velocity = 0;
       this.seqEl = null;
       this.trackEl = null;
+      this.isVisible = true;
+      this.reduceMotion =
+        window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ??
+        false;
 
       this.build();
       this.bind();
       this.observe();
-      this.loadImages();
       this.loop();
     }
 
@@ -89,7 +92,7 @@
       this.renderLists();
     }
 
-    renderItem(item) {
+    renderItem(item, isClone = false) {
       const li = document.createElement("li");
       li.className = "logoloop__item";
       li.setAttribute("role", "listitem");
@@ -105,6 +108,8 @@
         const img = document.createElement("img");
         img.src = item.src;
         img.alt = item.alt ?? "";
+        img.width = this.opts.logoHeight;
+        img.height = this.opts.logoHeight;
         if (item.title) img.title = item.title;
         img.loading = "lazy";
         img.decoding = "async";
@@ -118,6 +123,7 @@
         a.className = "logoloop__link";
         a.href = item.href;
         a.setAttribute("aria-label", label);
+        if (isClone) a.tabIndex = -1;
         a.target = "_blank";
         a.rel = "noreferrer noopener";
         a.appendChild(content);
@@ -135,9 +141,14 @@
         const ul = document.createElement("ul");
         ul.className = "logoloop__list";
         ul.setAttribute("role", "list");
-        if (i > 0) ul.setAttribute("aria-hidden", "true");
+        if (i > 0) {
+          ul.setAttribute("aria-hidden", "true");
+          ul.setAttribute("inert", "");
+        }
         if (i === 0) this.seqEl = ul;
-        this.opts.logos.forEach((item) => ul.appendChild(this.renderItem(item)));
+        this.opts.logos.forEach((item) =>
+          ul.appendChild(this.renderItem(item, i > 0)),
+        );
         this.trackEl.appendChild(ul);
       }
       if (this._ro && this.seqEl) this._ro.observe(this.seqEl);
@@ -177,6 +188,17 @@
     }
 
     observe() {
+      if (window.IntersectionObserver) {
+        this._io = new IntersectionObserver(
+          (entries) => {
+            this.isVisible = entries[0].isIntersecting;
+            if (this.isVisible) this.loop();
+          },
+          { rootMargin: "120px 0px" },
+        );
+        this._io.observe(this.el);
+      }
+
       if (!window.ResizeObserver) {
         this._onResize = () => this.measure();
         window.addEventListener("resize", this._onResize, { passive: true });
@@ -186,27 +208,6 @@
       this._ro = new ResizeObserver(() => this.measure());
       this._ro.observe(this.el);
       if (this.seqEl) this._ro.observe(this.seqEl);
-      this.measure();
-    }
-
-    loadImages() {
-      const imgs = this.seqEl?.querySelectorAll("img") ?? [];
-      if (!imgs.length) {
-        this.measure();
-        return;
-      }
-      let left = imgs.length;
-      const done = () => {
-        left -= 1;
-        if (left <= 0) this.measure();
-      };
-      imgs.forEach((img) => {
-        if (img.complete) done();
-        else {
-          img.addEventListener("load", done, { once: true });
-          img.addEventListener("error", done, { once: true });
-        }
-      });
     }
 
     bind() {
@@ -219,7 +220,14 @@
     }
 
     loop() {
+      if (this.reduceMotion || this.raf !== null) return;
+      this.lastTs = null;
+
       const tick = (ts) => {
+        if (!this.isVisible) {
+          this.raf = null;
+          return;
+        }
         if (this.lastTs === null) this.lastTs = ts;
         const dt = Math.max(0, ts - this.lastTs) / 1000;
         this.lastTs = ts;
@@ -245,14 +253,14 @@
   window.LogoLoop = LogoLoop;
 
   const TECH_LOGOS = [
-    { src: "https://img.icons8.com/color/96/html-5--v1.png", alt: "HTML", title: "HTML", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-    { src: "https://img.icons8.com/color/96/css3.png", alt: "CSS", title: "CSS", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-    { src: "https://img.icons8.com/color/96/javascript--v1.png", alt: "JavaScript", title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-    { src: "https://cdn.simpleicons.org/typescript/3178C6", alt: "TypeScript", title: "TypeScript", href: "https://www.typescriptlang.org" },
-    { src: "https://img.icons8.com/color/96/react-native--v1.png", alt: "React", title: "React", href: "https://react.dev" },
-    { src: "https://cdn.simpleicons.org/laravel/FF2D20", alt: "Laravel", title: "Laravel", href: "https://laravel.com" },
-    { src: "https://cdn.simpleicons.org/nextdotjs/FFFFFF", alt: "Next.js", title: "Next.js", href: "https://nextjs.org" },
-    { src: "https://cdn.simpleicons.org/nodedotjs/5FA04E", alt: "Node.js", title: "Node.js", href: "https://nodejs.org" },
+    { src: "./public/images/tech/html5.svg", alt: "HTML", title: "HTML", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { src: "./public/images/tech/css.svg", alt: "CSS", title: "CSS", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { src: "./public/images/tech/javascript.svg", alt: "JavaScript", title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { src: "./public/images/tech/typescript.svg", alt: "TypeScript", title: "TypeScript", href: "https://www.typescriptlang.org" },
+    { src: "./public/images/tech/react.svg", alt: "React", title: "React", href: "https://react.dev" },
+    { src: "./public/images/tech/laravel.svg", alt: "Laravel", title: "Laravel", href: "https://laravel.com" },
+    { src: "./public/images/tech/nextdotjs.svg", alt: "Next.js", title: "Next.js", href: "https://nextjs.org" },
+    { src: "./public/images/tech/nodedotjs.svg", alt: "Node.js", title: "Node.js", href: "https://nodejs.org" },
     {
       node: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true"><path fill="#29b6f6" d="M44,11.11v25.78c0,1.27-0.79,2.4-1.98,2.82l-8.82,4.14L34,33V15L33.2,4.15l8.82,4.14 C43.21,8.71,44,9.84,44,11.11z"/><path fill="#0277bd" d="M9,33.896L34,15V5.353c0-1.198-1.482-1.758-2.275-0.86L4.658,29.239 c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"/><path fill="#0288d1" d="M9,14.104L34,33v9.647c0,1.198-1.482,1.758-2.275,0.86L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"/></svg>',
       title: "Visual Studio Code",
@@ -262,7 +270,7 @@
       node: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m19.94,20.59c1.09.82,2.73.27,1.23-1.23-4.5-4.36-3.55-16.36-9.14-16.36S7.39,15,2.89,19.36c-1.64,1.64.14,2.05,1.23,1.23,4.23-2.86,3.95-7.91,7.91-7.91s3.68,5.05,7.91,7.91Z"/></svg>',
       title: "Antigravity",
     },
-    { src: "https://cdn.simpleicons.org/githubcopilot/FFFFFF", alt: "GitHub Copilot", title: "GitHub Copilot", href: "https://github.com/features/copilot" },
+    { src: "./public/images/tech/githubcopilot.svg", alt: "GitHub Copilot", title: "GitHub Copilot", href: "https://github.com/features/copilot" },
     {
       node: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8.25 7.5 4.5 12l3.75 4.5M15.75 7.5 19.5 12l-3.75 4.5M13.5 4.5 10.5 19.5"/></svg>',
       title: "Codex",

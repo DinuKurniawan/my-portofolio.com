@@ -6,5 +6,16 @@
     "api/contact.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "routes": [
+    { "src": "^/src/(images|css|js)/([A-Za-z0-9._-]+)$", "dest": "/src/$1/$2" },
+    { "src": "^/public/(.*)$", "dest": "/public/$1" },
+    { "src": "^\\.well-known/ard\\.json$", "dest": "/.well-known/ard.json" },
+    {
+      "src": "^/(index\\.html|robots\\.txt|sitemap\\.xml|llms\\.txt)$",
+      "dest": "/$1"
+    },
+    { "src": "^/api/(.*)$", "dest": "/api/$1" },
+    { "src": "^/.*$", "status": 404, "dest": "/404.html" }
+  ]
 }

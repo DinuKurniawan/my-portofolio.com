@@ -37,7 +37,8 @@ function normalizeValue(value) {
   return String(value ?? "").trim();
 }
 
-function normalizeContactPayload(payload = {}) {
+function normalizeContactPayload(payload) {
+  payload = payload && typeof payload === "object" ? payload : {};
   const name = normalizeValue(payload.name);
   const email = normalizeValue(payload.email);
   const subject = normalizeValue(payload.subject);
